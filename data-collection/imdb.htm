@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="movie_ids.js"></script>
+    <script>
+      var html;
+      var bookkeeping = {
+        feature_values: {},
+        misfits: {
+          summary: {}
+        },
+        count: 0,
+        avg_rating: 0,
+        avg_rating_count: 0
+      };
+
+      $(document).ready(function() {
+        html = $('#movies');
+        for (var i = 2; i < 10; i++) {
+          $.ajax({
+            url: 'http://imdbapi.org/?id=' + movie_ids[i] +'&type=json&plot=none&episode=0&lang=en-US&aka=simple&release=simple&business=1&tech=1',
+            success: done
+          });
+        }
+      });
+
+      function done(data) {
+        var movie = JSON.parse(data);
+
+        // only add movies
+        if (movie.type == "M") {
+          html.append( bookkeeping.count + "\t" + movie.imdb_id + "\t");
+          html.append( preprocess(movie, 'rating') + "\t");
+          html.append( preprocess(movie, 'rating_count') + "\t");
+          html.append( preprocess(movie, 'actors', 5) + "\t" );
+          html.append( preprocess(movie, 'directors')  + "\t" );
+          html.append( preprocess(movie, 'writers')  + "\t" );
+          html.append( preprocess(movie, 'genres')  + "\t" );
+          html.append( preprocess(movie, 'language')  + "\t" );
+          html.append( preprocess(movie, 'country')  + "\t" );
+          html.append( preprocess(movie, 'rated') + "\t");
+          html.append( preprocess(movie, 'release_date') + "\t");
+          html.append( movie.runtime[0].split(' ')[0]);
+          html.append("\n");
+          bookkeeping.count++;
+        }
+      }
+
+      function preprocess(movie, prop, n) {
+        var error = false, obj;
+
+        // get the feature value if it exists
+        if (movie.hasOwnProperty(prop)) {
+          obj = movie[prop];
+        } else {
+          return log_misfit(movie.imdb_id, prop);
+        }
+
+        // keep track of some stuff
+        switch (prop) {
+          case 'rated':
+            if (obj == 'UNRATED' || obj == 'NOT_RATED') {
+              log_misfit(movie.imdb_id, 'unrated');
+              return "unrated";
+            }
+            break;
+          case 'rating':
+            bookkeeping.avg_rating += obj;
+            break;
+          case 'rating_count':
+            bookkeeping.avg_rating_count += obj;
+            break;
+          default:
+            break;
+        }
+        
+        if ( !n || (n && obj.length < n) ) {
+          n = obj.length;
+        }
+        if (obj instanceof Array) {
+          var result = "";
+          for (var i = 0; i < n; i++) {
+            // add value to our set
+            add_feature_value(prop, obj[i]);
+
+            // add value to our string
+            result += obj[i];
+            if (i < n - 1) {
+              result += ',';
+            }
+          }
+        } else {
+          if (prop == 'release_date') {
+            var result = "";
+            result += parse_date_field(movie.imdb_id, 'release_day', obj.toString().substring(0,4)) + "\t";
+            result += parse_date_field(movie.imdb_id, 'release_month', obj.toString().substring(4,6)) + "\t";
+            result += parse_date_field(movie.imdb_id, 'release_year', obj.toString().substring(6,8));
+          } else {
+            add_feature_value(prop, obj);
+            result = obj;
+          }
+        }
+        return result;
+      }
+
+      function log_misfit(id, prop) {
+        // add specific example
+        if (bookkeeping.misfits.hasOwnProperty(id)) {
+          bookkeeping.misfits[id].push(prop);
+        } else {
+          bookkeeping.misfits[id] = [prop];
+        }
+
+        // update our summary
+        if (bookkeeping.misfits.summary.hasOwnProperty(prop)) {
+          bookkeeping.misfits.summary[prop]++;
+        } else {
+          bookkeeping.misfits.summary[prop] = 1;
+        }
+        return null;
+      }
+
+      function add_feature_value(prop, value) {
+        if (!bookkeeping.feature_values.hasOwnProperty(prop)) {
+          bookkeeping.feature_values[prop] = {};
+        }
+        if (bookkeeping.feature_values[prop].hasOwnProperty(value)) {
+          bookkeeping.feature_values[prop][value]++;
+        } else {
+          bookkeeping.feature_values[prop][value] = 1;
+        }
+      }
+
+      function parse_date_field(id, field, str) {
+        if (str == '00') {
+          log_misfit(id, field);
+          return null;
+        } else {
+          add_feature_value(field, str);
+          return str;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <pre id="movies"></pre>
+  </body>
+</html>
