@@ -3,46 +3,55 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="movie_ids.js"></script>
     <script>
-      var html;
+      var html, start, index_count;
       var bookkeeping = {
         feature_values: {},
         misfits: {
           summary: {}
         },
-        count: 0,
-        avg_rating: 0,
-        avg_rating_count: 0
+        count: 2,
+        real_count: 0,
+        sum_rating: 0,
+        sum_rating_count: 0
       };
 
       $(document).ready(function() {
         html = $('#movies');
-        for (var i = 2; i < 10; i++) {
+        start = $('#start');
+        index_count = $('#index_count');
+      });
+
+      function generate() {
+        var min = parseInt(start.val());
+        min = (min < 2) ? 2 : min;
+        for (var i = min; i < min + 500; i++) {
           $.ajax({
             url: 'http://imdbapi.org/?id=' + movie_ids[i] +'&type=json&plot=none&episode=0&lang=en-US&aka=simple&release=simple&business=1&tech=1',
             success: done
           });
         }
-      });
+      };
 
       function done(data) {
         var movie = JSON.parse(data);
+        index_count.html(bookkeeping.count);
+        bookkeeping.count++;
 
         // only add movies
         if (movie.type == "M") {
-          html.append( bookkeeping.count + "\t" + movie.imdb_id + "\t");
+          html.append( bookkeeping.real_count + "\t" + movie.imdb_id + "\t");
           html.append( preprocess(movie, 'rating') + "\t");
           html.append( preprocess(movie, 'rating_count') + "\t");
           html.append( preprocess(movie, 'actors', 5) + "\t" );
-          html.append( preprocess(movie, 'directors')  + "\t" );
-          html.append( preprocess(movie, 'writers')  + "\t" );
+          html.append( preprocess(movie, 'directors', 5)  + "\t" );
+          html.append( preprocess(movie, 'writers', 5)  + "\t" );
           html.append( preprocess(movie, 'genres')  + "\t" );
           html.append( preprocess(movie, 'language')  + "\t" );
           html.append( preprocess(movie, 'country')  + "\t" );
           html.append( preprocess(movie, 'rated') + "\t");
           html.append( preprocess(movie, 'release_date') + "\t");
-          html.append( movie.runtime[0].split(' ')[0]);
-          html.append("\n");
-          bookkeeping.count++;
+          html.append( preprocess(movie, 'runtime') + "\n" );
+          bookkeeping.real_count++;
         }
       }
 
@@ -51,7 +60,11 @@
 
         // get the feature value if it exists
         if (movie.hasOwnProperty(prop)) {
-          obj = movie[prop];
+          if (prop == 'runtime') {
+            obj = movie.runtime[0].split(' ')[0];
+          } else {
+            obj = movie[prop];
+          }
         } else {
           return log_misfit(movie.imdb_id, prop);
         }
@@ -65,10 +78,10 @@
             }
             break;
           case 'rating':
-            bookkeeping.avg_rating += obj;
+            bookkeeping.sum_rating += obj;
             break;
           case 'rating_count':
-            bookkeeping.avg_rating_count += obj;
+            bookkeeping.sum_rating_count += obj;
             break;
           default:
             break;
@@ -140,9 +153,27 @@
           return str;
         }
       }
+
+      function importBookkeeping() {
+        bookkeeping = JSON.parse($('#bookkeeping').val());
+      }
+
+      function printBookkeeping() {
+        $('#bookkeeping').val(JSON.stringify(bookkeeping, null, 2));
+      }
     </script>
   </head>
   <body>
+    <fieldset>
+      <legend>Configuration</legend>
+      <label for="start">start:</label>
+      <input type="text" id="start" />
+      <button onclick="generate()">Generate Data</button>
+      <span id="index_count"></span><br />
+      <textarea id="bookkeeping"></textarea>
+      <button onclick="importBookkeeping()">Prepare Bookkeeping</button>
+      <button onclick="printBookkeeping()">Refresh Bookkeeping</button>
+    </fieldset>
     <pre id="movies"></pre>
   </body>
 </html>
