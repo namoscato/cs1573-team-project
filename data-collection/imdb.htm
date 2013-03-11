@@ -105,9 +105,9 @@
         } else {
           if (prop == 'release_date') {
             var result = "";
-            result += parse_date_field(movie.imdb_id, 'release_day', obj.toString().substring(0,4)) + "\t";
+            result += parse_date_field(movie.imdb_id, 'release_year', obj.toString().substring(0,4)) + "\t";
             result += parse_date_field(movie.imdb_id, 'release_month', obj.toString().substring(4,6)) + "\t";
-            result += parse_date_field(movie.imdb_id, 'release_year', obj.toString().substring(6,8));
+            result += parse_date_field(movie.imdb_id, 'release_day', obj.toString().substring(6,8));
           } else {
             add_feature_value(prop, obj);
             result = obj;
