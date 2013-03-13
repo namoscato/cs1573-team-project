@@ -36,7 +36,21 @@
 
 	function loaded(evt) {
 		var fileString = evt.target.result;
-		var lines = fileString.split("\n"); 
+		var lines = fileString.split("\n"); //split the file by lines
+
+		//each line should contain the rating and the count of people who contributed to that rating.
+		//next we want to compute the weighted mean:  the sum of the (rating * count)s divided by the sum of the counts.
+		var numerator = 0;
+		var denominator = 0;
+		for (int i = 0; i < lines.length; i++) { //pass through the lines
+			var arr = lines.split(" ");
+			var rating = arr[0];
+			var num = arr[1];
+
+			numerator += rating * num;
+			denominator += num;
+		}
+		var average = numerator / denominator;
 
 	}
 
@@ -45,11 +59,5 @@
 			alert("File could not be read.");
 		}
 	}
-
-//compute the average
-var line = str_line_split
-//weighted version
-
-//nonweighted version
 
 </script>
