@@ -22,21 +22,25 @@
       });
 
       function generate() {
-        var min = parseInt(start.val());
-        min = (min < 2) ? 2 : min;
-        for (var i = min; i < min + 4000; i++) {
+        var min = bookkeeping.count;
+        if (min == 0) {
+          min = parseInt(start.val());
+          min = (min < 2) ? 2 : min;
+        }
+        for (var i = min; i < min + 3000; i++) {
           $.ajax({
             url: 'http://imdbapi.org/?id=' + movie_ids[i] +'&type=json&plot=none&episode=0&lang=en-US&aka=simple&release=simple&business=1&tech=1',
-            success: done
+            success: done,
+            complete: function() {
+              index_count.html(bookkeeping.count);
+              bookkeeping.count++;
+            }
           });
         }
       };
 
       function done(data) {
         var movie = JSON.parse(data);
-        index_count.html(bookkeeping.count);
-        bookkeeping.count++;
-
         // only add movies
         if (movie.type == "M") {
           html.append( bookkeeping.real_count + "\t" + movie.imdb_id + "\t");
