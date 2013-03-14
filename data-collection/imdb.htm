@@ -24,7 +24,7 @@
       function generate() {
         var min = parseInt(start.val());
         min = (min < 2) ? 2 : min;
-        for (var i = min; i < min + 500; i++) {
+        for (var i = min; i < min + 4000; i++) {
           $.ajax({
             url: 'http://imdbapi.org/?id=' + movie_ids[i] +'&type=json&plot=none&episode=0&lang=en-US&aka=simple&release=simple&business=1&tech=1',
             success: done
@@ -61,7 +61,7 @@
         // get the feature value if it exists
         if (movie.hasOwnProperty(prop)) {
           if (prop == 'runtime') {
-            obj = movie.runtime[0].split(' ')[0];
+            obj = findRuntime(movie.runtime);
           } else {
             obj = movie[prop];
           }
@@ -73,7 +73,7 @@
         switch (prop) {
           case 'rated':
             if (obj == 'UNRATED' || obj == 'NOT_RATED') {
-              log_misfit(movie.imdb_id, 'unrated');
+              //log_misfit(movie.imdb_id, 'unrated');
               return "unrated";
             }
             break;
@@ -160,6 +160,23 @@
 
       function printBookkeeping() {
         $('#bookkeeping').val(JSON.stringify(bookkeeping, null, 2));
+      }
+
+      // return USA runtime if it exists; otherwise, return first one
+      function findRuntime(runtimes) {
+        for (var i = 0; i < runtimes.length; i++) {
+          var array = runtimes[i].split(' ');
+          if ( isNaN(parseInt(array[0])) ) {
+            // we have multiple countries
+            if (array[0] == 'USA:') {
+              return array[1];
+            }
+          } else {
+            // there is an unlabeled time, so use it
+            return array[0];
+          }
+        }
+        return runtimes[0].split(' ')[1];
       }
     </script>
   </head>
