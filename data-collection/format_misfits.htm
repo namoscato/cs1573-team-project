@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="bookkeeping.js"></script>
+    <script>
+      $(document).ready(function() {
+        var output = $('#output');
+        for (var id in bookkeeping.misfits) {
+          output.append(id + "\t");
+          for (var i = 0; i < bookkeeping.misfits[id].length; i++) {
+            output.append(bookkeeping.misfits[id][i]);
+            if (i < bookkeeping.misfits[id].length - 1) {
+              output.append("\t");
+            } else {
+              output.append("\n");
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <pre id="output"></pre>
+  </body>
+</html>
