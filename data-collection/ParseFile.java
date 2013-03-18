@@ -8,7 +8,15 @@ public class ParseFile {
 
 		while ((line = buf.ReadLine()) != null) {
 			String[] arr = line.split("\t");
-			
+			//produce two text files.  one is clean examples only, the other one modifies the files.
+			switch (arr[1]) {
+				case release_day: {
+
+				} break;
+				case language: {
+
+				} break;
+			}
 		}
 	}
 
@@ -25,4 +33,12 @@ public class ParseFile {
 		else if (c % 4 == 2) return 2;
 		else return 0;
 	}
+
+	public int divideMonth(int d) {
+		if (d < 11) return 0;
+		else if (d < 21) return 1;
+		else return 2;
+	}
+
+	public void 
 }
