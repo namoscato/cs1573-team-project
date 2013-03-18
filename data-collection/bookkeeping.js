@@ -1,4 +1,4 @@
-{
+var bookkeeping = {
   "feature_values": {
     "rating": {
       "2": 6,
@@ -101002,4 +101002,4 @@
   "real_count": 19296,
   "sum_rating": 123452.69999999987,
   "sum_rating_count": 265473483
-}
+};
