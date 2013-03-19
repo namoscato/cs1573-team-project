@@ -1137,7 +1137,7 @@
 1136	tt0291350	7.9	8103	Miyoko Shôji,Mami Koyama,Fumiko Orikasa,Shôzô Îzuka,Shouko Tsuda	Satoshi Kon	Satoshi Kon,Sadayuki Murai	Animation,Drama,Romance	Japanese,English	Japan	PG	2002	09	14	87
 1137	tt0113828	7.3	2616	Jean-Paul Belmondo,Michel Boujenah,Alessandra Martines,Salomé Lelouch,Annie Girardot	Claude Lelouch	Victor Hugo,Claude Lelouch	Drama,History	French,German,English	France	R	1995	11	03	175
 1138	tt0314331	7.7	178429	Bill Nighy,Gregor Fisher,Rory MacGregor,Colin Firth,Sienna Guillory	Richard Curtis	Richard Curtis	Comedy,Drama,Romance	English,Portuguese,French	UK,USA,France	R	2003	11	14	135
-1139	tt0293715	8.1	23257	Tae-hyun Cha,Gianna Jun,Jin-hie Han,Sook-hee Hyun,Il-woo Kim	Jae-young Kwak	Ho-sik Kim,Jae-young Kwak	Comedy,Drama,Romance	Korean,English	South Korea	null	2001	07	27	Korea:
+1139	tt0293715	8.1	23257	Tae-hyun Cha,Gianna Jun,Jin-hie Han,Sook-hee Hyun,Il-woo Kim	Jae-young Kwak	Ho-sik Kim,Jae-young Kwak	Comedy,Drama,Romance	Korean,English	South Korea	null	2001	07	27	137
 1140	tt0035211	7.7	5562	Gary Cooper,Teresa Wright,Babe Ruth,Walter Brennan,Dan Duryea	Sam Wood	Jo Swerling,Herman J. Mankiewicz	Biography,Drama,Family,Romance,Sport	English	USA	null	1943	03	05	128
 1141	tt0048545	7.9	39992	James Dean,Natalie Wood,Sal Mineo,Jim Backus,Ann Doran	Nicholas Ray	Stewart Stern,Irving Shulman,and 1 more credit	Drama,Romance	English	USA	PG_13	1955	10	27	111
 1142	tt0454921	7.8	171194	Will Smith,Jaden Smith,Thandie Newton,Brian Howe,James Karen	Gabriele Muccino	Steve Conrad	Biography,Drama	English,Chinese	USA	PG_13	2006	12	15	117
@@ -1884,7 +1884,6 @@
 1883	tt1226271	7.5	17723	Colm Meaney,Henry Goodman,David Roper,Jimmy Reddington,Oliver Stokes	Tom Hooper	Peter Morgan,David Peace	Biography,Comedy,Drama,Sport	English	UK	R	2009	03	27	98
 1884	tt0124315	7.4	53878	Tobey Maguire,Charlize Theron,Delroy Lindo,Paul Rudd,Michael Caine	Lasse Hallström	John Irving,John Irving	Drama,Romance	English	USA	PG_13	2000	01	07	126
 1885	tt0116041	6.7	2905	Stanley Tucci,Hope Davis,Pat McNamara,Anne Meara,Parker Posey	Greg Mottola	Greg Mottola	Comedy,Drama,Mystery,Romance	English	Canada,USA	R	1997	03	05	87
-1886	tt0060722	7.6	422	Salvador Wood,Silvia Planas,Manuel Estanillo,Omar Alfonso,Tania Alvarado	Tomás Gutiérrez Alea	Ramón F. Suárez,Alfredo L. Del Cueto,and 1 more credit	Comedy	Spanish	Cuba	unrated	1966	07	24	85
 1887	tt0105438	7.8	791	Antonio López,Marina Moreno,Enrique Gran,María López,Carmen López	Víctor Erice	Víctor Erice,Antonio López	Documentary,Biography,Drama	Spanish	Spain	null	1993	04	02	133
 1888	tt0049784	7.9	987	Chikage Awashima,Ryô Ikebe,Teiji Takahashi,Keiko Kishi,Chishû Ryû	Yasujirô Ozu	Kôgo Noda,Yasujirô Ozu	Drama	Japanese	Japan	null	1974	09	25	144
 1889	tt0064276	7.3	49628	Peter Fonda,Dennis Hopper,Antonio Mendoza,Phil Spector,Mac Mashourian	Dennis Hopper	Peter Fonda,Dennis Hopper,and 1 more credit	Drama	English,Spanish	USA	R	1969	06	26	95
@@ -2185,7 +2184,7 @@
 2184	tt0292490	8.3	15530	Aamir Khan,Saif Ali Khan,Akshaye Khanna,Preity Zinta,Sonali Kulkarni	Farhan Akhtar	Farhan Akhtar,Kassim Jagmagia	Drama	Hindi,English,Urdu	India	unrated	2001	07	24	183
 2185	tt0456123	6.7	1596	Jean-Luc Couchard,Dominique Pinon,Jérémie Renier,Marion Cotillard,Mélanie Laurent	Olivier Van Hoofstadt	Olivier Van Hoofstadt,Olivier Legrain	Comedy	French,Dutch	France,Belgium	null	2006	06	21	null
 2186	tt0023948	7.6	4428	Marie Dressler,John Barrymore,Wallace Beery,Jean Harlow,Lionel Barrymore	George Cukor	Frances Marion,Herman J. Mankiewicz	Comedy,Drama	English	USA	null	1934	01	12	111
-2187	tt0821442	7.5	2278	Ho-jin Cheon,In-jae Heo,Ku Jin,In-seong Jo,Byeong-chun Kim	Ha Yoo	Ha Yoo	Action,Crime,Thriller	Korean	South Korea	null	2006	06	15	Korea:
+2187	tt0821442	7.5	2278	Ho-jin Cheon,In-jae Heo,Ku Jin,In-seong Jo,Byeong-chun Kim	Ha Yoo	Ha Yoo	Action,Crime,Thriller	Korean	South Korea	null	2006	06	15	141
 2188	tt0095031	7.2	31911	Steve Martin,Michael Caine,Glenne Headly,Anton Rodgers,Barbara Harris	Frank Oz	Dale Launer,Stanley Shapiro,and 1 more credit	Comedy,Crime	English	USA	PG	1988	12	14	110
 2189	tt0092948	7.3	10674	Eddie Murphy,Tatyana Ali,Billie Allen,James Brown III,Eyde Byrde	Robert Townsend	Eddie Murphy,Eddie Murphy,and 1 more credit	Documentary,Comedy	English	USA	R	1987	12	18	93
 2190	tt0961066	7.5	2715	Maria Heiskanen,Mikael Persbrandt,Jesper Christensen,Callin Öhrvall,Nellie Almgren	Jan Troell	Niklas Rådström,Jan Troell	Biography,Drama	Swedish,Finnish	Sweden,Denmark,Norway,Finland,Germany	unrated	2008	09	24	131
@@ -2207,7 +2206,7 @@
 2206	tt0031448	7.6	5119	Richard Greene,Basil Rathbone,Wendy Barrie,Nigel Bruce,Lionel Atwill	Sidney Lanfield	Ernest Pascal,Arthur Conan Doyle	Crime,Drama,Horror,Mystery,Thriller	English	USA	APPROVED	1939	03	31	80
 2207	tt0067484	7.2	402	Kazimierz Witkiewicz,Zygmunt Apostol,Bogusz Bilewski,Mieczyslaw Czechowicz,Andrzej Gawronski	Tadeusz Chmielewski	Tadeusz Chmielewski	Comedy	Polish	Poland	null	1971	08	27	null
 2208	tt0049314	6.9	6596	Bing Crosby,Grace Kelly,Frank Sinatra,Celeste Holm,John Lund	Charles Walters	John Patrick,Philip Barry	Comedy,Musical,Romance	English	USA	APPROVED	1956	07	17	111
-2209	tt0497137	7	11120	Su-jeong Lim,Rain,Hie-jin Choi,Byeong-ok Kim,Yong-nyeo Lee	Chan-wook Park	Chan-wook Park,Seo-Gyeong Jeong	Comedy,Drama,Romance,Sci-Fi	Korean	South Korea	null	2006	12	07	Korea:
+2209	tt0497137	7	11120	Su-jeong Lim,Rain,Hie-jin Choi,Byeong-ok Kim,Yong-nyeo Lee	Chan-wook Park	Chan-wook Park,Seo-Gyeong Jeong	Comedy,Drama,Romance,Sci-Fi	Korean	South Korea	null	2006	12	07	105
 2210	tt0032617	7.3	1279	William Powell,Myrna Loy,Frank McHugh,Edmund Lowe,Donald Douglas	W.S. Van Dyke	Octavus Roy Cohen,Leon Gordon	Comedy,Romance	English	USA	APPROVED	1940	08	09	99
 2211	tt0110116	7.2	13098	Gary Oldman,Jeroen Krabbé,Isabella Rossellini,Johanna ter Steege,Marco Hofschneider	Bernard Rose	Bernard Rose	Biography,Drama,Music,Romance	English	UK,USA	R	1995	01	06	121
 2212	tt1071804	6.8	12599	Christopher Soren Kelly,Quinn Hunchar,Jessica Duffy,Jennifer Batter,Jeremy Make	Jamin Winans	Jamin Winans	Action,Fantasy,Sci-Fi	English	USA	null	null	107
@@ -2495,7 +2494,7 @@
 2494	tt0145547	7	5884	Heath Ledger,Bryan Brown,David Field,Tom Long,Tony Forrow	Gregor Jordan	Gregor Jordan	Comedy,Crime,Thriller	English	Australia	R	1999	07	29	103
 2495	tt0216651	7.7	15406	Hideyuki Tanaka,Ichirô Nagai,Kôichi Yamadera,Megumi Hayashibara,Emi Shinohara	Yoshiaki Kawajiri	Yoshiaki Kawajiri,Hideyuki Kikuchi,and 1 more credit	Animation,Action,Adventure,Fantasy,Mystery,Sci-Fi	English,Japanese	Japan,USA	R	2001	09	28	103
 2496	tt0478829	7.5	3041	Fabrizio Borsani,Teo Gheorghiu,Julika Jenkins,Urs Jucker,Bruno Ganz	Fredi M. Murer	Fredi M. Murer,Peter Luisi,and 1 more credit	Drama,Music	Swiss German,English	Switzerland	PG	2006	12	07	100
-2497	tt2025526	7.2	3558	Hae-il Park,Seung-yong Ryoo,Chae-won Moon,Mu-Yeol Kim,Han-wi Lee	Han-min Kim	Han-min Kim	Action,History	Korean	South Korea	R	2011	08	10	Korea:
+2497	tt2025526	7.2	3558	Hae-il Park,Seung-yong Ryoo,Chae-won Moon,Mu-Yeol Kim,Han-wi Lee	Han-min Kim	Han-min Kim	Action,History	Korean	South Korea	R	2011	08	10	122
 2498	tt0159097	7.2	72950	James Woods,Kathleen Turner,Kirsten Dunst,Josh Hartnett,Michael Paré	Sofia Coppola	Jeffrey Eugenides,Sofia Coppola	Drama,Mystery,Romance	English	USA	R	2000	05	12	97
 2499	tt0086567	7	43320	Matthew Broderick,Dabney Coleman,John Wood,Ally Sheedy,Barry Corbin	John Badham	Lawrence Lasker,Walter F. Parkes,and 1 more credit	Sci-Fi,Thriller	English	USA	PG	1983	06	03	114
 2500	tt1314280	7.5	3695	Vincent Lindon,Firat Ayverdi,Audrey Dana,Derya Ayverdi,Thierry Godard	Philippe Lioret	Philippe Lioret,Emmanuel Courcol	Drama	French,Kurdish,English,Turkish	France	null	2009	03	11	110
@@ -2764,7 +2763,7 @@
 2763	tt0326449	7	1199	Vojin Cetkovic,Katarina Radivojevic,Dragan Nikolic,Milena Dravic,Radmila Zivkovic	Zdravko Sotra	Zdravko Sotra,Stevan Sremac	Comedy,Drama	Serbian,Czech	Federal Republic of Yugoslavia	null	2002	10	31	104
 2764	tt0131149	6.8	226	Rosemarie Castoro,Ginger Michels,Marcia Steinbrecher,Twyla Tharp,Susan Weiner	Hollis Frampton	null	null	English	USA	unrated	null	60
 2765	tt0078718	7.3	13802	Al Pacino,Jack Warden,John Forsythe,Lee Strasberg,Jeffrey Tambor	Norman Jewison	Valerie Curtin,Barry Levinson	Drama,Thriller,Crime	English	USA	R	1979	10	19	119
-2766	tt1587729	7.2	1776	Seung-won Cha,Sang-woo Kwone,Seung-woo Kim,Christina Cha,Seung Hyun Choi	John H. Lee	Man-Hee Lee,Dong-Woo Kim,and 1 more credit	War	Korean	South Korea	null	2010	06	16	Korea:
+2766	tt1587729	7.2	1776	Seung-won Cha,Sang-woo Kwone,Seung-woo Kim,Christina Cha,Seung Hyun Choi	John H. Lee	Man-Hee Lee,Dong-Woo Kim,and 1 more credit	War	Korean	South Korea	null	2010	06	16	120
 2767	tt1764726	6.9	187	Alan McGee,Bobby Gillespie,Noel Gallagher,Paul Arthurs,Norman Blake	Danny O'Connor	null	Documentary,Music	English	UK	null	2011	08	27	null
 2768	tt0419420	6.9	1239	Tom Murphy,Mark O'Halloran,Gavin Dowdall,Luke Keeler,Michael McElhatton	Lenny Abrahamson	Mark O'Halloran	Comedy,Drama	English	Ireland	null	2004	08	27	83
 2769	tt1232829	7.2	137794	Jonah Hill,Channing Tatum,Brie Larson,Dave Franco,Rob Riggle	Phil Lord,Chris Miller	Michael Bacall,Michael Bacall	Action,Comedy,Crime	English	USA	R	2012	03	16	109
@@ -3121,7 +3120,7 @@
 3120	tt0462232	4.8	242	Nick Searcy,Matt Keeslar,Joelle Carter,Andy Boswell,Sean Bridgers	Tony Elwood	Tony Elwood,Mark Kimray	Thriller	English	USA	R	null	null
 3121	tt0044509	7.7	2301	Burt Lancaster,Shirley Booth,Terry Moore,Richard Jaeckel,Philip Ober	Daniel Mann	Ketti Frings,William Inge	Drama	English	USA	APPROVED	1952	12	24	99
 3122	tt0025004	7.7	1036	Robert Donat,Elissa Landi,Louis Calhern,Sidney Blackmer,Raymond Walburn	Rowland V. Lee	Alexandre Dumas père,Philip Dunne	Action,Adventure,Drama,History,Romance,Thriller	English	USA	null	1934	09	07	113
-3123	tt0843270	7.2	1388	Zhonghua Chen,Jie Du,Tao Guo,Shu Hou,Bo Huang	Hao Ning	Hao Ning,Cheng Zhang	Comedy,Crime	Mandarin	China,Hong Kong	null	2006	06	30	Kong:
+3123	tt0843270	7.2	1388	Zhonghua Chen,Jie Du,Tao Guo,Shu Hou,Bo Huang	Hao Ning	Hao Ning,Cheng Zhang	Comedy,Crime	Mandarin	China,Hong Kong	null	2006	06	30	106
 3124	tt1320082	7.4	9452	Aleksey Guskov,Dmitri Nazarov,Mélanie Laurent,François Berléand,Miou-Miou	Radu Mihaileanu	Radu Mihaileanu,Alain-Michel Blanc	Comedy,Drama,Music	French,Russian	France,Italy,Romania,Belgium,Russia	PG_13	2009	11	04	119
 3125	tt0050458	7.8	1847	Steve Cochran,Alida Valli,Betsy Blair,Gabriella Pallotta,Dorian Gray	Michelangelo Antonioni	Michelangelo Antonioni,Elio Bartolini	Drama	Italian	Italy,USA	null	1957	06	22	116
 3126	tt0929860	6.9	1655	Haruka Ayase,Keisuke Koide,Risa Ai,Yoshikazu Ebisu,Ken'ichi Endô	Jae-young Kwak	Jae-young Kwak	Action,Sci-Fi,Comedy,Romance	Japanese	Japan	null	2008	05	31	115
@@ -3353,7 +3352,7 @@
 3352	tt0423977	7	35650	Anton Yelchin,Robert Downey Jr.,Kat Dennings,Tyler Hilton,Mark Rendall	Jon Poll	Gustin Nash	Comedy,Drama,Romance	English	USA	R	2008	02	22	97
 3353	tt0082176	7.5	8172	Natja Brunckhorst,Thomas Haustein,Jens Kuphal,Rainer Woelk,Jan Georg Effler	Uli Edel	Uli Edel,Kai Hermann	Biography,Drama	German	West Germany	R	1981	04	02	138
 3354	tt1792647	6.6	122	Erica Linz,Igor Zaripov,Dallas Barnett,Jason Berrent,John Clarke	Andrew Adamson	Andrew Adamson	Fantasy	English	USA	null	2012	11	09	91
-3355	tt0821470	6.7	2465	Jae-mo Ahn,Kil-Kang Ahn,Seok-yong Jeong,Deok-hyeon Jo,Doo-hong Jung	Seung-wan Ryoo	Seung-wan Ryoo,Jung-min Kim,and 1 more credit	Action,Crime,Drama	Korean	South Korea	null	2006	05	25	Korea:
+3355	tt0821470	6.7	2465	Jae-mo Ahn,Kil-Kang Ahn,Seok-yong Jeong,Deok-hyeon Jo,Doo-hong Jung	Seung-wan Ryoo	Seung-wan Ryoo,Jung-min Kim,and 1 more credit	Action,Crime,Drama	Korean	South Korea	null	2006	05	25	92
 3356	tt0293475	8.3	146	Barbara Barrie,Charles Braswell,Susan Browning,George Coe,John Cunningham	D.A. Pennebaker	null	Documentary	English	USA	null	null	58
 3357	tt0097099	8.2	346	Sara Lewinstein,David Mandell,Suzi Mandell,Sallie Perryman,Vito Russo	Rob Epstein,Jeffrey Friedman	Rob Epstein,Jeffrey Friedman,and 1 more credit	Documentary,Biography,History	English	USA	null	null	79
 3358	tt0299658	7.1	113489	Taye Diggs,Cliff Saunders,Catherine Zeta-Jones,Renée Zellweger,Dominic West	Rob Marshall	Bill Condon,Bob Fosse	Comedy,Crime,Musical	English,Hungarian	USA,Germany	PG_13	2003	01	24	113
@@ -4383,7 +4382,7 @@
 4382	tt0420251	7.1	10254	Bai Ling,Pauline Lau,Tony Leung Ka Fai,Meme Tian,Miriam Yeung Chin Wah	Fruit Chan,Takashi Miike,and 1 more credit	Chan-wook Park,Lilian Lee	Horror	Cantonese,Japanese,Korean,Mandarin	Hong Kong,Japan,South Korea	R	2004	08	20	125
 4383	tt0054380	6.6	60	Edmond O'Brien,Julie London,Laraine Day,Olga San Juan,George Eldredge	Hubert Cornfield	Hubert Cornfield,Charles Williams	Crime,Thriller,Drama	English,Spanish	USA	null	1960	06	null	79
 4384	tt1629376	6.4	2350	Priyanka Chopra,Neil Nitin Mukesh,John Abraham,Irrfan Khan,Aleksandr Dyachenko	Vishal Bhardwaj	Ruskin Bond,Matthew Robbins	Drama,Mystery,Thriller	Hindi,English,Urdu,Russian	India	null	2011	02	18	null
-4385	tt0077559	7.1	2564	Sheng Chiang,Philip Kwok,Feng Lu,Pai Wei,Chien Sun	Cheh Chang	Cheh Chang,Kuang Ni	Action	Mandarin	Hong Kong	R	1978	08	12	Kong:
+4385	tt0077559	7.1	2564	Sheng Chiang,Philip Kwok,Feng Lu,Pai Wei,Chien Sun	Cheh Chang	Cheh Chang,Kuang Ni	Action	Mandarin	Hong Kong	R	1978	08	12	97
 4386	tt0208664	7.8	65	null	Michel Brault,Pierre Perrault	null	Documentary	French	Canada	null	null	117
 4387	tt0106217	7.1	103	Carlos Roffé,Sergio Poves Campos,Lorenzo Quinteros,Mirta Busnelli,Nathalie Alonso Casale	Alejandro Agresti	Alejandro Agresti	Drama	Spanish	Argentina,Netherlands	null	null	null
 4388	tt0088678	7.2	1150	James Whitmore,Michele Mariana,Gary Krug,Chris Ritchie,John Morrison	Will Vinton	Susan Shadburne,Mark Twain	Animation,Adventure,Family	English	USA	G	null	86
@@ -4495,7 +4494,7 @@
 4494	tt0054780	7	122	Karla Chadimová,Vlastimil Hasek,Josef Hlinomaz,Bedrich Karen,Ladislav Kazda	Frantisek Vlácil	Milos Václav Kratochvíl,Frantisek A. Dvorák,and 1 more credit	Drama	Czech	Czechoslovakia	null	1964	08	13	85
 4495	tt0062893	7	908	Michel Piccoli,Anita Pallenberg,Gino Lavagetto,Mario Jannilli,Carole André	Marco Ferreri	Marco Ferreri,Marco Ferreri,and 1 more credit	Crime,Drama	Italian	Italy	unrated	1969	01	23	90
 4496	tt0089015	6.8	2095	Helen Shaver,Patricia Charbonneau,Audra Lindley,Andra Akers,Dean Butler	Donna Deitch	Jane Rule,Natalie Cooper	Drama,Romance	English	USA	R	1986	03	07	96
-4497	tt0780503	6.7	1623	Satoshi Tsumabuki,Ko Shibasaki,Kiichi Nakai,Yoshio Harada,Eita	Akihiko Shiota	Osamu Tezuka,Masa Nakamura,and 1 more credit	Action,Fantasy,Horror	Japanese	Japan	null	2007	03	15	Kong:
+4497	tt0780503	6.7	1623	Satoshi Tsumabuki,Ko Shibasaki,Kiichi Nakai,Yoshio Harada,Eita	Akihiko Shiota	Osamu Tezuka,Masa Nakamura,and 1 more credit	Action,Fantasy,Horror	Japanese	Japan	null	2007	03	15	139
 4498	tt0365135	7.1	950	Jeannie Epper,Zoe Bell,Lynda Carter,Lucy Lawless,Eurlyne Epper	Amanda Micheli	null	Documentary	English	USA	null	2005	04	15	null
 4499	tt0022834	7.3	977	John Gilbert,Paul Lukas,Virginia Bruce,Hedda Hopper,Reginald Owen	null	John Gilbert,Lenore J. Coffee,and 1 more credit	Drama	English	USA	null	1933	05	08	77
 4500	tt0039135	6.8	235	Edwige Feuillère,Silvia Monfort,Jean Marais,Jean Debucourt,Jacques Varennes	Jean Cocteau	Jean Cocteau	Drama	French	France	null	1948	12	18	93
@@ -4531,7 +4530,7 @@
 4530	tt1161443	6.1	916	Gorka Otxoa,Sabrina Garciarena,Julián López,Óscar Ladoire,Kiti Manver	Borja Cobeaga	Borja Cobeaga,Diego San José	Comedy	Spanish	Spain	null	2009	07	03	80
 4531	tt0070078	6.6	1351	Ian Bannen,Ian Carmichael,Peter Cushing,Diana Dors,Margaret Leighton	Kevin Connor	R. Chetwynd-Hayes,Raymond Christodoulou,and 1 more credit	Fantasy,Horror	English	UK	PG	1975	11	null	97
 4532	tt0116361	6.7	17303	Kiefer Sutherland,Reese Witherspoon,Bokeem Woodbine,Paul Perri,Robert Peters	Matthew Bright	Matthew Bright	Comedy,Crime,Drama,Thriller	English	USA	R	1997	09	03	110
-4533	tt0106545	5.8	511	Andy Lau,Jacky Cheung,Aaron Kwok,Chingmy Yau,Dicky Cheung	Jing Wong	Jing Wong	Action	English,Cantonese	Hong Kong	null	null	Kong:
+4533	tt0106545	5.8	511	Andy Lau,Jacky Cheung,Aaron Kwok,Chingmy Yau,Dicky Cheung	Jing Wong	Jing Wong	Action	English,Cantonese	Hong Kong	null	null	95
 4534	tt0093067	6.8	437	Liv Ullmann,Norma Aleandro,Robert Loggia,Rachel Chagall,Lawrence Monoson	Luis Mandoki	Luis Mandoki,Michael Love,and 1 more credit	Drama,Romance	English	USA,Mexico	R	1988	03	04	110
 4535	tt0082443	6.8	164	Elizabeth Taylor,Orson Welles,Simon Wiesenthal,Neville Chamberlain,Winston Churchill	Arnold Schwartzman	Martin Gilbert,Marvin Hier,and 1 more credit	Documentary,History,War	English	USA	null	1984	04	19	90
 4536	tt0765451	6.8	1288	Robbie Kay,Monika Schurmann,Nina Dobrev,Jordan Pettle,Rade Serbedzija	Jeremy Podeswa	Jeremy Podeswa,Anne Michaels	Drama	English,Greek,Yiddish,German	Canada,Greece	R	2008	10	23	104
@@ -4560,7 +4559,7 @@
 4559	tt0118823	7.1	166	Valeria Bruni Tedeschi,Leos Carax,Micaela Cardoso,Oksana Chernych,Alex Descas	Sharunas Bartas	Sharunas Bartas,Yekaterina Golubeva	Drama	French,Lithuanian,French Sign Language	France,Lithuania,Portugal	null	1997	10	01	120
 4560	tt2124803	6.5	199	Bill Bahlman,David Barr,Gregg Bordowitz,George Bush,Bill Clinton	David France	David France,Todd Woody Richman,and 1 more credit	Documentary,History,News	English	USA	unrated	null	null
 4561	tt1270291	5.7	3160	Clark Bartram,Damion Poitier,Isaac C. Singleton Jr.,Sandy Collora,Erin Gray	Sandy Collora	Nick Damon,Sandy Collora	Sci-Fi,Thriller	English	USA	null	null	90
-4562	tt0284363	7.3	4306	Ivan Barnev,Oldrich Kaiser,Julia Jentsch,Marián Labuda,Milan Lasica	Jirí Menzel	Bohumil Hrabal,Jirí Menzel	Comedy,Drama,Romance,War	Czech,German,French,English,Italian,Korean	Czech Republic,Slovakia	R	2007	01	11	Republic:
+4562	tt0284363	7.3	4306	Ivan Barnev,Oldrich Kaiser,Julia Jentsch,Marián Labuda,Milan Lasica	Jirí Menzel	Bohumil Hrabal,Jirí Menzel	Comedy,Drama,Romance,War	Czech,German,French,English,Italian,Korean	Czech Republic,Slovakia	R	2007	01	11	120
 4563	tt0827713	7	1122	Anna Mouglalis,Edouard Baer,Jean Rochefort,Laurent Terzieff,Jean-Pierre Kalfon	Samuel Benchetrit	Samuel Benchetrit	Comedy,Crime,Drama	French	France	null	2008	03	26	113
 4564	tt0038622	7.4	1969	Joan Crawford,John Garfield,Oscar Levant,J. Carrol Naish,Joan Chandler	Jean Negulesco	Clifford Odets,Zachary Gold,and 1 more credit	Drama,Music,Romance	English	USA	APPROVED	1946	12	25	125
 4565	tt0084778	6.9	110	Satomi Kobayashi,Toshinori Omi,Makoto Satô,Sayuri Ishibashi,Wakaba Irie	Nobuhiko Ôbayashi	Hisashi Yamanaka	Comedy	Japanese	Japan	null	1982	04	17	null
@@ -4683,11 +4682,11 @@
 4682	tt1522857	6.8	288	Osama bin Laden,Salim Hamdan,Abu Jandal,Troy Lebane	Laura Poitras	null	Documentary	Arabic	USA	unrated	null	null
 4683	tt0025590	7.4	482	W.C. Fields,Joe Morrison,Baby LeRoy,Judith Allen,Jan Duggan	William Beaudine	Garnett Weston,Jack Cunningham	Comedy	English	USA	null	1934	07	13	71
 4684	tt0063384	6.9	166	Per Oscarsson,Ann-Marie Gyllenspetz,Kerstin Tidelius,Bengt Ekerot,Harriet Forssell	Jan Troell	Clas Engström,Clas Engström	Drama	Swedish	Sweden	null	1968	03	18	110
-4685	tt0845464	6.2	300	Nick Cheung,Francis Ng,Anthony Wong Chau-Sang,Rain Li,Kwok Cheung Tsang	Herman Yau	Herman Yau,Jacky Wong,and 1 more credit	Crime,Drama	Cantonese	Hong Kong	null	2006	08	31	Kong:
+4685	tt0845464	6.2	300	Nick Cheung,Francis Ng,Anthony Wong Chau-Sang,Rain Li,Kwok Cheung Tsang	Herman Yau	Herman Yau,Jacky Wong,and 1 more credit	Crime,Drama	Cantonese	Hong Kong	null	2006	08	31	88
 4686	tt1710590	6.7	543	Sami Bouajila,Denis Podalydès,Maurice Bénichou,Salomé Stévenin,Nozha Khouadra	Roschdy Zem	Olivier Gorce,Roschdy Zem	Crime,Drama	French	France,Morocco	null	2011	06	22	85
 4687	tt0181733	7.2	286	Sam Doumit,Martin Goldman,Harry Keitt,Randy Little,Tyrene Manson	Nanette Burstein,Brett Morgen	null	Documentary,Drama,Sport	English	USA	null	null	null
 4688	tt0086655	7.3	2109	Isabelle Adjani,Alain Souchon,Suzanne Flon,Jenny Clève,Maria Machado	Jean Becker	Sébastien Japrisot,Sébastien Japrisot	Drama,Mystery	French	France	R	1983	05	11	133
-4689	tt0295192	7	848	Yeong-ae Lee,Ji-tae Yu,Sang-hui Baek,In-hwan Park,Jong-hak Baek	Jin-ho Hur	null	Drama,Romance	Korean	South Korea,Japan,Hong Kong	null	2001	09	29	Korea:
+4689	tt0295192	7	848	Yeong-ae Lee,Ji-tae Yu,Sang-hui Baek,In-hwan Park,Jong-hak Baek	Jin-ho Hur	null	Drama,Romance	Korean	South Korea,Japan,Hong Kong	null	2001	09	29	106
 4690	tt1606829	8.2	1337	Greg Speirs,Bill Walton,Jim Lampley,Mickey Hart,Dan Majerle	Marius A. Markevicius	Jon Weinbach,Marius A. Markevicius	Documentary	English	USA,Lithuania	unrated	2012	09	28	null
 4691	tt0081291	7	1034	Linda Manz,Dennis Hopper,Sharon Farrell,Don Gordon,Raymond Burr	Dennis Hopper	Leonard Yakir,Brenda Nielson	Drama	English	Canada	R	1982	04	null	94
 4692	tt0045002	7	351	Ralph Richardson,Trevor Howard,Robert Morley,Wendy Hiller,Kerima	Carol Reed	Joseph Conrad,William Fairchild	Drama,Adventure	English	UK	null	1952	07	11	102
@@ -4732,7 +4731,7 @@
 4731	tt1867093	5.5	3921	Samuel L. Jackson,Luke Kirby,Ruth Negga,Alan C. Peterson,Gil Bellows	David Weaver	Elan Mastai,David Weaver	Drama,Thriller	English	Canada	R	2012	04	20	90
 4732	tt0342956	6.8	226	null	Robb Moss	null	Documentary,Adventure	English	USA	unrated	null	78
 4733	tt0485147	6.9	65	Thomas Leikos,Katerina Badogianni,Mathios Badogiannis,Andypas Damosidis,Dimitris Kalogerakis	Theo Papadoulakis	Theo Papadoulakis	Short,Drama	Greek	null	null	null	25
-4734	tt1135983	5.2	216	Miki Mizuno,Dylan Kuo,Emme Wong,Nana Natsume,Sam Lee	Joe Ma	Joe Ma,Tooru Shinohara,and 1 more credit	Action	Japanese	Japan,Hong Kong	null	2009	08	08	Kong:
+4734	tt1135983	5.2	216	Miki Mizuno,Dylan Kuo,Emme Wong,Nana Natsume,Sam Lee	Joe Ma	Joe Ma,Tooru Shinohara,and 1 more credit	Action	Japanese	Japan,Hong Kong	null	2009	08	08	101
 4735	tt0045125	7.6	3008	Stewart Granger,Eleanor Parker,Janet Leigh,Mel Ferrer,Henry Wilcoxon	George Sidney	Ronald Millar,George Froeschel	Adventure,Drama,History,Romance	English	USA	APPROVED	1952	06	27	115
 4736	tt0070653	6.4	1798	Burt Lancaster,Alain Delon,Paul Scofield,John Colicos,Gayle Hunnicutt	Michael Winner	David W. Rintels,Gerald Wilson,and 1 more credit	Action,Drama,Thriller	English	USA	PG	1973	04	19	114
 4737	tt0063571	6.4	848	Elizabeth Taylor,Mia Farrow,Robert Mitchum,Peggy Ashcroft,Pamela Brown	Joseph Losey	Marco Denevi,George Tabori	Drama,Thriller	English	UK	APPROVED	1968	10	23	109
@@ -4841,7 +4840,7 @@
 4840	tt0030337	6.9	215	Ingrid Bergman,Tore Svennberg,Anders Henrikson,Georg Rydeberg,Gunnar Sjöberg	Gustaf Molander	Francis de Croisset,Gösta Stevens	Drama	Swedish	Sweden	unrated	1939	09	08	104
 4841	tt1870529	4.9	824	Maggie Gyllenhaal,Viola Davis,Oscar Isaac,Holly Hunter,Rosie Perez	Daniel Barnz	Brin Hill,Daniel Barnz	Drama	English	USA	PG	2012	09	28	121
 4842	tt0026007	6.8	342	Al Jolson,Kay Francis,Dolores del Rio,Ricardo Cortez,Dick Powell	Lloyd Bacon	Geza Herczeg,Karl Farkas	Crime,Drama,Musical,Romance	English	USA	null	1934	03	31	84
-4843	tt1274293	6.8	1114	Yun-seok Kim,Su-jeong Lim,Jin-mo Ju,Dong-won Kang,Hyo-jin Kim	Dong-Hoon Choi	Dong-Hoon Choi	Action,Adventure,Comedy,Fantasy,History	Korean	South Korea	null	2009	12	23	Korea:
+4843	tt1274293	6.8	1114	Yun-seok Kim,Su-jeong Lim,Jin-mo Ju,Dong-won Kang,Hyo-jin Kim	Dong-Hoon Choi	Dong-Hoon Choi	Action,Adventure,Comedy,Fantasy,History	Korean	South Korea	null	2009	12	23	136
 4844	tt1867566	7.3	115	Kôji Yakusho,Shun Oguri,Tsutomu Yamazaki,Masatô Ibu,Kengo Kôra	Shûichi Okita	Shûichi Okita,Fumio Moriya,and 1 more credit	Comedy	Japanese	Japan	null	2012	02	11	null
 4845	tt1650028	5.4	368	Claire Foy,Benedict Cumberbatch,Shaun Evans,Peter McDonald,Sinead Matthews	Dictynna Hood	Dictynna Hood	Drama	English	UK	null	2011	12	16	85
 4846	tt0179641	5.2	207	Véronique Alain,Josiane Balasko,Georges Bernier,Romain Bouteille,François Béranger	Jacques Doillon,Alain Resnais,and 1 more credit	Gébé	Comedy	French	France	null	1973	02	22	90
@@ -4868,7 +4867,7 @@
 4867	tt0090576	7.2	1865	Derek de Lint,Marc van Uchelen,Monique van de Ven,John Kraaykamp,Huub van der Lubbe	Fons Rademakers	Gerard Soeteman,Harry Mulisch	Drama,History,Romance,War	Dutch,English,German	Netherlands	PG	1986	02	06	144
 4868	tt0090670	6.9	6843	Sean Penn,Christopher Walken,Mary Stuart Masterson,Chris Penn,Millie Perkins	James Foley	Elliott Lewitt,Nicholas Kazan,and 1 more credit	Crime,Drama,Romance	English	USA	R	1986	04	18	111
 4869	tt0929235	7.1	251	Carroll Pickett,Steve Mills,Maurice Possley,Anne Ellis,Charlotte Hirschfelder	Peter Gilbert,Steve James	null	Documentary	English	USA	TV_MA	null	null
-4870	tt0395461	7	877	Parviz Shahinkhou,Maryam Hamid,Golshifteh Farahani,Mohamed Graïaa,Hossein Panahi	Nacer Khemir	Tonino Guerra,Nacer Khemir	Drama	Persian,Arabic	Switzerland,Hungary,France,Germany,Iran,Tunisia,UK	null	2006	05	11	Kong:
+4870	tt0395461	7	877	Parviz Shahinkhou,Maryam Hamid,Golshifteh Farahani,Mohamed Graïaa,Hossein Panahi	Nacer Khemir	Tonino Guerra,Nacer Khemir	Drama	Persian,Arabic	Switzerland,Hungary,France,Germany,Iran,Tunisia,UK	null	2006	05	11	96
 4871	tt0096841	6.7	363	Olga Antonova,Sergei Popov,Galina Zakhurdayeva,Natalya Buzko,Aleksandra Svenskaya	Kira Muratova	Aleksandr Chernykh,Kira Muratova,and 1 more credit	Drama	Russian	Soviet Union	null	1991	02	01	153
 4872	tt0062728	6.9	1487	Jean-Louis Trintignant,Jacqueline Sassard,Stéphane Audran,Nane Germon,Serge Bento	Claude Chabrol	Paul Gégauff,Claude Chabrol	Drama	French	France,Italy	R	1968	09	26	100
 4873	tt0029314	7.7	740	Chôjûrô Kawarasaki,Kan'emon Nakamura,Tsuruzo Nakamura,Choemon Bando,Sukezo Sukedakaya	Sadao Yamanaka	Shintarô Mimura	Drama	Japanese	Japan	null	1982	08	null	86
@@ -4923,7 +4922,7 @@
 4922	tt0095012	6.9	403	Malgorzata Braunek,Michal Grudzinski,Iga Mayr,Bozena Miefiodow,Monika Niemczyk	Andrzej Zulawski	Andrzej Zulawski	Drama,Horror	Polish	Poland	null	1972	null	null	null
 4923	tt0032413	7.3	766	Edward G. Robinson,Ruth Gordon,Otto Kruger,Donald Crisp,Maria Ouspenskaya	William Dieterle	John Huston,Heinz Herald	Biography,Drama	English	USA	APPROVED	1940	03	02	103
 4924	tt0456149	7.8	7180	Doru Ana,Ion Fiscuteanu,Monica Barladeanu,Alina Berzunteanu,Doru Boguta	Cristi Puiu	Cristi Puiu,Razvan Radulescu	Drama	Romanian	Romania	R	2005	09	22	150
-4925	tt0060635	7.4	385	Lingfeng Shangguan,Chun Shih,Ying Bai,Feng Hsu,Chien Tsao	King Hu	King Hu	Action,Adventure	Mandarin	Taiwan	null	1967	10	21	Kong:
+4925	tt0060635	7.4	385	Lingfeng Shangguan,Chun Shih,Ying Bai,Feng Hsu,Chien Tsao	King Hu	King Hu	Action,Adventure	Mandarin	Taiwan	null	1967	10	21	111
 4926	tt1343727	7.6	20799	Karl Urban,Rachel Wood,Andile Mngadi,Porteus Xandau Steenkamp,Jason Cope	Pete Travis	John Wagner,Carlos Ezquerra,and 1 more credit	Action,Crime,Sci-Fi	English	UK,USA,India	R	2012	09	21	95
 4927	tt0116167	6.3	329	Matt Ross,Catherine Curtin,Timothy Pilato,Ramon Moses,Eric Weiner	John Walsh	John Walsh	Romance,Comedy	English	USA	R	1996	09	27	88
 4928	tt1158936	6.8	1220	Riccardo Scamarcio,Odysseas Papaspiliopoulos,Léa Wiazemsky,Tess Spentzos,Kristen Ross	Costa-Gavras	Costa-Gavras,Jean-Claude Grumberg	Drama	French,German,Greek,English	France,Greece,Italy	null	2009	02	11	110
@@ -5478,7 +5477,7 @@
 5477	tt2253947	null	null	Robert Levy	Chris Sullivan	Chris Sullivan	Animation,Comedy,Drama,Mystery	English	USA	null	2012	10	null	null
 5478	tt1609790	6.4	939	Hans Erik Dyvik Husby,Malin Crépin,Helena af Sandeberg,David Dencik,Johan Glans	Amir Chamdin	Antonia Pyk	Biography,Drama,Music	Swedish,Dutch	Sweden	null	2010	11	12	101
 5479	tt0037611	7	1142	Humphrey Bogart,Alexis Smith,Sydney Greenstreet,Rose Hobart,Charles Drake	Curtis Bernhardt	Arthur T. Horman,Dwight Taylor	Drama,Film-Noir,Thriller	English	USA	APPROVED	1945	06	15	86
-5480	tt1156506	6.7	1022	Louis Koo,Barbie Hsu,Nick Cheung,Ye Liu,Siu-Wong Fan	Benny Chan	Alan Yuen,Benny Chan	Action	Cantonese,Mandarin,English	China,Hong Kong	null	2008	09	25	Korea:
+5480	tt1156506	6.7	1022	Louis Koo,Barbie Hsu,Nick Cheung,Ye Liu,Siu-Wong Fan	Benny Chan	Alan Yuen,Benny Chan	Action	Cantonese,Mandarin,English	China,Hong Kong	null	2008	09	25	110
 5481	tt0301358	5.2	118	Roger Rees,Mary McDonnell,Chloe Squires,Cody Wisker,Mark Joy	Richard Squires	Richard Squires	Drama,Comedy	English	USA	PG_13	null	null
 5482	tt1284526	7	835	Pavel Liska,Zuzana Bydzovská,Ladislav Sedivý,Marek Daniel,Tereza Vorísková	Bohdan Sláma	Bohdan Sláma	Drama	Czech	Czech Republic,France,Germany	unrated	2009	03	27	103
 5483	tt0092794	7	683	Josse De Pauw,Geert Hunaerts,Michael Pas,Gene Bervoets,Amid Chakir	Dominique Deruddere	Charles Bukowski,Dominique Deruddere,and 1 more credit	Drama	Italian,Dutch	Belgium	null	1987	null	null	90
@@ -5940,11 +5939,11 @@
 5939	tt0049552	7.1	1001	Aldo Ray,Brian Keith,Anne Bancroft,Jocelyn Brando,James Gregory	Jacques Tourneur	Stirling Silliphant,David Goodis	Crime,Drama,Film-Noir,Romance,Thriller	English,Spanish	USA	null	1957	05	13	78
 5940	tt0185591	6.4	38	Jackie Chan,Li-li Chen,Ke-Wei Cheng,Siu Ping Cheng,Ying Cheung	Mu Chu	Ke Szema	Drama	Cantonese,Mandarin	Hong Kong	null	1975	12	05	null
 5941	tt0089691	6	254	Hiroyuki Sanada,Noriko Watanabe,Jun Miho,Yuki Kazamatsuri,Strong Kongô	Kôsei Saitô	Ei Ogawa,Fûtarô Yamada	Action,Adventure,Fantasy	Japanese	Japan	R	1982	12	18	95
-5942	tt1662557	7.1	778	Frank M. Ahearn,Hye-jin Han,Nam Kyung-eub,Sang-wook Park,Seung-beom Ryu	Hyoung-Jun Kim	Hyeong-Joon Kim	Horror,Thriller	Korean	South Korea	null	2010	01	07	Korea:
+5942	tt1662557	7.1	778	Frank M. Ahearn,Hye-jin Han,Nam Kyung-eub,Sang-wook Park,Seung-beom Ryu	Hyoung-Jun Kim	Hyeong-Joon Kim	Horror,Thriller	Korean	South Korea	null	2010	01	07	125
 5943	tt0066154	6	497	Nigel Davenport,Jean Wallace,John Hamill,Lynne Frederick,Patrick Holt	Cornel Wilde	Sean Forestal,Cornel Wilde,and 1 more credit	Drama,Sci-Fi	English	USA	R	1970	10	23	96
 5944	tt0306432	6.1	1175	Leonor Watling,Rosa Maria Sardà,María Pujalte,Silvia Abascal,Eliska Sirová	Daniela Féjerman,Inés París	Daniela Féjerman,Inés París	Comedy,Drama	Spanish,Czech	Spain	null	2002	01	11	96
 5945	tt0047099	7.1	92	Arletty,Franck Villard,Gaby Sylvia,Yves Deniaud,Nicole Courcel	Jacqueline Audry	Pierre Laroche,Jean-Paul Sartre	Drama	French	France	null	1954	12	22	95
-5946	tt0856052	7.2	1009	Ha-kyun Shin,Ji-hye Yun,Min-jun Kim,Su-hee Go,Ye-rin Han	Cheol-hie Park	Cheol-hie Park	Action,Comedy,Crime,Thriller	Korean	South Korea	null	2006	08	24	Korea:
+5946	tt0856052	7.2	1009	Ha-kyun Shin,Ji-hye Yun,Min-jun Kim,Su-hee Go,Ye-rin Han	Cheol-hie Park	Cheol-hie Park	Action,Comedy,Crime,Thriller	Korean	South Korea	null	2006	08	24	113
 5947	tt1431122	3.6	578	Anil Kapoor,Sanjay Dutt,Paresh Rawal,Sunil Shetty,Sushmita Sen	Anees Bazmee	Anand Raj Anand,Anees Bazmee	Action,Comedy,Crime,Drama	Hindi,English	India	null	2010	12	10	null
 5948	tt0020223	6.8	275	Dolores Costello,George O'Brien,Noah Beery,Louise Fazenda,Guinn 'Big Boy' Williams	Michael Curtiz,and 1 more credit	Darryl F. Zanuck,Anthony Coldeway,and 1 more credit	Drama,War	English	USA	unrated	1929	11	21	135
 5949	tt1337366	6.5	1994	Marit Synnøve Berg,Frode Winther Gunnes,Morten Larsen,Tov Sletta,Hege Kristin Kjærvoll Sunde	Erik Skjoldbjærg	Christopher Grøndahl	Action,Biography,Crime,Drama,Thriller	Norwegian	Norway	null	2010	10	01	87
@@ -6072,7 +6071,7 @@
 6071	tt0073720	6.2	531	Lena Nyman,Tage Danielsson,Georg Årlin,Margaretha Krook,Ernst-Hugo Järegård	Tage Danielsson	Tage Danielsson	Comedy,Musical	Swedish	Sweden	null	1975	12	06	97
 6072	tt0034091	7	668	Robert Benchley,Frances Gifford,Buddy Pepper,Nana Bryant,Claud Allister	Alfred L. Werker,Hamilton Luske,and 3 more credits	Kenneth Grahame,Ted Sears	Animation,Family,Comedy	English	USA	unrated	1941	06	20	74
 6073	tt0790618	5.8	1838	Katrina Begin,Charles Chen,Melonie Diaz,Sunny Doench,Caroline Dollar	Jess Manafort	Jess Manafort	Comedy,Drama	English	USA	R	null	101
-6074	tt0034093	7	374	Jean Gabin,Madeleine Renaud,Michèle Morgan,Charles Blavette,Jean Marchat	Jean Grémillon	Roger Vercel,Jacques Prévert	Action,Drama,Romance	French	France	null	1946	06	15	Germany:
+6074	tt0034093	7	374	Jean Gabin,Madeleine Renaud,Michèle Morgan,Charles Blavette,Jean Marchat	Jean Grémillon	Roger Vercel,Jacques Prévert	Action,Drama,Romance	French	France	null	1946	06	15	91
 6075	tt0078152	7.3	352	Aurore Clément,Helmut Griem,Magali Noël,Hanns Zischler,Lea Massari	Chantal Akerman	Chantal Akerman	Drama	French	France,Belgium,West Germany	null	1978	11	08	127
 6076	tt0345852	4.8	236	William Baldwin,Jodi Lyn O'Keefe,Brenda James,Francis X. McCarthy,Deborah Allen	Marc S. Grenier	Linda Cordeiro,Alisandra Rand	Horror,Thriller	English	Canada	null	null	null
 6077	tt1664825	6.8	21	null	Scott Owen Moore	Bobby Marko,Scott Owen Moore,and 1 more credit	Documentary,Biography,Drama,History	Spanish	Guatemala,USA	null	null	null
@@ -6123,7 +6122,7 @@
 6122	tt0075177	6.1	1121	Barney James,Neil Kennedy,Leonardo Treviglio,Richard Warwick,Donald Dunham	Paul Humfress,Derek Jarman	Paul Humfress,Derek Jarman	Drama,History,Thriller	Latin	UK	X	2008	10	16	90
 6123	tt0381442	6.2	1736	Guillaume Canet,Zabou Breitman,Benoît Poelvoorde,Guillaume Gallienne,François Berléand	Tristan Aurouet,Gilles Lellouche	Alain Attal,Gilles Lellouche,and 1 more credit	Comedy	French	France	null	2004	12	01	105
 6124	tt0286058	6.5	222	John Turturro,Katherine Borowitz,Tara Fitzgerald,Hannah Taylor-Gordon,Anton Rodgers	Ademir Kenovic	Ademir Kenovic,Olivier Bonas	Drama	English	Italy,Luxembourg,Portugal	null	null	null
-6125	tt1535491	7.2	1115	Kang-ho Song,Dong-won Kang,Yun-seo Choi,Kyeong-min Go,Su-ho Ha	Hun Jang	Min-seok Jang,Joo-ho Kim	Drama,Thriller	Korean	South Korea	null	2010	02	04	Korea:
+6125	tt1535491	7.2	1115	Kang-ho Song,Dong-won Kang,Yun-seo Choi,Kyeong-min Go,Su-ho Ha	Hun Jang	Min-seok Jang,Joo-ho Kim	Drama,Thriller	Korean	South Korea	null	2010	02	04	116
 6126	tt0016914	6.9	278	Werner Krauss,Ruth Weyher,Ilka Grüning,Jack Trevor,Pavel Pavlov	Georg Wilhelm Pabst	Karl Abraham,Hans Neumann	Drama	German	Germany	null	2008	02	19	97
 6127	tt0108071	7.1	16945	Kate Maberly,Heydon Prowse,Andrew Knott,Maggie Smith,Laura Crossley	Agnieszka Holland	Frances Hodgson Burnett,Caroline Thompson	Drama,Family,Fantasy	English	USA	G	1993	08	13	101
 6128	tt1125387	6.6	70	CJ Jones,Robert DeMayo,T.L. Forsberg,Bob Hiltermann,Bernard Bragg	Hilari Scarl	Lisa Leeman,Dalan Musson	Documentary	English,American Sign Language	USA	PG_13	2010	03	19	null
@@ -6378,7 +6377,7 @@
 6377	tt2258685	7.4	63	Pooja Chopra,Marc Robinson,Ankita Shorey,Ruhi Singh,Prachi Trivedi	Nisha Pahuja	Nisha Pahuja	Documentary	English,Hindi	Canada	null	null	null
 6378	tt1262981	6.9	18302	Robin Williams,Daryl Sabara,Morgan Murphy,Naomi Glick,Dan Spencer	Bobcat Goldthwait	Bobcat Goldthwait	Comedy,Drama	English	USA	R	2010	09	24	99
 6379	tt1999995	5.7	18	Brittany Snow,Jeffrey Combs,Jonny Coyne,Lawrence Gilliard Jr.,Enver Gjokaj	David Guy Levy	Steffen Schlachtenhaufen	Horror,Thriller	English	USA	null	null	null
-6380	tt0408120	7.1	1025	Ivan Trojan,Zuzana Sulajová,Zuzana Stivínová,Miroslav Krobot,Nina Divísková	Petr Zelenka	Petr Zelenka,Petr Zelenka	Comedy,Drama	Czech,Slovak	Czech Republic,Germany,Slovakia	null	2005	02	24	Republic:
+6380	tt0408120	7.1	1025	Ivan Trojan,Zuzana Sulajová,Zuzana Stivínová,Miroslav Krobot,Nina Divísková	Petr Zelenka	Petr Zelenka,Petr Zelenka	Comedy,Drama	Czech,Slovak	Czech Republic,Germany,Slovakia	null	2005	02	24	100
 6381	tt0857275	6	1692	Matthew Broderick,Sanaa Lathan,Michael Kenneth Williams,Philip Baker Hall,Jesse Tyler Ferguson	Joshua Goldin	Joshua Goldin	Drama,Romance	English,Wolof	USA,Germany	R	null	89
 6382	tt0086303	6.6	137	Cheung-Yan Yuen,Lung Chin,Tin Shing Hoh,Eddy Ko,Hao-ming Liao	Woo-ping Yuen	Chung-Hsing Chao,Woo-ping Yuen	null	Cantonese	Hong Kong	null	1983	08	24	null
 6383	tt0446510	6.1	16	Henidar Amru,Timur Angin,Indra Birowo,Edwin,Wulan Guritno	Amir Muhammad	Amir Muhammad	Documentary	Indonesian	Indonesia,Malaysia	null	null	null
@@ -7251,7 +7250,7 @@
 7250	tt0041672	6.8	400	Dana Andrews,Susan Hayward,Kent Smith,Lois Wheeler,Jessie Royce Landis	Mark Robson	Julius J. Epstein,Philip G. Epstein,and 1 more credit	Drama	English	USA	null	1950	01	21	98
 7251	tt1611931	6.4	50	null	Mark Henderson,Kate Horne	null	Documentary,Biography,Crime	English	UK,Colombia,Germany	null	2010	02	null	null
 7252	tt1213922	5.7	417	Kad Merad,Catherine Deneuve,Emmanuelle Béart,Mélanie Bernier,Maria de Medeiros	Laetitia Colombani	Laetitia Colombani	Comedy	French	France	null	2008	10	29	88
-7253	tt0296696	6.4	2040	Eun-Kyung Shin,Sang-Myeon Park,Jae-mo Ahn,In-kwon Kim,Eun-ju Choi	Jin-gyu Cho	Hyo-jin Kang,Moon-saeng Kim,and 1 more credit	Action,Romance,Comedy	Korean	South Korea	null	2001	09	28	Korea:
+7253	tt0296696	6.4	2040	Eun-Kyung Shin,Sang-Myeon Park,Jae-mo Ahn,In-kwon Kim,Eun-ju Choi	Jin-gyu Cho	Hyo-jin Kang,Moon-saeng Kim,and 1 more credit	Action,Romance,Comedy	Korean	South Korea	null	2001	09	28	107
 7254	tt0269587	6.9	390	null	Apichatpong Weerasethakul	null	Drama,Mystery	Thai	Thailand,Netherlands	null	null	83
 7255	tt1655420	7.1	35473	Michelle Williams,Eddie Redmayne,Julia Ormond,Kenneth Branagh,Pip Torrens	Simon Curtis	Adrian Hodges,Colin Clark	Biography,Drama	English	UK,USA	R	2011	12	23	99
 7256	tt0175934	5.9	24	Jirí Schwarz,Veronika Zilková,Marta Vancurová,Petr Cepek,Jan Hrusínský	Frantisek Vlácil	Václav Nývlt	Drama	Czech	Czechoslovakia	null	1988	03	null	null
@@ -7329,7 +7328,7 @@
 7328	tt1500512	5.4	492	Hale Appleman,Charlie Barnett,Adam Barrie,Chris Bresky,Matt Doyle	Alan Brown	William Shakespeare,Alan Brown,and 1 more credit	Drama	English	USA	null	null	null
 7329	tt1334555	7	457	Highschool Seniors of Charleston,Morgan Freeman	Paul Saltzman	Paul Saltzman	Documentary	English	Canada	null	null	90
 7330	tt0114198	5.7	51	Boguslaw Linda,Krzysztof Pieczynski,Danuta Stenka,Bartlomiej Topa,Adam Bauman	Krzysztof Lang	Krzysztof Lang,Maciej Maciejewski	null	Polish,Russian	UK,Poland,Czech Republic	R	1995	05	31	null
-7331	tt0079763	7.3	73	Gaye Advert,Jack Airport,Arturo Bassick,Rick Buckler,Chelsea	Wolfgang Büld	Wolfgang Büld	Documentary,Music	English,German	West Germany	null	null	Germany:
+7331	tt0079763	7.3	73	Gaye Advert,Jack Airport,Arturo Bassick,Rick Buckler,Chelsea	Wolfgang Büld	Wolfgang Büld	Documentary,Music	English,German	West Germany	null	null	111
 7332	tt1921070	5.4	807	Richard Coyle,Bronson Webb,Agyness Deyn,Mem Ferda,Zlatko Buric	Luis Prieto	Matthew Read	Crime,Thriller	English	UK	R	2012	10	12	89
 7333	tt0064714	7.2	348	Susumu Ishikawa,Toshiko Fujita,Rumi Sakakibara,Asao Koike,Kin'ya Aikawa	Kimio Yabuki	Hisashi Inoue,Charles Perrault,and 1 more credit	Animation,Adventure,Comedy,Family,Fantasy,Romance	Japanese	Japan	null	1969	03	18	80
 7334	tt0030642	6.8	110	Sacha Guitry,Gaby Morlay,Jacqueline Delubac,Georges Grey,Pauline Carton	Sacha Guitry	Sacha Guitry	Comedy,Romance	French	France	null	1938	01	29	109
@@ -7944,7 +7943,7 @@
 7943	tt0030483	6.9	313	Peter Lorre,Mary Maguire,Henry Wilcoxon,Erik Rhodes,Harold Huber	Norman Foster	Philip MacDonald,Norman Foster,and 1 more credit	Action,Crime,Drama,Film-Noir,Mystery,Thriller	English	USA	APPROVED	1938	10	14	62
 7944	tt1242447	6.2	1455	Martin Freeman,Marc Wootton,Jason Watkins,Ashley Jensen,Pam Ferris	Debbie Isitt	Debbie Isitt	Comedy,Family	English	UK	PG	2009	11	27	105
 7945	tt0317965	7	1179	Sergio Castellitto,Jacqueline Lustig,Chiara Conti,Gigio Alberti,Alberto Mondini	Marco Bellocchio	Marco Bellocchio	Drama	Italian	Italy	null	2002	04	19	105
-7946	tt0069518	7.3	586	David Chiang,Ching Lee,Lung Ti,Feng Ku,Sing Chen	Cheh Chang	Kuang Ni	Action,Drama,History,War	Mandarin	Hong Kong	R	1971	02	07	Germany:
+7946	tt0069518	7.3	586	David Chiang,Ching Lee,Lung Ti,Feng Ku,Sing Chen	Cheh Chang	Kuang Ni	Action,Drama,History,War	Mandarin	Hong Kong	R	1971	02	07	102
 7947	tt1880418	5.9	803	Edward Burns,Kerry Bishé,Marsha Dietlein,Caitlin Fitzgerald,Johnny Solo	Edward Burns	Edward Burns	Comedy,Drama	English	USA	unrated	null	95
 7948	tt0339553	5.5	217	Thomas Suire,Thomas Blanchard,Laurent Soffiati,Vincent Martin,Pierre-Maurice Nouvel	Alain Guiraudie	Alain Guiraudie,Frédéric Videau	Comedy,Drama,Romance	French	France,Austria	null	2003	11	12	null
 7949	tt1714878	6.7	266	Yu-mi Jeong,Seon-gyun Lee,Seong-kun Mun	Sang-soo Hong	Sang-soo Hong	Comedy,Drama	Korean	South Korea	null	2012	04	18	80
@@ -8002,7 +8001,7 @@
 8001	tt1085507	6.7	3086	David Roberts,Claire van der Boom,Peter Phelps,Bill Hunter,Kieran Darcy-Smith	Nash Edgerton	Joel Edgerton,Matthew Dabner,and 1 more credit	Crime,Drama,Thriller	English	Australia	R	2008	07	31	105
 8002	tt0045190	6.7	298	Joseph Cotten,Teresa Wright,Jonathan Hale,Walter Sande,Eddie Marr	Andrew L. Stone	Andrew L. Stone	Drama,Crime	English	USA	APPROVED	1952	11	12	85
 8003	tt0073114	7.3	3463	Isabelle Adjani,Bruce Robinson,Sylvia Marriott,Joseph Blatchley,Ivry Gitlis	François Truffaut	François Truffaut,Jean Gruault	Biography,Drama,History	French,English	France	PG	1975	10	08	96
-8004	tt0059715	7.5	547	Yumiko Nogawa,Tamio Kawaji,Hiroshi Chô,Eimei Esumi,Shigeyoshi Fujioka	Seijun Suzuki	Hajime Takaiwa,Taijiro Tamura	Drama,War	Japanese	Japan	unrated	1965	02	28	Germany:
+8004	tt0059715	7.5	547	Yumiko Nogawa,Tamio Kawaji,Hiroshi Chô,Eimei Esumi,Shigeyoshi Fujioka	Seijun Suzuki	Hajime Takaiwa,Taijiro Tamura	Drama,War	Japanese	Japan	unrated	1965	02	28	96
 8005	tt0154750	6.5	418	Tapio Liinoja,Martti Suosalo,Heikki Nousiainen,Anna Haaranen,Heidi Herala	Timo Koivusalo	Timo Koivusalo,Juha Numminen	Biography,Drama,Music	Finnish	Finland	null	1999	02	19	117
 8006	tt0348121	6.9	9111	Anne Suzuki,Masane Tsukayama,Katsuo Nakamura,Manami Konishi,Kiyoshi Kodama	Katsuhiro Ôtomo	Sadayuki Murai,Katsuhiro Ôtomo	Animation,Action,Adventure,Family,Sci-Fi,Thriller	Japanese	Japan	PG_13	2005	03	18	126
 8007	tt0063654	7	592	Patricia Neal,Jack Albertson,Martin Sheen,Don Saxon,Elaine Williams	Ulu Grosbard	Frank D. Gilroy,Frank D. Gilroy	Drama	English	USA	G	1970	02	12	107
@@ -8095,7 +8094,7 @@
 8094	tt0085739	4.4	34	Kirsti Otsamo,Kimmo Tuppurainen,Risto Salmi,Kaarina Perola,Erkki Ruokokoski	Veikko Kerttula	Veikko Kerttula,Veijo Meri,and 1 more credit	Comedy,Drama	Finnish	Finland	null	1983	01	21	91
 8095	tt0034514	6.3	636	Henry Fonda,Lucille Ball,Barton MacLane,Eugene Pallette,Agnes Moorehead	Irving Reis	Leonard Spigelgass,Damon Runyon	Drama,Romance	English	USA	APPROVED	1942	09	04	88
 8096	tt0029912	6.5	487	W.C. Fields,Martha Raye,Dorothy Lamour,Shirley Ross,Lynne Overman	Mitchell Leisen	Walter DeLeon,Francis Martin	Comedy,Musical,Romance	English	USA	APPROVED	1938	02	11	91
-8097	tt1655617	6.2	303	Jeong-hwa Eom,Kang-hee Choi,Jin-woong Jo,Hwa-yeong Kim,Do-gyung Lee	Jeong-ho Lee	Jeong-ho Lee	Horror,Mystery,Thriller	Korean	South Korea	null	2010	04	15	Korea:
+8097	tt1655617	6.2	303	Jeong-hwa Eom,Kang-hee Choi,Jin-woong Jo,Hwa-yeong Kim,Do-gyung Lee	Jeong-ho Lee	Jeong-ho Lee	Horror,Mystery,Thriller	Korean	South Korea	null	2010	04	15	117
 8098	tt0022689	6.1	487	Dolores del Rio,Joel McCrea,John Halliday,Richard 'Skeets' Gallagher,Bert Roach	King Vidor	Richard Walton Tully,Wells Root	Adventure,Romance,Drama	English	USA	null	1932	08	12	80
 8099	tt0020695	5.9	259	Basil Rathbone,Leila Hyams,Roland Young,Alec B. Francis,George F. Marion	David Burton,Nick Grinde	S.S. Van Dine,Lenore J. Coffee	Mystery	English	USA	null	1930	01	03	88
 8100	tt0054067	7.4	5242	Barbara Steele,John Richardson,Andrea Checchi,Ivo Garrani,Arturo Dominici	Mario Bava	Ennio De Concini,Mario Serandrei	Horror	Italian	Italy	unrated	1961	02	15	87
@@ -8445,7 +8444,7 @@
 8444	tt0091767	4	361	Daniel Jordano,Matthew Penn,Leon W. Grant,Mary B. Ward,Marisa Tomei	Bob Weinstein,Harvey Weinstein	Bob Weinstein,Harvey Weinstein,and 1 more credit	Comedy	English	USA	PG_13	1986	10	03	102
 8445	tt0488612	4.9	248	Michael Risley,Olivia Archer,Loren Dean,Bruce Faulk,Judith Hawking	Tim McCann	Richard Chizmar,Johnathon Schaech,and 1 more credit	Crime,Drama,Thriller	English	USA	R	null	null
 8446	tt0222293	6.8	1090	Tilda Swinton,Tom McCamus,Sean McCann,Gabriel Gascon,Griffith Brewer	Robert Lepage	John Mighton,John Mighton,and 1 more credit	Mystery,Sci-Fi,Crime,Drama	English	Canada	null	2001	07	13	93
-8447	tt0086136	4.5	377	Monica Broeke,Patrick Bauchau,Inge Maria Granzow,Anja Schüte,Emmanuelle Béart	David Hamilton	Michael Erdmann,Philippe Gautier,and 1 more credit	Drama,Romance	German,French	France,West Germany	null	1984	null	null	Germany:
+8447	tt0086136	4.5	377	Monica Broeke,Patrick Bauchau,Inge Maria Granzow,Anja Schüte,Emmanuelle Béart	David Hamilton	Michael Erdmann,Philippe Gautier,and 1 more credit	Drama,Romance	German,French	France,West Germany	null	1984	null	null	93
 8448	tt0032946	6.9	544	Ginger Rogers,Joel McCrea,Marjorie Rambeau,Henry Travers,Miles Mander	Gregory La Cava	Allan Scott,Gregory La Cava	Drama	English	USA	APPROVED	1940	03	22	93
 8449	tt0188160	6	542	Jimmy Smits,Maria del Mar,Jon Seda,Clifton Collins Jr.,Ernesto Hernández	Carlos Ávila	Phil Berger	Drama,Sport	English	USA	PG_13	2000	03	31	118
 8450	tt0115016	7	311	Leslie Cheung,Chien-lien Wu,Xiaolin Geng,Lei Huang,Philip Kwok	Ronny Yu	Roy Szeto,Ronny Yu,and 1 more credit	Drama,Music,Romance	Mandarin,Cantonese	Hong Kong,Singapore	null	1995	07	22	100
@@ -8843,7 +8842,7 @@
 8842	tt0896872	7.1	12236	Rachel Weisz,Vanessa Redgrave,Monica Bellucci,David Strathairn,Nikolaj Lie Kaas	Larysa Kondracki	Larysa Kondracki,Eilis Kirwan	Biography,Drama,Thriller	English,Romanian,Russian,Serbian	Germany,Canada,USA	R	2011	06	23	112
 8843	tt0034384	6.8	1061	Robert Young,Randolph Scott,Dean Jagger,Virginia Gilmore,John Carradine	Fritz Lang	Zane Grey,Robert Carson	History,Western	English,Sioux	USA	APPROVED	1941	02	21	95
 8844	tt0096446	7.1	51704	Val Kilmer,Joanne Whalley,Warwick Davis,Jean Marsh,Patricia Hayes	Ron Howard	George Lucas,Bob Dolman	Action,Adventure,Drama,Fantasy,Romance	English	USA	PG	1988	05	20	126
-8845	tt1048174	6.4	1249	Lisa Ray,Sheetal Sheth,Parvin Dabas,Nandana Sen,David Dennis	Shamim Sarif	Shamim Sarif,Shamim Sarif	Drama	English	South Africa,UK	PG_13	2009	01	15	Africa:
+8845	tt1048174	6.4	1249	Lisa Ray,Sheetal Sheth,Parvin Dabas,Nandana Sen,David Dennis	Shamim Sarif	Shamim Sarif,Shamim Sarif	Drama	English	South Africa,UK	PG_13	2009	01	15	94
 8846	tt0111749	7.1	152	Lajos Kovács,Diana Vacaru,Éva Igó,Aleksandr Porokhovshchikov,Gábor Reviczky	János Szász	Georg Büchner,János Szász	Drama	Hungarian	Hungary	null	1994	02	24	93
 8847	tt0806686	6.6	1413	Nina Hoss,Devid Striesow,Hinnerk Schönemann,Burghart Klaußner,Barbara Auer	Christian Petzold	Christian Petzold	Drama,Romance,Thriller	German	Germany	null	2008	05	16	89
 8848	tt0047688	6.7	1196	Doris Day,Frank Sinatra,Gig Young,Ethel Barrymore,Dorothy Malone	Gordon Douglas	Julius J. Epstein,Lenore J. Coffee	Drama,Musical,Romance	English	USA	APPROVED	1954	12	null	117
@@ -8973,7 +8972,7 @@
 8972	tt0063013	5	931	Alain Delon,Marianne Faithfull,Roger Mutton,Marius Goring,Catherine Jourdan	Jack Cardiff	André Pieyre de Mandiargues,Ronald Duncan	Romance	English	UK,France	R	1968	06	21	91
 8973	tt0459913	6.2	183	Marko Matvere,Anastasiya Makeyeva,Renars Kaupers,Tõnu Kark,Elle Kull	Peeter Simm	Aleksandr Borodyanskiy,Mati Põldre,and 1 more credit	Biography,Drama,Music	Estonian,Finnish,Russian	Estonia,Finland,Russia	null	2007	10	05	null
 8974	tt1926992	7.3	260	Leyla Zareh,Fereshteh Sadre Orafaiy,Shahab Hosseini,Roya Taymourian	Mohammad Rasoulof	Mohammad Rasoulof	Drama	Persian	Iran	null	2011	09	07	100
-8975	tt0372782	6.8	729	So-ri Moon,In-mun Kim,Yeo-jeong Yoon,Tae-gyu Bong,Jeong-rim Baek	Sang-soo Im	Sang-soo Im	Drama	Korean	South Korea	null	2003	08	15	Korea:
+8975	tt0372782	6.8	729	So-ri Moon,In-mun Kim,Yeo-jeong Yoon,Tae-gyu Bong,Jeong-rim Baek	Sang-soo Im	Sang-soo Im	Drama	Korean	South Korea	null	2003	08	15	104
 8976	tt0882969	6	366	David Carradine,Rip Torn,Bruce Dern,Mariel Hemingway,Charles Durning	Daniel Adams	Daniel Adams,Joseph C. Lincoln	Comedy,Romance	English	USA	PG	null	97
 8977	tt0113189	7.2	121480	Pierce Brosnan,Sean Bean,Izabella Scorupco,Famke Janssen,Joe Don Baker	Martin Campbell	Ian Fleming,Michael France	Action,Crime,Thriller	English,Russian,Spanish	UK,USA	PG_13	1995	11	17	130
 8978	tt0484039	6.3	921	Nahuel Pérez Biscayart,Nahuel Viale,Inés Efron,Verónica Llinás,Héctor Díaz	Alexis Dos Santos	Alexis Dos Santos	Drama	Spanish,English	Argentina,UK	null	2006	09	28	110
@@ -9344,7 +9343,7 @@
 9343	tt1095442	7.3	3598	Souleymane Sy Savane,Red West,Diana Franco Galindo,Lane 'Roc' Williams,Mamadou Lam	Ramin Bahrani	Ramin Bahrani,Bahareh Azimi	Drama	English,French,Wolof,Spanish	USA	R	2009	08	26	91
 9344	tt0459387	5.3	881	Nikki Albon,Zoey Campbell,Stephanie de Whalley,Phil Deguara,Aren Devlin	Thomas Clay	Thomas Clay,Joseph Lang	Drama,Horror	English	UK	null	2006	04	26	96
 9345	tt0041430	6.5	407	Gregory Peck,Ava Gardner,Melvyn Douglas,Walter Huston,Ethel Barrymore	Robert Siodmak	Ladislas Fodor,Christopher Isherwood	Drama	English	USA	APPROVED	1949	06	29	110
-9346	tt0436639	6.5	541	Jung Suh,Ji-ho Shim,Yun-hong Oh,Jeon-han Kim,Wook-hyeon Seon	Cheol-su Park	Cheol-su Park,Jun-han Kim	Drama,Romance	Korean	South Korea	null	2005	06	10	Korea:
+9346	tt0436639	6.5	541	Jung Suh,Ji-ho Shim,Yun-hong Oh,Jeon-han Kim,Wook-hyeon Seon	Cheol-su Park	Cheol-su Park,Jun-han Kim	Drama,Romance	Korean	South Korea	null	2005	06	10	98
 9347	tt1288633	5.1	118	Hugo Silva,Carmelo Gómez,Carlos Sante,Rula Blanco,Tomás Lijó	Andrés Luque,Samuel Martín Mateos	Javier Echániz,Juan Antonio Gil Bengoa	Drama	Spanish	Spain	null	2009	09	04	null
 9348	tt0116483	6.9	88268	Adam Sandler,Christopher McDonald,Julie Bowen,Frances Bay,Allen Covert	Dennis Dugan	Tim Herlihy,Adam Sandler	Comedy,Romance,Sport	English	USA	PG_13	1996	02	16	92
 9349	tt0486480	6.6	1861	Chen Chang,Yôsuke Eguchi,Kar Yan Lam,Barbie Hsu,Bo-lin Chen	Chao-Bin Su	Chao-Bin Su	Drama,Horror,Mystery,Sci-Fi,Thriller	Hokkien,English,Japanese,Mandarin	Taiwan	unrated	2006	09	28	108
@@ -9441,7 +9440,7 @@
 9440	tt1274645	6.1	234	Geraldine Chaplin,Martina García,Emma Suárez,Eduard Fernández,Àlex Brendemühl	Agustí Vila	Agustí Vila	Drama	Catalan,Spanish	Spain	null	2010	11	05	null
 9441	tt0023238	7.4	4614	Joel McCrea,Fay Wray,Robert Armstrong,Leslie Banks,Noble Johnson	Irving Pichel,Ernest B. Schoedsack	James Ashmore Creelman,Richard Connell	Adventure,Thriller,Horror,Mystery	English,Russian	USA	unrated	1932	09	16	63
 9442	tt1016205	6.9	769	Yôichirô Saitô,Kanako Masuda,Machiko Ono,Shigeki Uda,Makiko Watanabe	Naomi Kawase	Naomi Kawase	Drama	Japanese	France,Japan	null	2007	06	23	null
-9443	tt0995857	3.9	288	Leon Schuster,Tongayi Chirisa,Leeanda Reddy,Kaseran Pillay,Meren Reddy	Gray Hofmeyr	null	Comedy	English,Afrikaans	India,South Africa	null	2008	11	27	Africa:
+9443	tt0995857	3.9	288	Leon Schuster,Tongayi Chirisa,Leeanda Reddy,Kaseran Pillay,Meren Reddy	Gray Hofmeyr	null	Comedy	English,Afrikaans	India,South Africa	null	2008	11	27	101
 9444	tt0059447	6.6	669	Warren Beatty,Alexandra Stewart,Hurd Hatfield,Franchot Tone,Teddy Hart	Arthur Penn	Alan M. Surgal	Crime,Drama	English	USA	unrated	1965	09	27	93
 9445	tt0070424	7.2	275	Stephen Archibald,Hughie Restorick,Jean Taylor Smith,Bernard McKenna,Mr. Munro	Bill Douglas	Bill Douglas	Biography,Drama	English	UK	null	null	55
 9446	tt1183911	6.3	3274	Rhys Ifans,Chloë Sevigny,David Thewlis,Luis Tosar,Crispin Glover	Bernard Rose	Bernard Rose,Howard Marks	Biography,Comedy,Drama	English,Spanish	UK,Spain	null	2011	06	03	121
@@ -9678,7 +9677,7 @@
 9677	tt0156460	6.5	1007	Daniel Chilson,Niklaus Lange,Don Handfield,Linna Carter,Seabass Diamond	John Keitel	John Keitel	Drama,Romance,Sport	English	USA	null	1999	07	09	92
 9678	tt0089066	6.1	837	Laurent Terzieff,Aurelle Doazan,Jean-Pierre Léaud,Nathalie Baye,Claude Brasseur	Jean-Luc Godard	Alain Sarde,Philippe Setbon	Comedy,Crime,Drama	French,English,Italian	France,Switzerland	unrated	1985	08	23	95
 9679	tt0028757	6.9	774	Fred Astaire,George Burns,Gracie Allen,Joan Fontaine,Reginald Gardiner	George Stevens	P.G. Wodehouse,Ernest Pagano	Comedy,Musical,Romance	English	USA	APPROVED	1937	11	19	101
-9680	tt0177707	6.7	731	William K.L. Dickson	null	null	Short	English	USA	unrated	null	0
+9680	tt0177707	6.7	731	William K.L. Dickson	null	null	Short	English	USA	unrated	null	null
 9681	tt0104107	6.7	4191	James Woods,Louis Gossett Jr.,Bruce Dern,Oliver Platt,Heather Graham	Michael Ritchie	Leonard Wise,Steven McKay	Action,Drama,Sport	English	USA	R	1992	08	14	98
 9682	tt0019823	6.5	472	George Arliss,Doris Lloyd,David Torrence,Joan Bennett,Florence Arliss	Alfred E. Green	Julien Josephson	Biography,Drama,History	English	USA	null	1929	11	01	90
 9683	tt1247640	6.4	19717	Cyril Raffaelli,David Belle,Philippe Torreton,Daniel Duval,Elodie Yung	Patrick Alessandrin	Luc Besson	Action,Crime,Sci-Fi,Thriller	French	France	R	2009	02	18	101
@@ -9756,7 +9755,7 @@
 9755	tt1646114	6.8	852	Viktor Nemets,Vladimir Golovin,Aleksey Vertkov,Dmitriy Gotsdiner,Olga Shuvalova	Sergei Loznitsa	Sergei Loznitsa	Adventure,Drama	German,Russian	Germany,Ukraine,Netherlands	null	2011	09	30	127
 9756	tt0030469	6.8	292	Peter Lorre,Rochelle Hudson,Robert Kent,J. Edward Bromberg,Chick Chandler	Norman Foster	Lou Breslow,John Patrick	Action,Crime,Drama,Film-Noir,Mystery,Thriller	English	USA	APPROVED	1938	06	24	63
 9757	tt0116931	5.8	1507	Matt Day,Matthew Dyktynski,Alice Garner,Frances O'Connor,Radha Mitchell	Emma-Kate Croghan	Stavros Kazantzidis,Yael Bergman	Comedy,Romance	English	Australia	R	1997	03	28	76
-9758	tt0378428	5.9	3078	Ji-tae Yu,Jae-un Lee,Rin Seo,Eun-pyo Jeong,Doo-hong Jung	Byung-chun Min	Byung-chun Min	Sci-Fi,Action,Drama,Thriller	Korean	South Korea	R	2003	09	05	Korea:
+9758	tt0378428	5.9	3078	Ji-tae Yu,Jae-un Lee,Rin Seo,Eun-pyo Jeong,Doo-hong Jung	Byung-chun Min	Byung-chun Min	Sci-Fi,Action,Drama,Thriller	Korean	South Korea	R	2003	09	05	114
 9759	tt0102494	7	24320	River Phoenix,Keanu Reeves,James Russo,William Richert,Rodney Harvey	Gus Van Sant	William Shakespeare,Gus Van Sant	Drama,Romance	English,Italian	USA	R	1991	09	29	104
 9760	tt0091507	7	563	Sabine Azéma,Fanny Ardant,Pierre Arditi,André Dussollier,Jacques Dacqmine	Alain Resnais	Henri Bernstein,Alain Resnais	Drama,Romance	French	France	null	1986	09	03	112
 9761	tt0471834	7.2	1947	Mika Nakashima,Aoi Miyazaki,Hiroki Narimiya,Ken'ichi Matsuyama,Saeko	Kentarô Ohtani	Ai Yazawa,Taeko Asano,and 1 more credit	Drama,Music	Japanese,English	Japan	null	2008	04	04	113
@@ -9804,7 +9803,7 @@
 9803	tt0091939	6.3	3263	Tracy Camilla Johns,Tommy Redmond Hicks,John Canada Terrell,Spike Lee,Raye Dowell	Spike Lee	Spike Lee	Comedy,Romance	English	USA	R	1986	08	08	84
 9804	tt1876451	4.6	1598	Jordin Sparks,Whitney Houston,Derek Luke,Mike Epps,Carmen Ejogo	Salim Akil	Mara Brock Akil,Joel Schumacher,and 1 more credit	Drama,Music	English	USA	PG_13	2012	08	17	116
 9805	tt0493450	6.5	1732	Charlie Clark,Nick Shirm,Thomas Drewson,Gregg Sulkin,Matt Bardock	Paul Weiland	Peter Straughan,Bridget O'Connor,and 1 more credit	Biography,Comedy,Drama	English	France,UK	PG_13	2006	11	03	93
-9806	tt0407821	6.8	1289	Woo-seong Kam,Jung Suh,Kyeong-heon Kang,Hyeong-seong Jang,Byung-ho Son	Il-gon Song	Il-gon Song	Drama,Horror,Mystery,Thriller	Korean	South Korea	R	2004	09	03	Korea:
+9806	tt0407821	6.8	1289	Woo-seong Kam,Jung Suh,Kyeong-heon Kang,Hyeong-seong Jang,Byung-ho Son	Il-gon Song	Il-gon Song	Drama,Horror,Mystery,Thriller	Korean	South Korea	R	2004	09	03	112
 9807	tt0031973	7.1	678	Spencer Tracy,Nancy Kelly,Richard Greene,Walter Brennan,Charles Coburn	Henry King,Otto Brower	Hal Long,Sam Hellman	Adventure,Drama,History	English	USA	APPROVED	1939	08	18	101
 9808	tt0891457	6.3	1073	Rainie Yang,Isabella Leong,John Shen,Jay Shih,Ivy Chen	Zero Chou	Singing Chen	Drama,Romance	Mandarin	Taiwan	null	2007	03	30	94
 9809	tt1389096	null	null	Al Pacino,Christopher Walken,Alan Arkin,Julianna Margulies,Katheryn Winnick	Fisher Stevens	Noah Haidle	Comedy,Crime	English	USA	R	2013	02	01	null
@@ -10881,7 +10880,7 @@
 10880	tt0216279	6.1	386	Brendan Gleeson,Amanda Donohoe,James Nesbitt,Adrian Dunbar,Bronagh Gallagher	Declan Lowney	Colin Bateman	Romance,Comedy,Drama	English	UK,Ireland,Germany	null	2001	10	26	91
 10881	tt0067975	6.2	684	Debbie Reynolds,Shelley Winters,Dennis Weaver,Micheál MacLiammóir,Agnes Moorehead	Curtis Harrington	Henry Farrell	Crime,Drama,Horror,Musical,Mystery,Romance,Thriller	English	USA	null	1972	05	26	101
 10882	tt0098692	6.8	2029	Gregory Snegoff,Mike Reynolds,Alexandra Kenworthy,Edie Mirman,Jeff Winkless	Yoshiaki Kawajiri	Kisei Choo,Hideyuki Kikuchi	Animation,Fantasy,Horror,Sci-Fi	Japanese	Japan	unrated	1993	08	20	82
-10883	tt0370082	5.9	1594	Ji-hyo Song,Han-byeol Park,An Jo,Ji-Yeon Park,Su-a Hong	Jae-yeon Yun	Soyoung Lee	Horror,Drama	Korean	South Korea	R	2003	08	01	Korea:
+10883	tt0370082	5.9	1594	Ji-hyo Song,Han-byeol Park,An Jo,Ji-Yeon Park,Su-a Hong	Jae-yeon Yun	Soyoung Lee	Horror,Drama	Korean	South Korea	R	2003	08	01	97
 10884	tt0045333	6.8	635	Susan Hayward,Rory Calhoun,David Wayne,Thelma Ritter,Robert Wagner	Walter Lang	Lamar Trotti	Biography,Drama,Musical	English,Portuguese	USA	null	1952	04	04	117
 10885	tt1366981	7	828	Rahman Altin,Nadir Saribacak,Ersan Unsal,Görkem Yeltan	Mahmut Fazil Coskun	Görkem Yeltan,Ismail Kilicarslan,and 1 more credit	Drama	Turkish	Turkey	null	2009	10	09	90
 10886	tt0034409	6.7	987	Fred Astaire,Rita Hayworth,Robert Benchley,John Hubbard,Osa Massen	Sidney Lanfield	Michael Fessier,Ernest Pagano	Comedy,Musical,Romance	English	USA	APPROVED	1941	09	25	88
@@ -11789,7 +11788,7 @@
 11788	tt0051016	4.8	488	Ronald Colman,Hedy Lamarr,Groucho Marx,Harpo Marx,Chico Marx	Irwin Allen	Irwin Allen,Charles Bennett,and 1 more credit	Drama,Fantasy	English	USA	null	1957	11	08	100
 11789	tt0483812	6.1	1236	Amber Tamblyn,Vincent Piazza,Constance Wu,Halley Feiffer,Melissa Leo	Hilary Brougher	Hilary Brougher	Drama	English	USA	R	null	92
 11790	tt0114592	5.8	355	Michael Imperioli,Mira Sorvino,Joyce Phillips,Paul Calderon,Lisa Louise Langford	Gary Winick	Lee Drysdale	Drama	English	USA	R	1996	09	06	89
-11791	tt0081609	6.8	676	Natalya Belokhvostikova,Curd Jürgens,Igor Kostolevskiy,Claude Jade,Armen Dzhigarkhanyan	Aleksandr Alov,Vladimir Naumov	Aleksandr Alov,Vladimir Naumov,and 1 more credit	Action,Drama,Crime,Romance,Thriller,War	Russian	Soviet Union,France,Switzerland,Spain	null	1981	07	08	Union:
+11791	tt0081609	6.8	676	Natalya Belokhvostikova,Curd Jürgens,Igor Kostolevskiy,Claude Jade,Armen Dzhigarkhanyan	Aleksandr Alov,Vladimir Naumov	Aleksandr Alov,Vladimir Naumov,and 1 more credit	Action,Drama,Crime,Romance,Thriller,War	Russian	Soviet Union,France,Switzerland,Spain	null	1981	07	08	150
 11792	tt0421073	6.8	67143	Keanu Reeves,Forest Whitaker,Hugh Laurie,Chris Evans,Cedric the Entertainer	David Ayer	James Ellroy,Kurt Wimmer	Action,Crime,Drama,Thriller	English,Turkish	USA	R	2008	04	11	109
 11793	tt0446046	6.5	14831	Antonio Banderas,Yaya Alafia,Rob Brown,Alfre Woodard,John Ortiz	Liz Friedlander	Dianne Houston	Drama,Music	English	USA	PG_13	2006	04	07	118
 11794	tt0084776	6.4	1320	John Cassavetes,Gena Rowlands,Susan Sarandon,Vittorio Gassman,Raul Julia	Paul Mazursky	William Shakespeare,Paul Mazursky,and 1 more credit	Comedy,Drama,Fantasy,Romance	English	USA	PG	1982	08	13	140
@@ -11850,7 +11849,7 @@
 11849	tt0238066	6.4	152	Black Prince,Omar Cook,Alan Crosley,Frank DeMaio,Mike DeMaio	Steven Cantor	null	Documentary	English	USA	null	2001	09	07	null
 11850	tt0375104	6.4	2448	Jim Caviezel,Claire Forlani,Jeremy Northam,Malcolm McDowell,Aidan Quinn	Rowdy Herrington	Rowdy Herrington,Kim Dawson	Biography,Drama,Romance,Sport	English	USA	PG	2004	04	30	120
 11851	tt0077270	6.9	1466	Stan Shaw,Andrew Stevens,James Canning,Michael Lembeck,Craig Wasson	Sidney J. Furie	Rick Natkin,Sidney J. Furie	Drama,War	English	Hong Kong,USA	R	1978	04	12	125
-11852	tt0414931	6.7	3223	Richie Ren,Kelly Chen,Nick Cheung,Siu-Fai Cheung,Shiu Hung Hui	Johnnie To	Hing-Ka Chan,Tin-Shing Yip	Action,Crime,Drama	Cantonese,Mandarin,English	Hong Kong,China	null	2004	06	10	Kong:
+11852	tt0414931	6.7	3223	Richie Ren,Kelly Chen,Nick Cheung,Siu-Fai Cheung,Shiu Hung Hui	Johnnie To	Hing-Ka Chan,Tin-Shing Yip	Action,Crime,Drama	Cantonese,Mandarin,English	Hong Kong,China	null	2004	06	10	90
 11853	tt0112579	7.4	33638	Clint Eastwood,Meryl Streep,Annie Corley,Victor Slezak,Jim Haynie	Clint Eastwood	Richard LaGravenese,Robert James Waller	Drama,Romance	English	USA	R	1995	06	02	135
 11854	tt0043361	7.2	330	Arthur Kennedy,Peggy Dow,Julie Adams,James Edwards,Will Geer	Mark Robson	Robert Buckner,Baynard Kendrick	Drama	English	USA	null	1951	07	16	96
 11855	tt0168987	6	4461	Wendy Crewson,Karyn Dwyer,Christina Cox,Ann-Marie MacDonald,Marya Delver	Anne Wheeler	Peggy Thompson	Comedy,Drama,Romance	English	Canada	R	1999	07	08	101
@@ -12086,7 +12085,7 @@
 12085	tt0154352	6.4	45	Patrick Achdjian,William S. Burroughs,Anna Condo,Eleonore Condo,George Condo	John McNaughton	George Condo,John McNaughton	Documentary	English	USA	null	2001	08	17	null
 12086	tt0424908	6.7	7587	Diane Kruger,Ralph Riach,Matyelok Gibbs,Ed Harris,Bill Stewart	Agnieszka Holland	Stephen J. Rivele,Christopher Wilkinson	Biography,Drama,Music	English	USA,Germany,Hungary	PG_13	2006	10	19	104
 12087	tt0109484	6.1	6866	Noreen Hennessey,Lucy Webb,Erica Yohn,Tina Majorino,Ray Liotta	Jessie Nelson	Jessie Nelson	Comedy,Drama,Romance	English	USA	PG	1994	08	12	115
-12088	tt0902967	7.1	301	Zabou Breitman,Mariella Frostrup	Matthew Aeberhard,Leander Ward	Melanie Finn	Documentary	English	USA,UK	G	2008	12	17	Republic:
+12088	tt0902967	7.1	301	Zabou Breitman,Mariella Frostrup	Matthew Aeberhard,Leander Ward	Melanie Finn	Documentary	English	USA,UK	G	2008	12	17	78
 12089	tt0072848	7	2834	Donald Sutherland,Karen Black,Burgess Meredith,William Atherton,Geraldine Page	John Schlesinger	Nathanael West,Waldo Salt	Drama,Thriller	English	USA	R	1975	08	22	144
 12090	tt0472071	5.8	5790	Guy Pearce,Catherine Zeta-Jones,Timothy Spall,Saoirse Ronan,Malcolm Shields	Gillian Armstrong	Tony Grisoni,Brian Ward	Drama,Romance,Thriller	English,Hungarian	UK,Australia	PG	2008	03	13	97
 12091	tt1985981	5.4	2854	Bruna Abdullah,John Abraham,Shekhar Bassi,Peter Brown,Pamela Betsy Cooper	Rohit Dhawan	Milap Zaveri,Rohit Dhawan	Comedy,Drama	Hindi,Gujarati,Punjabi,English	India	unrated	2011	11	24	null
@@ -12122,7 +12121,7 @@
 12121	tt0109838	5.7	3567	Brooke Shields,William Sadler,Eduardo Ricard,Henry Carbo,Deep Roy	Tom Stern,Alex Winter	Tim Burns,Tom Stern,and 1 more credit	Comedy,Sci-Fi	English	USA	PG_13	1995	09	29	86
 12122	tt0109855	6.9	896	Renée Humphrey,Alicia Witt,William R. Moses,Leslie Hope,Ania Suli	Rafal Zielinski	James Bosley	Crime,Drama	English	Canada	unrated	1995	04	14	105
 12123	tt0327753	6.1	1367	Kate Dollenmayer,Mark Herlehy,Christian Rudder,Jennifer L. Schaper,Myles Paige	Andrew Bujalski	Andrew Bujalski	Comedy,Drama	English	USA	null	2007	04	19	85
-12124	tt0076709	5	1421	Bruce Lee,Tai Chung Kim,Jang Lee Hwang,Roy Horan,Roy Chiao	See-Yuen Ng,and 2 more credits	Tin Shing Hoh,Chuo-lun Ting	Action,Mystery	Cantonese	Hong Kong	R	1981	03	21	Kong:
+12124	tt0076709	5	1421	Bruce Lee,Tai Chung Kim,Jang Lee Hwang,Roy Horan,Roy Chiao	See-Yuen Ng,and 2 more credits	Tin Shing Hoh,Chuo-lun Ting	Action,Mystery	Cantonese	Hong Kong	R	1981	03	21	86
 12125	tt1576440	5.6	2241	Jay Baruchel,Anne-Marie Cadieux,Diane D'Aquila,Xavier Dolan,Gary Farmer	Jacob Tierney	Jacob Tierney,Chrystine Brouillet	Drama,Thriller	English	Canada	R	null	null
 12126	tt0065797	6.9	1345	James Earl Jones,Jane Alexander,Lou Gilbert,Joel Fluellen,Chester Morris	Martin Ritt	Howard Sackler,Howard Sackler	Drama,Romance,Sport	English,Hungarian,German,Spanish	USA	null	1970	10	16	103
 12127	tt0047050	5.9	606	Stewart Granger,Grace Kelly,Paul Douglas,John Ericson,Murvyn Vye	Andrew Marton	Ivan Goff,Ben Roberts	Adventure,Drama	English	USA	APPROVED	1954	12	29	100
@@ -12155,7 +12154,7 @@
 12154	tt1440161	6	10094	Kate Hudson,Gael García Bernal,Kathy Bates,Lucy Punch,Romany Malco	Nicole Kassell	Gren Wells	Comedy,Drama,Fantasy,Romance	English	USA	PG_13	2012	05	04	106
 12155	tt0110365	6.7	3782	Tim Roth,Edward Furlong,Moira Kelly,Vanessa Redgrave,Paul Guilfoyle	James Gray	James Gray	Crime,Drama	English	USA	R	1995	05	19	98
 12156	tt0464096	4.9	312	Jay Mohr,Robert Patrick,Joe Mantegna,Mike Starr,Lindsay Price	Peter Ettinger	Peter Ettinger,Steve Brewer	Comedy,Mystery,Thriller	English	USA	R	2009	null	null	89
-12157	tt0401488	6.9	1416	Petr Forman,Emília Vásáryová,Jirí Machácek,Natasa Burger,Jan Tríska	Jan Hrebejk	Jan Hrebejk,Petr Jarchovský	Comedy,Drama	Czech,English,German,Russian	Czech Republic	R	2004	09	16	Republic:
+12157	tt0401488	6.9	1416	Petr Forman,Emília Vásáryová,Jirí Machácek,Natasa Burger,Jan Tríska	Jan Hrebejk	Jan Hrebejk,Petr Jarchovský	Comedy,Drama	Czech,English,German,Russian	Czech Republic	R	2004	09	16	108
 12158	tt0025423	7	1459	Victor McLaglen,Boris Karloff,Wallace Ford,Reginald Denny,J.M. Kerrigan	John Ford	Dudley Nichols,Garrett Fort,and 1 more credit	Adventure,War	English	USA	null	1934	02	16	73
 12159	tt0452643	6.1	7355	Brittany Murphy,Matthew Rhys,Catherine Tate,Santiago Cabrera,Elliot Cowan	Alek Keshishian	Alek Keshishian	Comedy,Romance	English	France,UK	R	2007	04	25	90
 12160	tt0113756	5.8	262	Vivian Paxton,Claudette Sutherland,Michael Marisi Ornstein,Cal Bartlett,Mary Stein	Dirk Shafer	Dirk Shafer	Comedy	English	USA	null	1996	03	15	86
@@ -14566,7 +14565,7 @@
 14565	tt0495596	6.5	11255	Junichi Okada,Aoi Teshima,Bunta Sugawara,Yûko Tanaka,Teruyuki Kagawa	Goro Miyazaki	Ursula K. Le Guin,Goro Miyazaki	Animation,Adventure,Fantasy	Japanese	Japan	PG_13	2006	07	29	115
 14566	tt1361843	5.8	1689	Oscar Redding,Arthur Angel,Paul Ashcroft,Thomas M. Wright,Mark Leonard Winter	Jonathan auf der Heide	Jonathan auf der Heide,Oscar Redding	Biography,Drama,History	English,Irish Gaelic	Australia	null	2009	09	24	104
 14567	tt0090350	6.8	6922	Mickey Rourke,John Lone,Ariane,Leonard Termo,Raymond J. Barry	Michael Cimino	Robert Daley,Oliver Stone,and 1 more credit	Action,Crime,Drama,Thriller	Mandarin,English,Cantonese,Vietnamese,Polish	USA	R	1985	08	16	134
-14568	tt0093229	6.7	516	Michelle Yeoh,Cynthia Rothrock,John Sham,Hoi Mang,Hark Tsui	Corey Yuen	James Clouse,Barry Wong	Action,Crime	Cantonese,English	Hong Kong	null	1985	11	30	Kong:
+14568	tt0093229	6.7	516	Michelle Yeoh,Cynthia Rothrock,John Sham,Hoi Mang,Hark Tsui	Corey Yuen	James Clouse,Barry Wong	Action,Crime	Cantonese,English	Hong Kong	null	1985	11	30	93
 14569	tt0407304	6.5	202114	Tom Cruise,Dakota Fanning,Miranda Otto,Justin Chatwin,Tim Robbins	Steven Spielberg	Josh Friedman,David Koepp,and 1 more credit	Action,Adventure,Drama,Sci-Fi,Thriller	English	USA	PG_13	2005	08	11	116
 14570	tt0207201	6.3	97634	Mel Gibson,Helen Hunt,Marisa Tomei,Alan Alda,Ashley Johnson	Nancy Meyers	Josh Goldsmith,Cathy Yuspa	Comedy,Fantasy,Romance	English,French	USA	PG_13	2000	12	15	127
 14571	tt1391137	3.5	5143	Tyler Perry,Janet Jackson,Jill Scott,Sharon Leal,Malik Yoba	Tyler Perry	Tyler Perry	Comedy,Romance	English	USA	PG_13	2010	04	02	121
@@ -15011,7 +15010,7 @@
 15010	tt0076059	6.3	2180	George Segal,Jane Fonda,Ed McMahon,Richard Gautier,Allan Miller	Ted Kotcheff	David Giler,Jerry Belson	Comedy	English	USA	PG	1977	03	18	95
 15011	tt0909388	6.2	992	Eero Milonoff,Jussi Nikkilä,Olavi Uusivirta,Minttu Mustakallio,Tommi Korpela	Jukka-Pekka Siili	Pentti Kasurinen,Antero Arjatsalo	Biography,Drama,Music	Finnish	Finland	null	2007	09	28	107
 15012	tt0035937	6.7	1331	Richard Dix,Russell Wade,Edith Barrett,Ben Bard,Edmund Glover	Mark Robson	Donald Henderson Clarke,Leo Mittler	Drama,Mystery,Thriller	English,German	USA	TV_PG	1944	07	27	69
-15013	tt0101864	5.4	517	N!xau,Ching-Ying Lam,Sam Christopher Chow,Lung Chan,Stephen Chow	Billy Chan	Barry Wong	Comedy,Fantasy	English,Cantonese,Ungwatsi	Hong Kong	null	1991	07	05	Africa:
+15013	tt0101864	5.4	517	N!xau,Ching-Ying Lam,Sam Christopher Chow,Lung Chan,Stephen Chow	Billy Chan	Barry Wong	Comedy,Fantasy	English,Cantonese,Ungwatsi	Hong Kong	null	1991	07	05	96
 15014	tt0200669	5.9	2982	Kate Beckinsale,James Fox,Anjelica Huston,Nick Nolte,Jeremy Northam	James Ivory	Henry James,Ruth Prawer Jhabvala	Drama,Romance	English	USA,France,UK	R	2000	09	13	130
 15015	tt1601913	6.9	101457	Liam Neeson,Frank Grillo,Dermot Mulroney,Dallas Roberts,Joe Anderson	Joe Carnahan	Joe Carnahan,Ian Mackenzie Jeffers,and 1 more credit	Action,Adventure,Drama,Thriller	English	USA	R	2012	05	18	117
 15016	tt0071583	5.6	1208	Ken Shapiro,Richard Belzer,Chevy Chase,Buzzy Linhart,Richmond Baier	Ken Shapiro	Lane Sarasohn,Ken Shapiro,and 1 more credit	Comedy	English	USA	R	1975	06	05	75
@@ -15912,7 +15911,7 @@
 15911	tt0068617	5.4	741	Burt Reynolds,Jack Weston,Tom Skerritt,Raquel Welch,James McEachin	Richard A. Colla	Evan Hunter,Evan Hunter	Comedy,Crime,Drama	English	USA	PG	1973	02	12	92
 15912	tt0210717	6.6	1105	Francisco Rabal,José Coronado,Dafne Fernández,Eulalia Ramón,Maribel Verdú	Carlos Saura	Carlos Saura,Luigi Scattini	Biography,Drama,War	Spanish,French	Spain,Italy	R	1999	11	12	107
 15913	tt0109951	6	8662	Shirley MacLaine,Nicolas Cage,Austin Pendleton,Edward Albert,James Rebhorn	Hugh Wilson	Hugh Wilson,Peter Torokvei	Comedy	English	USA	PG_13	1994	03	11	96
-15914	tt0325478	5.6	80	Meital Dohan,Ashraf Farah,Amnon Fisher,Razia Israeli,Amos Lavi	Doron Eran	Yoav Halevy,Hanita Halevy	Drama	English,Arabic,Hebrew	Israel	null	2005	10	28	Republic:
+15914	tt0325478	5.6	80	Meital Dohan,Ashraf Farah,Amnon Fisher,Razia Israeli,Amos Lavi	Doron Eran	Yoav Halevy,Hanita Halevy	Drama	English,Arabic,Hebrew	Israel	null	2005	10	28	86
 15915	tt0990407	6	86105	Seth Rogen,Jay Chou,Cameron Diaz,Tom Wilkinson,Christoph Waltz	Michel Gondry	Seth Rogen,Evan Goldberg,and 1 more credit	Action,Comedy,Crime,Thriller	English,Mandarin	USA	PG_13	2011	01	14	119
 15916	tt0356159	5.5	1455	Dylan Fergus,Bryan Kirkwood,Hank Harris,Andrew Levitas,Matt Phillips	Paul Etheredge	Paul Etheredge	Horror,Thriller	English	USA	R	2006	02	22	84
 15917	tt0496319	6	1998	Mark Webber,Daniel Ross Owens,Glen Powell,Anne Clarke,Cherami Leigh	Ethan Hawke	Ethan Hawke,Ethan Hawke	Drama,Music,Romance	English	USA	R	2007	03	23	117
@@ -19137,7 +19136,7 @@
 19136	tt0897361	3.6	19934	Bonnie Aarons,Lindsay Lohan,Michael Adler,Julia Ormond,Garcelle Beauvais	Chris Sivertson	Jeff Hammond	Crime,Mystery,Thriller	English	USA	R	2007	07	27	105
 19137	tt0095179	4.9	12518	Jennifer Banko,John Otrin,Susan Blu,Lar Park-Lincoln,Terry Kiser	John Carl Buechler	Daryl Haney,Manuel Fidello,and 1 more credit	Horror,Thriller	English	USA	R	1988	05	13	88
 19138	tt0430304	3.8	25898	Marlon Wayans,Shawn Wayans,Kerry Washington,John Witherspoon,Tracy Morgan	Keenen Ivory Wayans	Keenen Ivory Wayans,Shawn Wayans,and 1 more credit	Comedy,Crime	English,Estonian	USA,Canada	PG_13	2006	07	14	98
-19139	tt0372873	3.7	17619	Jason Behr,Amanda Brooks,Robert Forster,Craig Robinson,Aimee Garcia	Hyung-rae Shim	Hyung-rae Shim	Action,Drama,Fantasy,Horror,Thriller	English,Korean	South Korea	PG_13	2008	05	13	Korea:
+19139	tt0372873	3.7	17619	Jason Behr,Amanda Brooks,Robert Forster,Craig Robinson,Aimee Garcia	Hyung-rae Shim	Hyung-rae Shim	Action,Drama,Fantasy,Horror,Thriller	English,Korean	South Korea	PG_13	2008	05	13	90
 19140	tt0102202	3.6	2890	Sasha Mitchell,Peter Boyle,Dennis Chan,Cary-Hiroyuki Tagawa,John Diehl	Albert Pyun	Mark DiSalle,Jean-Claude Van Damme,and 1 more credit	Action,Drama	English	USA	R	1991	06	14	89
 19141	tt0263728	3.9	1915	Michael York,Michael Biehn,Joseph Makkar,Guy Siner,Diane Venora	Brian Trenchard-Smith,and 1 more credit	Stephan Blinn,Hollis Barton	Thriller,Fantasy	English	USA	PG_13	2001	09	21	104
 19142	tt0086955	3.3	3484	Dudley Moore,Eddie Murphy,Kate Capshaw,George Dzundza,Helen Shaver	Willard Huyck	Robert Grossbach,Gloria Katz,and 1 more credit	Comedy,War	English	USA	R	1984	07	20	94
