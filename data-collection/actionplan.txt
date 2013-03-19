@@ -16,6 +16,8 @@ compute averages after culling data set, then replace
 rating – replace with standard average of dataset (not the weighted average)
 rating_count – replace with average of dataset
 
+more than five missing values
+
 2) write a java function that throws away unclean examples
 3) write a java function that replaces the missing values with the above
 
