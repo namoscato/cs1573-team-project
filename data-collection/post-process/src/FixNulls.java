@@ -1,5 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +11,24 @@ import java.util.Scanner;
 
 public class FixNulls {
 	
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
+		File input = new File("../movie_data_revision2.txt");
+		int count[] = new int[16];
+		
+		try {
+			Scanner scanner = new Scanner(input);
+			while (scanner.hasNextLine()) {
+				count[PostProcess.missingValues(scanner.nextLine())]++;
+			}
+			for (int i = 0; i < count.length; i++) {
+				System.out.println(i + "\t" + count[i]);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		//PostProcess.missingValues
+		/*
 		File input = new File("../movie_data_revision1.txt");
 		File output = new File("../movie_data_revision2.txt");
 		
@@ -43,5 +61,6 @@ public class FixNulls {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		*/
 	}
 }
