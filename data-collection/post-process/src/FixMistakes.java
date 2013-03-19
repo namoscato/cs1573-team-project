@@ -58,23 +58,7 @@ public class FixMistakes {
 		return result + "\n";
 	}
 	
-	public static void main(String[] args) {
-		// populate misfits data structure
-		/*
-		File file = new File("../misfits.txt");
-		Map<String, List<String>> misfits = null;
-		try {
-			Scanner scanner = new Scanner(file);
-			misfits = new HashMap<String, List<String>>();
-			while (scanner.hasNextLine()) {
-				List<String> temp = Arrays.asList(scanner.nextLine().split("\t"));
-				misfits.put(temp.get(0), temp.subList(1, temp.size()));
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		*/
-		
+	public static void main(String[] args) {		
 		File input = new File("../movie_data.txt");
 		File output = new File("../movie_data_fixed.txt");
 		
@@ -105,6 +89,7 @@ public class FixMistakes {
 					}
 					
 					// remove duplicate directors and writers
+					values.set(4, removeDuplicates(values.get(4)));
 					values.set(5, removeDuplicates(values.get(5)));
 					values.set(6, removeDuplicates(values.get(6)));
 					
