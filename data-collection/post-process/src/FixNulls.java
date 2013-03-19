@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class FixNulls {
 	
 	public static void main(String[] args) {		
-		File input = new File("../movie_data_fixed.txt");
-		File output = new File("../movie_data_fixed2.txt");
+		File input = new File("../movie_data_revision1.txt");
+		File output = new File("../movie_data_revision2.txt");
 		
 		try {
 			output.createNewFile();
@@ -34,6 +34,9 @@ public class FixNulls {
 						bw.write(line + "\n");
 					}
 				}
+				bw.flush();
+				bw.close();
+				scanner.close();
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}

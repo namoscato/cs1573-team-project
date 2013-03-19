@@ -60,7 +60,7 @@ public class FixMistakes {
 	
 	public static void main(String[] args) {		
 		File input = new File("../movie_data.txt");
-		File output = new File("../movie_data_fixed.txt");
+		File output = new File("../movie_data_revision1.txt");
 		
 		try {
 			output.createNewFile();
@@ -95,6 +95,7 @@ public class FixMistakes {
 					
 					bw.write(createLine(values));
 				}
+				scanner.close();
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
