@@ -98,14 +98,14 @@ public class PostProcess {
 							//skip
 						}
 						else { //otherwise we are OK to write to noisy data
-							noisy_bw.write(str);
+							noisy_bw.write(str + "\n");
 						}
 
 					}
 				}
 				else { // there aren't any missing feature values
-					clean_bw.write(str); //note we only write to clean if nothing's wrong
-					noisy_bw.write(str);
+					clean_bw.write(str + "\n"); //note we only write to clean if nothing's wrong
+					noisy_bw.write(str + "\n");
 				}
 			}
 			scanner.close();
