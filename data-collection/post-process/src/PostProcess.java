@@ -27,9 +27,19 @@ public class PostProcess {
 		else if (d < 21) return 1;
 		else return 2;
 	}
+
+	public static int missingValues(String msg) {
+		List<String> arr = Arrays.asList(msg.split("\t"));
+		int count = 0;
+		for (String a:  arr) {
+			if (a == null) { count++;}
+		}
+		return count;
+	}
 	
 	public static void main(String[] args) {
 		// populate misfits data structure
+		/*
 		File file = new File("../misfits.txt");
 		Map<String, List<String>> misfits = null;
 		try {
@@ -42,6 +52,7 @@ public class PostProcess {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		*/
 
 		//create two files, one for clean data and one for noisy data
 		File clean_data = new File("../clean_data.txt");
@@ -61,28 +72,29 @@ public class PostProcess {
 		FileWriter clean_fw = new FileWriter(clean_data.getAbsoluteFile());
 		BufferedWriter clean_bw = new BufferedWriter(clean_bw);
 
-		file = new File("../movie_data.txt");
+		file = new File("../movie_data_fixed.txt");
 
 		try {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
 				String str = scanner.nextLine();
 				List<String> example = Arrays.asList(str.split("\t"));
-				if (misfits.containsKey(example.get(1)) {
+				int missing = missingValues(str);
+				if (missing > 0) {
 					//if there are more than 3 missing values, throw out the data
-					if (misfits.get(example.get(1)).size() > 3) {
+					if (missing > 3) {
 						//throw it out
 					} 
 					//iterate through array list checking for missing writers, actors, directors
 					else {
 
-						if (misfits.get(example.get(1)).contains("writers")) {
+						if (example.get(4) == null) { 
 							//skip
 						}
-						else if (misfits.get(example.get(1)).contains("actors")) {
+						else if (example.get(5) == null) {
 							//skip
 						}
-						else if (misfits.get(example.get(1)).contains("directors")) {
+						else if (example.get(6) == null) {
 							//skip
 						}
 						else { //otherwise we are OK to write to noisy data
