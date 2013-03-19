@@ -117,12 +117,19 @@ public class PostProcess {
 			while (scanner.hasNextLine()) {
 				String str = scanner.nextLine();
 				List<String> example = Arrays.asList(str.split("\t"));
-				if (example.get(2) != null) {
-
+				if (example.get(2) != null && example.get(3) != null) {
+					average_count++;
+					rating_average += Double.parseDouble(example.get(2));
+					rating_count_average += Double.parseDouble(example.get(3));
+				}
+				if (example.get(example.size()-1) != null) {
+					runtime_count++;
+					runtime_average += Double.parseDouble(example.get(example.size()-1));
 				}
 			}
-			rating_average /= count;
-			rating_count_average /= count;
+			rating_average /= average_count;
+			rating_count_average /= average_count;
+			runtime_average /= runtime_count;
 			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
