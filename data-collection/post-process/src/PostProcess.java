@@ -140,7 +140,8 @@ public class PostProcess {
 		try {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
-				List<String> example = Arrays.asList(scanner.nextLine().split("\t"));
+				String str = scanner.nextLine();
+				List<String> example = Arrays.asList(str.split("\t"));
 				if (misfits.containsKey(example.get(1))) {
 					// there are missing feature values 
 					for (String feature : misfits.get(example.get(1))) {
