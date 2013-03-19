@@ -19239,4 +19239,57 @@
 19239	tt0054215	8.6	223288	John Gavin,Vera Miles,Anthony Perkins,Janet Leigh,Martin Balsam	Alfred Hitchcock	Joseph Stefano,Robert Bloch	Horror,Mystery,Thriller	English	USA	TV_14	1960	09	08	109
 19240	tt0086197	7.9	30856	Scott Glenn,Sam Shepard,Fred Ward,Ed Harris,Dennis Quaid	Philip Kaufman	Tom Wolfe,Philip Kaufman	Adventure,Drama,History	English,Russian	USA	R	1983	10	21	193
 19241	tt0070666	7.8	42845	Jack Kehoe,John Randolph,Biff McGuire,Barbara Eda-Young,Al Pacino	Sidney Lumet	Waldo Salt,Peter Maas	Biography,Crime,Drama,Thriller	English,Italian,Spanish	USA,Italy	R	1973	12	05	130
-19242	tt0046359	8.1	28715	Otto Preminger,Don Taylor,William Holden,Robert Strauss,Harvey Lembeck	Billy Wilder	Billy Wilder,Edwin Blum	Comedy,Drama,Thriller,War	English,German,Russian	USA	
+19242	tt0046359	8.1	28715	Otto Preminger,Don Taylor,William Holden,Robert Strauss,Harvey Lembeck	Billy Wilder	Billy Wilder,Edwin Blum	Comedy,Drama,Thriller,War	English,German,Russian	USA	unrated	1953	08	10	120
+19243	tt0070735	8.4	99192	Charles Durning,Robert Redford,Robert Shaw,Paul Newman,Ray Walston	George Roy Hill	David S. Ward	Comedy,Crime,Drama	English	USA	TV_14	1974	01	10	129
+19244	tt0082971	8.7	373019	Ronald Lacey,Harrison Ford,Karen Allen,Paul Freeman,John Rhys-Davies	Steven Spielberg	George Lucas,Lawrence Kasdan	Action,Adventure	English,German,Hebrew,Spanish,Arabic,Nepali	USA	PG	1981	06	12	115
+19245	tt0047396	8.7	179226	Wendell Corey,Raymond Burr,Thelma Ritter,Grace Kelly,James Stewart	Alfred Hitchcock	Cornell Woolrich,John Michael Hayes	Mystery,Thriller	English	USA	PG	1955	01	14	112
+19246	tt0056592	8.5	122066	Ruth White,Rosemary Murphy,John Megna,Frank Overton,Gregory Peck	Robert Mulligan	Horton Foote,Harper Lee	Crime,Drama,Mystery	English	USA	unrated	1963	03	16	129
+19247	tt0032138	8.2	158758	Jack Haley,Judy Garland,Frank Morgan,Bert Lahr,Ray Bolger	Victor Fleming	Florence Ryerson,Noel Langley	Adventure,Family,Fantasy,Musical	English	USA	null	1939	08	25	101
+19248	tt0069704	7.5	43202	Cindy Williams,Paul Le Mat,Charles Martin Smith,Richard Dreyfuss,Ron Howard	George Lucas	Gloria Katz,George Lucas	Comedy	English	USA	PG	1973	08	11	110
+19249	tt0096928	6.8	52485	Dan Shor,Keanu Reeves,George Carlin,Alex Winter,Terry Camilleri	Stephen Herek	Ed Solomon,Chris Matheson	Adventure,Comedy,Sci-Fi	English,French,German	USA	PG	1989	02	17	90
+19250	tt0171804	7.5	50768	Hilary Swank,Chloë Sevigny,Brendan Sexton III,Peter Sarsgaard,Alicia Goranson	Kimberly Peirce	Kimberly Peirce,Andy Bienen	Drama	English	USA	R	1999	10	29	118
+19251	tt0101393	6.6	39496	William Baldwin,Kurt Russell,Robert De Niro,Donald Sutherland,Jennifer Jason Leigh	Ron Howard	Gregory Widen	Action,Crime,Drama,Mystery,Thriller	English	USA	R	1991	05	24	137
+19252	tt0101761	7.1	44968	Meg Ryan,Frank Whaley,Val Kilmer,Kevin Dillon,Kyle MacLachlan	Oliver Stone	Oliver Stone,Randall Jahnson	Biography,Drama,Music	English	USA	R	1991	03	01	140
+19253	tt0083929	7.2	45719	Brian Backer,Sean Penn,Judge Reinhold,Jennifer Jason Leigh,Robert Romanus	Amy Heckerling	Cameron Crowe	Comedy,Drama,Romance	English	USA	R	1982	08	13	90
+19254	tt0101889	7.5	39190	Adam Bryant,Jeff Bridges,David Hyde Pierce,Ted Ross,Paul Lombardi	Terry Gilliam	Richard LaGravenese	Comedy,Drama,Fantasy	English	USA	R	1991	09	20	137
+19255	tt0209958	6.2	55204	Marianne Jean-Baptiste,Dylan Baker,Gerry Becker,Jennifer Lopez,Colton James	Tarsem Singh	Mark Protosevich	Sci-Fi,Thriller	English	USA,Germany	NC_17	2000	08	18	107
+19256	tt0113438	2.8	719	Joanne Vannicola,Louis Gossett Jr.,Karen Gayle,Max Piersig,Jason Cadieux	Sidney J. Furie	Michael Stokes	Action,Drama	English	Canada	PG_13	1996	05	04	96
+19257	tt0113243	5.9	36992	Angelina Jolie,Matthew Lillard,Jonny Lee Miller,Laurence Mason,Jesse Bradford	Iain Softley	Rafael Moreu	Crime,Drama,Thriller	English,Italian,Japanese,Russian	USA	PG_13	1995	09	15	107
+19258	tt0066206	8	54271	Stephen Young,Michael Strong,Karl Malden,Carey Loftin,George C. Scott	Franklin J. Schaffner	Edmund H. North,Francis Ford Coppola	Biography,Drama,History,War	English,German,French,Russian,Arabic,Italian	USA	null	1970	04	02	172
+19259	tt0114781	5.2	24038	Steven Seagal,Morris Chestnut,Eric Bogosian,Katherine Heigl,Everett McGill	Geoff Murphy	Matt Reeves,Richard Hatem	Action,Thriller	English	USA	R	1995	07	14	100
+19260	tt0085518	2.6	1030	Michael Carr	John Alan Schwartz	John Alan Schwartz	Documentary,Horror	English	USA	null	1981	11	10	85
+19261	tt0093516	3	1586	Shannon Tweed,Sally Kellerman,Patrick Dempsey,Isabelle Mejias,Al Waxman	George Mendeluk	Harold Ramis,Janis Allen	Comedy,Fantasy,Romance	English	Canada	R	1987	05	15	96
+19262	tt0129908	4.5	1185	David Müller,Jeffrey Pillars,Christo Davids,Hayley Tyson,Jim Varney	John R. Cherry III	Jeffrey Pillars,Joseph Dattorre	Family,Comedy	English	USA	PG	null	null
+19263	tt0093091	3.5	2050	Royal Dano,Phil Fondacaro,Damon Martin,J. Downing,Kerry Remsen	Albert Band	Charlie Dolan,Dennis Paoli	Comedy,Horror	English	USA	R	null	89
+19264	tt0105179	3.9	612	J.H. Wyman,Alle Ghadban,Nicole de Boer,Joy Tanner,Kenneth McGregor	Clay Borris	Richard Beattie	Horror,Thriller	English	Canada	R	null	null
+19265	tt0112634	2.9	1100	Cliff De Young,Rick Dean,John Savage,Ryan Thomas Johnson,Don Stroud	Louis Morneau	Michael Palmer	Action,Horror,Sci-Fi	English	USA	R	1995	02	23	83
+19266	tt0091934	2.7	3107	Philip Sayer,Sean Penn,Richard Griffiths,Paul Freeman,Madonna	Jim Goddard	John Kohn,Robert Bentley	Adventure,Crime,Drama,Romance	English	UK	PG_13	1986	08	29	97
+19267	tt0185183	2.4	49682	John Travolta,Forest Whitaker,Sabine Karsenti,Barry Pepper,Kim Coates	Roger Christian	J.D. Shapiro,Corey Mandell	Action,Sci-Fi	English	USA	PG_13	2000	05	12	118
+19268	tt0121261	2.3	820	Michael Carr	John Alan Schwartz	Veronica Lakewood,John Alan Schwartz	Documentary,Horror	English	USA	null	null	91
+19269	tt0118539	2.4	6938	Hulk Hogan,Michael O'Laskey II,Loni Anderson,Mathew Botuchis,Jim Varney	Sean McNamara	Sean McNamara,Jeff Phillips	Action,Adventure,Comedy,Family	English	USA	PG	1998	06	18	93
+19270	tt0223251	3.3	204	James B. Schwartz,John Alan Schwartz	John Alan Schwartz	James B. Schwartz,John Alan Schwartz	Documentary	English	USA	unrated	null	null
+19271	tt0403703	3.3	4093	Eric Stuart,Wayne Grayson,Dan Green,Gregory Abbey,Scottie Ray	Hatsuki Tsuji	Michael Pecerlello	Animation,Action,Adventure,Family,Fantasy,Thriller	English	Japan,USA	PG	2004	08	13	90
+19272	tt0119068	4.3	1091	Linda Kash,Jamie Bartlett,Jim Varney,Washington Xisolo,Claire Marshall	John R. Cherry III	John R. Cherry III	Family,Comedy	English	USA	PG	null	null
+19273	tt0369226	2.3	31716	Matthew Walker,Frank C. Turner,Christian Slater,Stephen Dorff,Tara Reid	Uwe Boll	Michael Roesch,Elan Mastai	Horror	English	Canada,Germany,USA	R	2009	03	20	96
+19274	tt0266860	4.4	4519	Eric Stuart,Veronica Taylor,Madeleine Blaustein,Rachael Lillis,Ikue Ôtani	Michael Haigney,Kunihiko Yuyama	Michael Haigney,Norman J. Grossfeld	Animation,Action,Adventure,Family,Fantasy	Japanese,English	Japan	G	2001	04	06	93
+19275	tt0093405	2.2	5518	Moses Gunn,Tom Courtenay,Joe Don Baker,Pat Colbert,Bill Cosby	Paul Weiland	Jonathan Reynolds,Bill Cosby	Comedy	English	USA	PG	1987	12	18	85
+19276	tt0121262	2.4	652	James B. Schwartz,John Zimmerman	Susumu Saegusa,John Alan Schwartz	James B. Schwartz	Documentary,Horror	English	USA,Japan	unrated	null	90
+19277	tt0115834	2.5	1194	Janet Gunn,Rick Dean,Anthony Peck,Scott Valentine,Rodger Halston	Jonathan Winfrey	Rob Kerchner	Action,Horror,Sci-Fi	English	USA	R	null	85
+19278	tt0120389	2.8	4760	Steve Cardenas,Jason David Frank,Greg Collins,Kai Doi,Jon Simanton	Shuki Levy,David Winning	Shuki Levy,Shell Danielson	Action,Adventure,Family,Fantasy,Sci-Fi,Thriller	English	USA,Japan	PG	1997	03	28	99
+19279	tt0799949	2.2	66329	Adam Campbell,Jayma Mays,Jennifer Coolidge,Kal Penn,Faune A. Chambers	Aaron Seltzer,Jason Friedberg	Aaron Seltzer,Jason Friedberg	Adventure,Comedy	English	USA	PG_13	2007	01	26	86
+19280	tt0317676	2	25955	Ellie Cornell,Clint Howard,Jonathan Cherry,Ona Grauer,Tyron Leitso	Uwe Boll	Mark A. Altman,Dan Bates	Action,Horror,Thriller	English	Germany,Canada,USA	R	2003	10	10	90
+19281	tt0313487	4.4	2583	Eric Stuart,Veronica Taylor,Madeleine Blaustein,Rachael Lillis,Ikue Ôtani	Jim Malone,Kunihiko Yuyama	Hideki Sonoda	Animation,Action,Adventure,Family	English,Japanese	Japan,USA	G	2002	10	25	75
+19282	tt0362165	2.1	24287	Ryan Falconer,Liam Falconer,Jamie Kennedy,Traylor Howard,Alan Cumming	Lawrence Guterman	Lance Khazei	Adventure,Comedy,Family,Fantasy	English	USA,Germany	PG	2005	02	18	94
+19283	tt1213644	1.8	49329	Vanessa Lachey,Gary 'G. Thang' Johnson,Matt Lanter,Nicole Parker,Crista Flanagan	Aaron Seltzer,Jason Friedberg	Aaron Seltzer,Jason Friedberg	Comedy	English	USA	PG_13	2008	08	29	87
+19284	tt0120598	2.3	2074	Trevor Morgan,Diana Rice,Jane Wheeler,Kyla Pratt,Alan Fawcett	Steve Gomer	Stephen White,Sheryl Leach	Adventure,Family	English	USA	G	1998	03	30	76
+19285	tt0804452	2.7	13711	Janel Parrish,Nathalia Ramos,Logan Browning,Chelsea Kane,Skyler Shaye	Sean McNamara	Susan Estelle Jansen,Adam De La Peña	Comedy,Family,Music	English,Spanish	USA	PG	2007	08	03	110
+19286	tt0347791	5.6	1523	Eric Stuart,Veronica Taylor,Madeleine Blaustein,Rachael Lillis,Ikue Ôtani	Jim Malone,Kunihiko Yuyama	Hideki Sonoda,Kathy Borland	Animation,Action,Adventure,Crime,Family	English	Japan	G	2004	09	24	71
+19287	tt0339034	1.7	19240	Kelly Clarkson,Anika Noni Rose,Greg Siff,Justin Guarini,Katherine Bailess	Robert Iscove	Kim Fuller	Comedy,Musical,Romance	English	USA	PG	2003	06	20	81
+19288	tt0270846	1.5	16239	Scott Baio,Jon Voight,Justin Chatwin,Vanessa Angel,Skyler Shaye	Bob Clark	Steven Paul,Gregory Poppen	Comedy,Family	English	Germany,UK,USA	PG	2004	08	27	88
+19289	tt0299930	2.4	34098	Ben Affleck,Lenny Venito,Terry Camilleri,Robert Silver,David Backus	Martin Brest	Martin Brest	Comedy,Crime,Romance	English	USA	R	2003	08	01	121
+19290	tt0409811	7.1	162	Ji-min Han,Jin-Young Jang,Takeo Nakahara,Yûko Fueki,Ju-hyuk Kim	Jong-chan Yun	Jong-chan Yun	Romance	Japanese,Korean	South Korea	null	2005	12	29	132
+19291	tt0118589	2	15879	Max Beesley,Da Brat,Valarie Pettiford,Mariah Carey,Tia Texada	Vondie Curtis-Hall	Cheryl L. West,Kate Lanier	Music,Romance	English	USA	PG_13	2001	09	21	104
+19292	tt1139664	6.3	561	Jean Pierre Noher,Oscar Martínez,Inés Efron,Cecilia Roth,Arturo Goetz	Daniel Burman	Daniel Burman	Comedy,Drama	Spanish,Hebrew	Argentina,Spain,France,Italy	unrated	2008	04	24	91
+19293	tt1937189	7.1	7	Inri Cristo,David Shayler,Vissarion	Heloisa Sartorato,Valerie Gudenus	null	Documentary	English	Italy	null	null	null
+19294	tt1961192	6.7	122	Lene Maria Christensen,Nanna Buhl Andresen,Søren Sætter-Lassen,Sverrir Gudnason,Birgitte Hjort Sørensen	Bille August	Anastassia Arnold,Peter Asmussen	Biography,Drama	Danish	Denmark,Sweden	null	2012	09	27	null
+19295	tt1954701	7.8	304	Inga Birkenfeld,Alexander Altomirianos,Annika Ernst,Tom Schilling,Martin Brambach	Jan Ole Gerster	Jan Ole Gerster	Comedy,Drama	German,English	Germany	null	2012	11	01	83

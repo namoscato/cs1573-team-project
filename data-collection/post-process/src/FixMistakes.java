@@ -95,6 +95,7 @@ public class FixMistakes {
 					
 					bw.write(createLine(values));
 				}
+				bw.close();
 				scanner.close();
 			} catch (IOException e1) {
 				e1.printStackTrace();
