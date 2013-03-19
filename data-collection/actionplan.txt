@@ -1,13 +1,14 @@
 1) decide what to throw away
 
+writers – throw out
+directors – throw out
+actors – throw out
+
 compare performance of clean examples with examples with noise:
 release_month – replace with most occurring month in the dataset (10)
 release_day –  replace with release_time and weekday
 language – replace with most occurring language ('English')
-writers – throw out
-directors – throw out
 rated – replace with 'unrated' 
-actors – throw out
 release_date – depends on what we decide to do with _month and _day above
 genres – replace with most occurring genre ('Drama')
 country – replace with most occurring country ('USA')

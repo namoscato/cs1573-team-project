@@ -68,24 +68,65 @@ public class PostProcess {
 			while (scanner.hasNextLine()) {
 				String str = scanner.nextLine();
 				List<String> example = Arrays.asList(str.split("\t"));
-				//if there are more than 3 missing values, throw out the data
-				if (misfits.get(example.get(1)).size() > 3) {
-					//throw it out
-				} 
-				//handle the missing values on case by case
-				else if (misfits.containsKey(example.get(1)) {
-					
+				if (misfits.containsKey(example.get(1)) {
+					//if there are more than 3 missing values, throw out the data
+					if (misfits.get(example.get(1)).size() > 3) {
+						//throw it out
+					} 
+					//iterate through array list checking for missing writers, actors, directors
+					else {
+
+						if (misfits.get(example.get(1)).contains("writers")) {
+							//skip
+						}
+						else if (misfits.get(example.get(1)).contains("actors")) {
+							//skip
+						}
+						else if (misfits.get(example.get(1)).contains("directors")) {
+							//skip
+						}
+						else { //otherwise we are OK to write to noisy data
+							noisy_bw.write(str);
+						}
+
+					}
 				}
 				else { // there aren't any missing feature values
-					clean_bw.write(str);
+					clean_bw.write(str); //note we only write to clean if nothing's wrong
 					noisy_bw.write(str);
 				}
 			}
+			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		noisy_bw.close();
 		clean_bw.close();
+
+		//find the average of rating, rating_count
+		double rating_average = 0;
+		double rating_count_average = 0;
+		int average_count = 0;
+
+		double runtime_average = 0;
+		int runtime_count = 0;
+		
+		file = new File("../noisy_data.txt");
+		try {
+			Scanner scanner = new Scanner(file);
+			while (scanner.hasNextLine()) {
+				String str = scanner.nextLine();
+				List<String> example = Arrays.asList(str.split("\t"));
+				if (example.get(2) != null) {
+
+				}
+			}
+			rating_average /= count;
+			rating_count_average /= count;
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 
 		//replace missing values
 		file = new File("../noisy_data.txt");
@@ -108,6 +149,7 @@ public class PostProcess {
 					// there aren't any missing feature values
 				}
 			}
+			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
