@@ -42,8 +42,53 @@ public class PostProcess {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
+		//create two files, one for clean data and one for noisy data
+		File clean_data = new File("../clean_data.txt");
+ 		File noisy_data = new File("../noisy_data.txt");
+		// if file doesnt exist, then create it
+		if (!clean_data.exists()) {
+			clean_data.createNewFile();
+		}
+		if (!noisy_data.exists()) {
+			noisy_data.createNewFile();
+		}
+
+		//remove anything with five or above values, missing writers, actors, or directors
+		FileWriter noisy_fw = new FileWriter(noisy_data.getAbsoluteFile());
+		BufferedWriter noisy_bw = new BufferedWriter(noisy_fw);
+
+		FileWriter clean_fw = new FileWriter(clean_data.getAbsoluteFile());
+		BufferedWriter clean_bw = new BufferedWriter(clean_bw);
+
 		file = new File("../movie_data.txt");
+
+		try {
+			Scanner scanner = new Scanner(file);
+			while (scanner.hasNextLine()) {
+				String str = scanner.nextLine();
+				List<String> example = Arrays.asList(str.split("\t"));
+				//if there are more than 3 missing values, throw out the data
+				if (misfits.get(example.get(1)).size() > 3) {
+					//throw it out
+				} 
+				//handle the missing values on case by case
+				else if (misfits.containsKey(example.get(1)) {
+					
+				}
+				else { // there aren't any missing feature values
+					clean_bw.write(str);
+					noisy_bw.write(str);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		noisy_bw.close();
+		clean_bw.close();
+
+		//replace missing values
+		file = new File("../noisy_data.txt");
 		try {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
