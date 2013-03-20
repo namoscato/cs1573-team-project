@@ -158,6 +158,8 @@ public class PostProcess {
 					// there are missing feature values 
 					for (String feature : misfits.get(example.get(1))) {
 						switch (feature) {
+							case "release_month":
+							
 							case "rating":
 								// do stuff
 								break;
