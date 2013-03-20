@@ -1,8 +1,8 @@
 # Action Plan
 
-1. Post-Process Data
+## 1. Post-Process Data
 
-## Replacing Missing Values
+### Replacing Missing Values
 
 id | feature		fix
 --:| ---------------- | -------------------
@@ -23,10 +23,11 @@ id | feature		fix
 14 | day_of_week      | ?
 15 | runtime          | standard average
 
-## Missing Value Distribution
+### Missing Value Distribution
 
 Computed via `FixNulls.java`.
 
+values | count
 -:| ----
 1 | 4394
 2 | 1112
@@ -39,11 +40,11 @@ Computed via `FixNulls.java`.
 9 | 7
 10 | 1
 
-2. Build SFS
+## 2. Build SFS
 
-3. Build Models
+## 3. Build Models
 
-## Model Tree
-## Neural Network
+### Model Tree
+### Neural Network
 
-4. Evaluate
+## 4. Evaluate
