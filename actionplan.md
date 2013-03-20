@@ -28,7 +28,7 @@ id | feature		fix
 Computed via `FixNulls.java`.
 
 values | count
--:| ----
+---:| ---
 1 | 4394
 2 | 1112
 3 | 848
