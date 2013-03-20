@@ -4,7 +4,7 @@
 
 ### Replacing Missing Values
 
-id | feature		fix
+id | feature          | fix
 --:| ---------------- | -------------------
 0  | id               | -
 1  | imdb_id          | -
