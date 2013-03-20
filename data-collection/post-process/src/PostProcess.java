@@ -157,16 +157,7 @@ public class PostProcess {
 			while (scanner.hasNextLine()) {
 				String str = scanner.nextLine();
 				List<String> example = Arrays.asList(str.split("\t"));
-<<<<<<< HEAD
-				if (misfits.containsKey(example.get(1))) {
-					// there are missing feature values 
-					for (String feature : misfits.get(example.get(1))) {
-						switch (feature) {
-							case "release_month":
-							
-							case "rating":
-								// do stuff
-=======
+				
 				for (int i = 0; i < example.size(); i++) {
 					if (example.get(i).equals("null")) {
 						switch (i) {
@@ -202,7 +193,6 @@ public class PostProcess {
 								break;
 							case 2: // rating
 								example.set(i, fmt.format(rating_average));
->>>>>>> 9082871badf667f868ec9fb82c4206532925298f
 								break;
 							default:
 								break;
