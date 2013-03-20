@@ -53,7 +53,7 @@ public class PostProcess {
 		return count;
 	}
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		File input = new File("../movie_data_revision2.txt");
 		
 		// create two files, one for clean data and one for noisy data
@@ -138,6 +138,8 @@ public class PostProcess {
 			clean_bw.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		// go through and replace null values in noisy_data.txt with computed averages/modes
@@ -145,7 +147,7 @@ public class PostProcess {
 		
 		try {
 			revised_data.createNewFile();
-			FileWriter revised_fw = new FileWriter(noisy_data.getAbsoluteFile());
+			FileWriter revised_fw = new FileWriter(revised_data.getAbsoluteFile());
 			BufferedWriter revised_bw = new BufferedWriter(revised_fw);
 			
 			Scanner scanner = new Scanner(noisy_data);
@@ -201,6 +203,8 @@ public class PostProcess {
 			scanner.close();
 			revised_bw.close();
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
