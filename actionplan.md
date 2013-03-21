@@ -17,10 +17,10 @@ id | feature          | fix
 8  | language         | 'English'
 9  | country          | 'USA'
 10 | mpaa_rating      | 'unrated'
-11 | release_year     | ?
+11 | release_year     | scrap
 12 | release_month    | 10
-13 | month_partition  | ?
-14 | day_of_week      | ?
+13 | month_partition  | most common occurrence
+14 | day_of_week      | most common occurrence
 15 | runtime          | standard average
 
 ### Missing Value Distribution
@@ -39,6 +39,26 @@ values | count
 8 | 10
 9 | 7
 10 | 1
+
+### Day of Week Distribution
+
+day | count
+---:| ---
+0 | 2357
+1 | 2340
+2 | 2359
+3 | 2347
+4 | 2238
+5 | 2259
+6 | 2336
+
+### Month Partition Distribution
+
+partition | count
+---:| ---
+0 | 5033
+1 | 5557
+2 | 5646
 
 ## 2. Build SFS
 
