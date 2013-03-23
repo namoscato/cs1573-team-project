@@ -84,6 +84,9 @@ public class PostProcess {
 		int[] day_of_week_count = new int[7];
 		int month_partition_mode = -1;
 		int[] month_partition_count = new int[3];
+		
+		int clean_count = 0;
+		int noisy_count = 0;
  		
 		try {
 			// assume files do not exist
@@ -139,9 +142,11 @@ public class PostProcess {
 					
 					// always write to noisy as is (with nulls)
 					noisy_bw.write(FixMistakes.createLine(example));
+					noisy_count++;
 					// only write to clean if there are no missing values
 					if (missing == 0) {
 						clean_bw.write(FixMistakes.createLine(example));
+						clean_count++;
 					}
 				}
 			}
@@ -157,6 +162,9 @@ public class PostProcess {
 			System.out.println("runtime_average: " + runtime_average);
 			System.out.println("day_of_week_mode: " + day_of_week_mode);
 			System.out.println("month_partition_mode: " + month_partition_mode);
+			
+			System.out.println("clean = " + clean_count);
+			System.out.println("noisy = " + noisy_count);
 			
 			scanner.close();
 			noisy_bw.close();
