@@ -60,6 +60,20 @@ partition | count
 1 | 5557
 2 | 5646
 
+### Summary
+
+* `clean_data.txt` contains all examples with no missing feature values. `noisy_data_revision1.txt` contains all (appropriate) examples with altered feature values as defined in the Missing Values table above.
+* `clean_config.txt` and  `noisy_config.txt` contain the set of distinct feature values for each of the following nominal/discrete features:
+    1. actors
+    1. directors
+    1. writers
+    1. genres
+    1. language
+    1. country
+    1. mpaa_rating
+    1. release_year
+* Additional nominal/discrete features include release_month, month_partition and day_of_week. runtime will most likely be used as a continuous feature.
+
 ## 2. Build SFS
 
 ## 3. Build Models
