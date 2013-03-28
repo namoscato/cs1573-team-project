@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
@@ -23,14 +24,16 @@ public class FixMistakes {
 		return formatCommaString(people);
 	}
 	
-	public static String formatCommaString(List<String> list) {
-		if (list.size() == 0) {
+	public static String formatCommaString(Collection<String> collection) {
+		if (collection.size() == 0) {
 			return "null";
 		} else {
 			String result = "";
-			for (int i = 0; i < list.size(); i++) {
-				result += list.get(i);
-				if (i < list.size() - 1) {
+			int i = 0;
+			for (String item : collection) {
+				result += item;
+				i++;
+				if (i < collection.size()) {
 					result += ",";
 				}
 			}

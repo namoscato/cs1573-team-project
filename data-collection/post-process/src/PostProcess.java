@@ -53,6 +53,20 @@ public class PostProcess {
 		return count;
 	}
 	
+	public static int max(int[] array) {
+		int max = Integer.MIN_VALUE;
+		int result = -1;
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + ", ");
+			if (array[i] > max) {
+				max = array[i];
+				result = i;
+			}
+		}
+		System.out.println();
+		return result;
+	}
+	
 	public static void main(String[] args) {
 		File input = new File("../movie_data_revision2.txt");
 		
@@ -66,6 +80,13 @@ public class PostProcess {
 		int rating_count = 0;
 		int runtime_average = 0;
 		int runtime_count = 0;
+		int day_of_week_mode = -1;
+		int[] day_of_week_count = new int[7];
+		int month_partition_mode = -1;
+		int[] month_partition_count = new int[3];
+		
+		int clean_count = 0;
+		int noisy_count = 0;
  		
 		try {
 			// assume files do not exist
@@ -88,17 +109,22 @@ public class PostProcess {
 				
 				int missing = missingValues(str);
 				
-				// only keep examples with < 6 missing values (see FixNulls.java for distribution) and actors, directors and writers are not null
-				if (missing < 6 && !example.get(4).equals("null") && !example.get(5).equals("null") && !example.get(6).equals("null")) {
+				// only keep examples with < 6 missing values (see FixNulls.java for distribution) and actors, directors, writers and year are not null
+				if (missing < 6 && !example.get(4).equals("null") && !example.get(5).equals("null") && !example.get(6).equals("null") && !example.get(11).equals("null")) {
 					// replace release_day with two new features values
 					if (example.get(13).equals("null")) {
 						// if release day is null, just add one new null value
 						example.add(example.size() - 1, "null");
 					} else {
-						// otherwise, compute position in month and day of week 
-						example.set( 13, Integer.toString(divideMonth(example.get(13))) );
-						example.add( 14, Integer.toString(dayOfWeek(example.get(13), example.get(12), example.get(11))) );
-						// INCREMENT AN AVERAGE & COUNT FOR BOTH OF THESE?
+						// otherwise, compute position in month 
+						int temp = divideMonth(example.get(13));
+						example.set( 13, Integer.toString(temp) );
+						month_partition_count[temp]++;
+						
+						// and compute day of week
+						temp = dayOfWeek(example.get(13), example.get(12), example.get(11));
+						example.add( 14, Integer.toString(temp));
+						day_of_week_count[temp]++;
 					}
 					
 					// if we have a rating and rating count, include it in the average
@@ -114,13 +140,13 @@ public class PostProcess {
 						runtime_count++;
 					}
 					
-					// what else do we need to average? are we doing anything with release_day/dayofweek/etc?
-					
 					// always write to noisy as is (with nulls)
 					noisy_bw.write(FixMistakes.createLine(example));
+					noisy_count++;
 					// only write to clean if there are no missing values
 					if (missing == 0) {
 						clean_bw.write(FixMistakes.createLine(example));
+						clean_count++;
 					}
 				}
 			}
@@ -128,10 +154,17 @@ public class PostProcess {
 			rating_average /= rating_count;
 			rating_count_average = (int)Math.round( rating_count_average * 1.0 / rating_count );
 			runtime_average = (int)Math.round( runtime_average * 1.0 / runtime_count );
+			day_of_week_mode = max(day_of_week_count);
+			month_partition_mode = max(month_partition_count);
 			
 			System.out.println("rating_average: " + rating_average);
 			System.out.println("rating_count_average: " + rating_count_average);
 			System.out.println("runtime_average: " + runtime_average);
+			System.out.println("day_of_week_mode: " + day_of_week_mode);
+			System.out.println("month_partition_mode: " + month_partition_mode);
+			
+			System.out.println("clean = " + clean_count);
+			System.out.println("noisy = " + noisy_count);
 			
 			scanner.close();
 			noisy_bw.close();
@@ -157,16 +190,7 @@ public class PostProcess {
 			while (scanner.hasNextLine()) {
 				String str = scanner.nextLine();
 				List<String> example = Arrays.asList(str.split("\t"));
-<<<<<<< HEAD
-				if (misfits.containsKey(example.get(1))) {
-					// there are missing feature values 
-					for (String feature : misfits.get(example.get(1))) {
-						switch (feature) {
-							case "release_month":
-							
-							case "rating":
-								// do stuff
-=======
+				
 				for (int i = 0; i < example.size(); i++) {
 					if (example.get(i).equals("null")) {
 						switch (i) {
@@ -174,16 +198,13 @@ public class PostProcess {
 								example.set(i, Integer.toString(runtime_average));
 								break;
 							case 14: // day of week
-								// what are we doing with day of week?
+								example.set(i, Integer.toString(day_of_week_mode));
 								break;
 							case 13: // month partition
-								// do something
+								example.set(i, Integer.toString(month_partition_mode));
 								break;
 							case 12: // release month
 								example.set(i, "10");
-								break;
-							case 11: // release year
-								// do something
 								break;
 							case 10: // MPAA rating
 								example.set(i, "unrated");
@@ -202,7 +223,6 @@ public class PostProcess {
 								break;
 							case 2: // rating
 								example.set(i, fmt.format(rating_average));
->>>>>>> 9082871badf667f868ec9fb82c4206532925298f
 								break;
 							default:
 								break;
