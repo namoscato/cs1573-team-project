@@ -6,37 +6,34 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Scanner;
 
 public class PostProcess {
 	
 	/*
-	 * Returns the day of the week
+	 * Returns the day of the week (Saturday
 	 */
-	public static int dayOfWeek (String s_d, String s_m, String s_y) {
-		int d = Integer.parseInt(s_d), m = Integer.parseInt(s_m), y = Integer.parseInt(s_y);
-		int c = getCentury(y);
-		y = y % 100;
-		return (int) ((d + m + y + (float)y/4 + c) % 7);
-	}
-	
-	private static int getCentury (int year) {
-		int c = year / 100;
-		if (c % 4 == 0) return 6;
-		else if (c % 4 == 1) return 4;
-		else if (c % 4 == 2) return 2;
-		else return 0;
+	public static int isWeekend(String s_d, String s_m, String s_y) {
+		Calendar cal = new GregorianCalendar();
+		cal.set(Integer.parseInt(s_y), Integer.parseInt(s_m) - 1, Integer.parseInt(s_d));
+		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+		if (dayOfWeek == 1 || dayOfWeek == 6 || dayOfWeek == 7){
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 	
 	/*
-	 * Splits month into three partitions
+	 * Splits month into two partitions
 	 */
 	public static int divideMonth(String s) {
 		int d = Integer.parseInt(s);
-		if (d < 11) return 0;
-		else if (d < 21) return 1;
-		else return 2;
+		if (d < 16) return 0;
+		else return 1;
 	}
 	
 	/*
@@ -53,17 +50,26 @@ public class PostProcess {
 		return count;
 	}
 	
+	public static String formatArray(int[] array) {
+		String result = "[";
+		for (int i = 0; i < array.length; i++) {
+			result += array[i];
+			if (i < array.length - 1) {
+				result += ", ";
+			}
+		}
+		return result + "]";
+	}
+	
 	public static int max(int[] array) {
 		int max = Integer.MIN_VALUE;
 		int result = -1;
 		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i] + ", ");
 			if (array[i] > max) {
 				max = array[i];
 				result = i;
 			}
 		}
-		System.out.println();
 		return result;
 	}
 	
@@ -80,10 +86,8 @@ public class PostProcess {
 		int rating_count = 0;
 		int runtime_average = 0;
 		int runtime_count = 0;
-		int day_of_week_mode = -1;
-		int[] day_of_week_count = new int[7];
-		int month_partition_mode = -1;
-		int[] month_partition_count = new int[3];
+		int weekend_mode = -1;
+		int[] weekend_count = new int[2];
 		
 		int clean_count = 0;
 		int noisy_count = 0;
@@ -111,20 +115,16 @@ public class PostProcess {
 				
 				// only keep examples with < 6 missing values (see FixNulls.java for distribution) and actors, directors, writers and year are not null
 				if (missing < 6 && !example.get(4).equals("null") && !example.get(5).equals("null") && !example.get(6).equals("null") && !example.get(11).equals("null")) {
-					// replace release_day with two new features values
-					if (example.get(13).equals("null")) {
-						// if release day is null, just add one new null value
-						example.add(example.size() - 1, "null");
-					} else {
-						// otherwise, compute position in month 
-						int temp = divideMonth(example.get(13));
-						example.set( 13, Integer.toString(temp) );
-						month_partition_count[temp]++;
-						
-						// and compute day of week
-						temp = dayOfWeek(example.get(13), example.get(12), example.get(11));
-						example.add( 14, Integer.toString(temp));
-						day_of_week_count[temp]++;
+					// if release day is not null, compute whether or not it is weekend
+					if (!example.get(13).equals("null")) {
+						if (example.get(12).equals("null")) {
+							example.set( 13, "null");
+						} else {
+							// can only compute weekend if month exists
+							int temp = isWeekend(example.get(13), example.get(12), example.get(11));
+							example.set( 13, Integer.toString(temp));
+							weekend_count[temp]++;	
+						}
 					}
 					
 					// if we have a rating and rating count, include it in the average
@@ -154,14 +154,12 @@ public class PostProcess {
 			rating_average /= rating_count;
 			rating_count_average = (int)Math.round( rating_count_average * 1.0 / rating_count );
 			runtime_average = (int)Math.round( runtime_average * 1.0 / runtime_count );
-			day_of_week_mode = max(day_of_week_count);
-			month_partition_mode = max(month_partition_count);
+			weekend_mode = max(weekend_count);
 			
 			System.out.println("rating_average: " + rating_average);
 			System.out.println("rating_count_average: " + rating_count_average);
 			System.out.println("runtime_average: " + runtime_average);
-			System.out.println("day_of_week_mode: " + day_of_week_mode);
-			System.out.println("month_partition_mode: " + month_partition_mode);
+			System.out.println("weekend_mode: " + weekend_mode + "\t" + formatArray(weekend_count));
 			
 			System.out.println("clean = " + clean_count);
 			System.out.println("noisy = " + noisy_count);
@@ -194,14 +192,11 @@ public class PostProcess {
 				for (int i = 0; i < example.size(); i++) {
 					if (example.get(i).equals("null")) {
 						switch (i) {
-							case 15: // runtime
+							case 14: // runtime
 								example.set(i, Integer.toString(runtime_average));
 								break;
-							case 14: // day of week
-								example.set(i, Integer.toString(day_of_week_mode));
-								break;
-							case 13: // month partition
-								example.set(i, Integer.toString(month_partition_mode));
+							case 13: // weekend
+								example.set(i, Integer.toString(weekend_mode));
 								break;
 							case 12: // release month
 								example.set(i, "10");
