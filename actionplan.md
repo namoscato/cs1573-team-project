@@ -1,6 +1,15 @@
 # Action Plan
 
-## 1. Post-Process Data
+## 1. Process Data
+
+### Summary
+
+1. Export `movielens.txt` from [Movie Lens](http://movielens.umn.edu/).
+1. Populate JavaScript array of IMDb IDs from this raw file using `parse.py`. Array is stored in `movie_ids.js`.
+1. Get movie data from IMDb via an unofficial [IMDb API](http://imdbapi.org/) using `imdb.htm`. Due to API request limits, successive iterations of discrete subsets were generated and stored in `movie_data.txt`. `bookkeeping.js` was also continuously updated during this process. This object enables us to understand the data set feature value and missing value distribution.
+1. Run `FixMistakes.java` to take care of some initial data issues such as incorrect and duplicate feature values. Output is stored in `movie_data_revision1.txt`.
+1. Run `FixNulls.java` to adjust for the cases in which an example did not contain a release day (thus, the two features derived from release day were not output appropriately). Output is stored in `movie_data_revision2.txt`.
+1. Run `PostProcess.java` to generate two data sets: `clean_data.txt` and `noisy_data_revision1.txt`. Examples with no year, writers, actors or directors are discarded. Likewise, examples with more than five missing feature values are discarded. This latter choice reflects the missing value distribution outlined below.
 
 ### Replacing Missing Values
 
@@ -60,7 +69,7 @@ partition | count
 1 | 5557
 2 | 5646
 
-### Summary
+### Final Format
 
 * `clean_data.txt` contains all examples with no missing feature values. `noisy_data_revision1.txt` contains all (appropriate) examples with altered feature values as defined in the Missing Values table above.
 * `clean_config.txt` and  `noisy_config.txt` contain the set of distinct feature values for each of the following nominal/discrete features:
