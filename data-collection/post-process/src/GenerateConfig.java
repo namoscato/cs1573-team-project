@@ -15,8 +15,8 @@ public class GenerateConfig {
 	private static final int START_INDEX = 4;
 	
 	public static void main(String[] args) {
-		File input = new File("../clean_data.txt");
-		File output = new File("../clean_config.txt");
+		File input = new File("../noisy_data_revision1.txt");
+		File output = new File("../../config/noisy_config.txt");
 		
 		try {
 			// create output file
@@ -46,6 +46,8 @@ public class GenerateConfig {
 			for (int i = 0; i < FEATURES.length; i++) {
 				bw.write(FEATURES[i] + "\t" + FixMistakes.formatCommaString(values.get(i)) + "\n");
 			}
+			bw.write("release_month\t1,2,3,4,5,6,7,8,9,10,11,12\n");
+			bw.write("weekend\t0,1");
 			
 			scanner.close();
 			bw.close();
