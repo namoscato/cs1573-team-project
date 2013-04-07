@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class ModelTree { 
-	private final List<String> classValues;
 	private final List<Feature> features;
 	private final List<Data> trainingData;
 	private final List<Data> testData;
@@ -18,27 +17,21 @@ public class ModelTree {
 	private int testCorrect;
 	private double testAccuracy;
 	
-	private static final boolean DEBUG = false;
-	private static final String hr = "---------------------------";
+	private static final boolean DEBUG = true;
+	private static final String HR = "---------------------------";
 	
 	/*
 	 * Creates a ModelTree object and calculates the accuracy on
 	 * the training and test data.
-	 * @param classValues list of classification values
 	 * @param features list of features
 	 * @param trainingData list of training data
 	 * @param testData list of test data
-	 * @param function number that specifies gain function
 	 */
-	public ModelTree(List<String> classValues, List<Feature> features, List<Data> trainingData, List<Data> testData, int function) {
-		this.classValues = classValues;
+	public ModelTree(List<Feature> features, List<Data> trainingData, List<Data> testData) {
 		this.features = new ArrayList<Feature>(features); // we mess with the features array
 		this.trainingData = trainingData;
 		this.testData = testData;
-		if (DEBUG) {
-			System.out.println(classValues + "\n" + features + "\n" + trainingData + "\n" + testData + "\n");
-		}
-		//root = ID3(this.trainingData, this.features, function);
+		root = M5(this.trainingData, this.features);
 		
 		// see how we did
 		/*
@@ -49,15 +42,22 @@ public class ModelTree {
 		*/
 	}
 	
+	public Node M5(List<Data> examples, List<Feature> features) {
+		return M5(examples, features, 0);
+	}
 	
-	public void M5(List<Data> examples, List<Feature> features) {
+	public Node M5(List<Data> examples, List<Feature> features, int depth) {
 		Node parent = new Node();
+		
+		if (DEBUG) {
+			System.out.println(padLevel(depth) + "M5 with " + examples.size() + " examples and " + features.size() + " features");	
+		}
 		
 		// if examples.size() is small or standard deviation (difference of examples) is below some threshold
 		// if features is empty, just run the linear model
 		// else:
 		
-		Feature chosen;
+		Feature chosen = null;
 		double min = Double.POSITIVE_INFINITY;
 		List<List<Data>> subsets = null;
 		for (Feature feature : features) {
@@ -72,8 +72,14 @@ public class ModelTree {
 			// find standard deviation and adjust for size of subset
 			double temp = 0;
 			for (List<Data> subset : sub) {
-				temp += standardDeviation(subset) * subset.size() / count;
+				// only compute standard deviation if subset has more than one example
+				if (subset.size() > 1) {
+					double stddev = standardDeviation(subset);
+					temp += stddev * (1 - subset.size() / count); // punish small subsets
+				}
 			}
+			
+			// if this feature is better than previous features, update accordingly
 			if (temp < min) {
 				min = temp;
 				chosen = feature;
@@ -81,24 +87,31 @@ public class ModelTree {
 			}
 		}
 		
+		if (DEBUG) {
+			System.out.println(padLevel(depth) + "chose feature " + chosen.getName() + " with stdDev = " + min);			
+		}
+		
 		// we now know chosen is the feature we are going to use
-		for (List<Data> subset : subsets) {
-			if (subset.size() == 0) {
-				// run examples through linear model with continuous feature values
-				//count = classifyByLabel(examples);
-				//Node child = new Node( classValues.get(max(count)) );
-				//parent.addChild(chosen.getValue(i), child);
+		for (int i = 0; i < subsets.size(); i++) {
+			//System.out.println(padLevel(depth + 1) + chosen.getValue(i) + " size is " + subsets.get(i).size());
+			if (subsets.get(i).size() < 50) {
+				// run examples through perceptron and create leaf node
+				Node child = new Node(examples, true);
+				parent.addChild(chosen.getValue(i), child);
 			} else {
 				// only remove the feature for our recursion
-				//List<Feature> smaller = new ArrayList<Feature>(features);
-				//smaller.remove(chosen);
-				//parent.addChild( chosen.getValue(i), ID3(subsets.get(i), smaller, function, level + 1) );
+				List<Feature> smaller = new ArrayList<Feature>(features);
+				smaller.remove(chosen);
+				parent.addChild( chosen.getValue(i), M5(subsets.get(i), smaller, depth + 1) );
 			}
 		}
+		
+		return parent;
 	}
 	
 	/*
 	 * Compute sample standard deviation of set of example outputs.
+	 * Assume that examples contains at least two data elements.
 	 * @param examples set of data examples
 	 * @return sample standard deviation
 	 */
@@ -137,10 +150,36 @@ public class ModelTree {
 				
 		// classify the set according to chosen feature value
 		for (Data example : set) {
-			int valueIndex = featureValues.indexOf( example.getDiscrete(feature.getID()) );
-			subsets.get(valueIndex).add(example);
+			// iterate through multiple feature values
+			for (String value : example.getDiscrete(feature)) {
+				subsets.get(featureValues.indexOf(value)).add(example);
+			}
 		}
 		return subsets;
+	}
+	
+	public static double computeAverage(List<Data> examples) {
+		double avg = 0;
+		for (Data example : examples) {
+			avg += example.getOutput();
+		}
+		return avg / examples.size();
+	}
+	
+	/*
+	 * Helper function that prints some spaces.
+	 * @param level depth of recursion
+	 */
+	private String padLevel(int level) {
+		if (level < 1) {
+			return "";
+		} else {
+			String padding = "";
+			for (int i = 0; i < level; i++) {
+				padding += "    ";
+			}
+			return padding;
+		}
 	}
 	
 	/*
@@ -153,6 +192,7 @@ public class ModelTree {
 		private Feature feature;
 		private Map<String, Node> children;
 		private List<Data> examples;
+		//private LinearEquation output;
 		private double output;
 		
 		private static final double LEARNING_RATE = .005;
@@ -161,6 +201,7 @@ public class ModelTree {
 			feature = null;
 			children = null;
 			examples = null;
+			//output = null;
 			output = Double.NaN;
 		}
 		
@@ -168,8 +209,21 @@ public class ModelTree {
 			feature = null;
 			children = null;
 			this.examples = examples;
-			// compute continuous output if leaf
-			//output = new LinearEquation(perceptron(examples);
+			//output = null;
+			output = Double.NaN;
+		}
+		
+		public Node(List<Data> examples, boolean leaf) {
+			feature = null;
+			children = null;
+			this.examples = examples;
+			if (leaf) {
+				//output = new LinearEquation(perceptron(examples));
+				output = computeAverage(examples);
+			} else {
+				//output = null;
+				output = Double.NaN;
+			}
 		}
 		
 		public Feature getFeature() {
@@ -180,16 +234,25 @@ public class ModelTree {
 			return feature.getName();
 		}
 		
-		public double getOutput() {
-			return output;
-		}
-		
 		public Map<String, Node> getChildren() {
 			return children;
 		}
 		
 		public Node getChild(String key) {
 			return children.get(key);
+		}
+		
+		public double getOutput() {
+			return output;
+		}
+		/*
+		public double solve(double[] x) {
+			return output.solve(x);
+		}
+		*/
+		
+		public List<Data> getExamples() {
+			return examples;
 		}
 		
 		public void setFeature(Feature feature) {
@@ -226,6 +289,9 @@ public class ModelTree {
 			double[] weights = new double[examples.get(0).getContinuousSize() + 1];
 			while (true) {
 				double[] newWeights = perceptron(examples, weights);
+				if (DEBUG) {
+					//System.out.println(ModelTreeTest.formatArray(weights) + " <> " + ModelTreeTest.formatArray(newWeights));
+				}
 				if (!newWeights.equals(weights)) {
 					weights = newWeights; // continue
 				} else {
@@ -243,7 +309,9 @@ public class ModelTree {
 				for (int i = 0; i < weights.length; i++) {
 					List<Number> input = example.getContinuous();
 					LinearEquation eq = new LinearEquation(weights, convertDoubles(input));
-					double temp = LEARNING_RATE * (example.getOutput() - logisticRegression(eq));
+					double tempp = logisticRegression(eq);
+					System.out.println(example.getOutput() + " - " + tempp);
+					double temp = LEARNING_RATE * (example.getOutput() - tempp);
 					if (i > 0) {
 						// w_0 has an x value of 1; otherwise, multiply by input
 						temp *= input.get(i - 1).doubleValue();
@@ -283,6 +351,7 @@ public class ModelTree {
 	public static void main(String[] args) throws ParseException {
 		Configuration config = Parse.parseConfigFile("../config/config.txt", "../config/clean_config.txt");
 		List<Data> dataset = Parse.parseDataFile("../data-collection/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
-		System.out.println(dataset.get(0));
+		
+		
 	}
 }

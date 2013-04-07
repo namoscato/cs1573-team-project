@@ -39,8 +39,8 @@ public class Data {
 		return discrete;
 	}
 	
-	public List<String> getDiscrete(int index) {
-		return discrete.get(index);
+	public List<String> getDiscrete(Feature feature) {
+		return discrete.get(feature.getID());
 	}
 	
 	public int getDiscreteSize() {
