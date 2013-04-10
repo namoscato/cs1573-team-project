@@ -81,7 +81,10 @@ public class PostProcess {
  		File noisy_data = new File("../noisy_data.txt");
  		
  		// initialize some noisy data stuff
-		double rating_average = 0;
+		double clean_rating_average = 0;
+		int clean_rating_count = 0;
+		double noisy_rating_average = 0;
+		int noisy_rating_count = 0;
 		int rating_count_average = 0;
 		int rating_count = 0;
 		int runtime_average = 0;
@@ -127,9 +130,24 @@ public class PostProcess {
 						}
 					}
 					
-					// if we have a rating and rating count, include it in the average
-					if (!example.get(2).equals("null") && !example.get(3).equals("null")) {
-						rating_average += Double.parseDouble(example.get(2));
+					// replace odd ratings with normal ratings
+					String rating = example.get(10);
+					if (rating.length() > 3 && rating.substring(0, 2).equals("TV")) {
+						if (rating.equals("TV_MA")) {
+							example.set(10, "R");
+						} else if (rating.equals("TV_14")) {
+							example.set(10, "PG_13");
+						} else if (rating.equals("TV_PG")) {
+							example.set(10, "PG");
+						} else if (rating.equals("TV_G")) {
+							example.set(10, "G");
+						}
+					} else if (rating.equals("NC_17")) {
+						example.set(10, "X");
+					}
+					
+					// if we have a rating count, include it in the average
+					if (!example.get(3).equals("null")) {
 						rating_count_average += Double.parseDouble(example.get(3));
 						rating_count++;
 					}
@@ -143,20 +161,31 @@ public class PostProcess {
 					// always write to noisy as is (with nulls)
 					noisy_bw.write(FixMistakes.createLine(example));
 					noisy_count++;
+					if (!example.get(2).equals("null")) {
+						noisy_rating_average += Double.parseDouble(example.get(2));
+						noisy_rating_count++;
+					}
+					
 					// only write to clean if there are no missing values
 					if (missing == 0) {
 						clean_bw.write(FixMistakes.createLine(example));
 						clean_count++;
+						if (!example.get(2).equals("null")) {
+							clean_rating_average += Double.parseDouble(example.get(2));
+							clean_rating_count++;
+						}
 					}
 				}
 			}
 			
-			rating_average /= rating_count;
+			noisy_rating_average /= noisy_rating_count;
+			clean_rating_average /= clean_rating_count;
 			rating_count_average = (int)Math.round( rating_count_average * 1.0 / rating_count );
 			runtime_average = (int)Math.round( runtime_average * 1.0 / runtime_count );
 			weekend_mode = max(weekend_count);
 			
-			System.out.println("rating_average: " + rating_average);
+			System.out.println("noisy_rating_average: " + clean_rating_average);
+			System.out.println("clean_rating_average: " + clean_rating_average);
 			System.out.println("rating_count_average: " + rating_count_average);
 			System.out.println("runtime_average: " + runtime_average);
 			System.out.println("weekend_mode: " + weekend_mode + "\t" + formatArray(weekend_count));
@@ -217,7 +246,7 @@ public class PostProcess {
 								example.set(i, Integer.toString(rating_count_average));
 								break;
 							case 2: // rating
-								example.set(i, fmt.format(rating_average));
+								example.set(i, fmt.format(noisy_rating_average));
 								break;
 							default:
 								break;

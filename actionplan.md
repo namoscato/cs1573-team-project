@@ -55,6 +55,14 @@ weekend | count | percent
 yes | 10223 | 63%
 no | 6013 | 37%
 
+### Averages
+
+feature | average
+--- | ---
+rating | 6.36890402893429
+rating_count | 15274
+runtime | 103
+
 ## 2. Build SFS
 
 ## 3. Build Models
