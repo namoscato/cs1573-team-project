@@ -1,4 +1,3 @@
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +67,7 @@ public class ModelTreeTest {
 		return result;
 	}
 	
-	public static void main(String[] args) throws ParseException {		
+	public static void main(String[] args) throws Exception {		
 		Configuration config = Parse.parseConfigFile("../config/config.txt", "../config/clean_config.txt");
 		List<Data> examples = Parse.parseDataFile("../data-collection/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
 		
@@ -88,22 +87,9 @@ public class ModelTreeTest {
 			}
 			
 			ModelTree tree = new ModelTree(config.getDiscrete(), train, subsets.get(test));
-			System.exit(1);
-			//System.out.println(tree);
+			tree.printTree();
+			System.exit(0);
 			//correct[test] = tree.getTestAccuracy();
 		}
-		
-		/*
-		System.out.println("information gain = " + average(correct[0]));
-		print(correct[0]);
-		System.out.println("gain ratio = " + average(correct[1]));
-		print(correct[1]);
-		System.out.println("mis-classification = " + average(correct[2]));
-		print(correct[2]);
-		*/
-		
-		//System.out.println();
-		
-		//determineSignificance(correct);
 	}
 }

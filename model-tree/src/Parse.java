@@ -15,7 +15,7 @@ public class Parse {
 	 * @param file filename of file
 	 * @return Scanner object or null if file doesn't exist
 	 */
-	private static Scanner openFile(String file) {
+	public static Scanner openFile(String file) {
 		try {
 			Scanner scanner = new Scanner(new File(file));
 			return scanner;

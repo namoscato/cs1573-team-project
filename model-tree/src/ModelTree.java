@@ -1,21 +1,31 @@
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import weka.classifiers.functions.LinearRegression;
+import weka.core.Attribute;
+import weka.core.FastVector;
+import weka.core.Instance;
+import weka.core.Instances;
 
 public class ModelTree { 
 	private final List<Feature> features;
 	private final List<Data> trainingData;
 	private final List<Data> testData;
 	private Node root;
+	private LinearRegression linearRegression;
+	private FastVector continuousAttributes;
 	
 	private int trainingCorrect;
 	private double trainingAccuracy;
 	private int testCorrect;
 	private double testAccuracy;
+	
+	// we prune the tree as we go 
+	private static final int MIN_SUBSET_SIZE = 50; // stop if subset size is less than this
+	private static final double MIN_DEVIATION = 0; // stop if (std) deviation is less than this
 	
 	private static final boolean DEBUG = true;
 	private static final String HR = "---------------------------";
@@ -27,10 +37,22 @@ public class ModelTree {
 	 * @param trainingData list of training data
 	 * @param testData list of test data
 	 */
-	public ModelTree(List<Feature> features, List<Data> trainingData, List<Data> testData) {
+	public ModelTree(List<Feature> features, List<Data> trainingData, List<Data> testData) throws Exception {
 		this.features = new ArrayList<Feature>(features); // we mess with the features array
 		this.trainingData = trainingData;
 		this.testData = testData;
+		
+		// initialize our leaf-node linear classifier
+		// each leaf node is just re-trained on the same classifier
+		linearRegression = new LinearRegression();
+		// set up our continuous feature vector
+		continuousAttributes = new FastVector(2);
+		continuousAttributes.addElement(new Attribute("rating"));
+		for (int i = 1; i <= trainingData.get(0).getContinuousSize(); i++) {
+			continuousAttributes.addElement(new Attribute("attr" + i));
+		} 
+		
+		// create our tree
 		root = M5(this.trainingData, this.features);
 		
 		// see how we did
@@ -42,11 +64,11 @@ public class ModelTree {
 		*/
 	}
 	
-	public Node M5(List<Data> examples, List<Feature> features) {
+	public Node M5(List<Data> examples, List<Feature> features) throws Exception {
 		return M5(examples, features, 0);
 	}
 	
-	public Node M5(List<Data> examples, List<Feature> features, int depth) {
+	public Node M5(List<Data> examples, List<Feature> features, int depth) throws Exception {
 		Node parent = new Node();
 		
 		if (DEBUG) {
@@ -87,6 +109,7 @@ public class ModelTree {
 			}
 		}
 		
+		parent.setFeature(chosen);
 		if (DEBUG) {
 			System.out.println(padLevel(depth) + "chose feature " + chosen.getName() + " with stdDev = " + min);			
 		}
@@ -94,7 +117,7 @@ public class ModelTree {
 		// we now know chosen is the feature we are going to use
 		for (int i = 0; i < subsets.size(); i++) {
 			//System.out.println(padLevel(depth + 1) + chosen.getValue(i) + " size is " + subsets.get(i).size());
-			if (subsets.get(i).size() < 50) {
+			if (subsets.get(i).size() < MIN_SUBSET_SIZE || min < MIN_DEVIATION) {
 				// run examples through perceptron and create leaf node
 				Node child = new Node(examples, true);
 				parent.addChild(chosen.getValue(i), child);
@@ -166,6 +189,29 @@ public class ModelTree {
 		return avg / examples.size();
 	}
 	
+	public void printTree() {
+		printSubtree(root, 0);
+	}
+	
+	/*
+	 * @param root root node of tree
+	 * @param level depth of recursion
+	 */
+	private void printSubtree(Node root, int level) {
+		Iterator<Entry<String, Node>> it = root.getChildren().entrySet().iterator();
+		while (it.hasNext()) {
+			System.out.print(padLevel(level));
+			Entry<String, Node> leaf = it.next();
+			System.out.print(root.getFeatureName() + "=" + leaf.getKey());
+			if (leaf.getValue().isLeaf()) {
+				System.out.println(" " + leaf.getValue().getFormattedEquation());
+			} else {
+				System.out.println();
+				printSubtree(leaf.getValue(), level + 1);
+			}
+		}
+	}
+	
 	/*
 	 * Helper function that prints some spaces.
 	 * @param level depth of recursion
@@ -192,37 +238,35 @@ public class ModelTree {
 		private Feature feature;
 		private Map<String, Node> children;
 		private List<Data> examples;
-		//private LinearEquation output;
-		private double output;
-		
-		private static final double LEARNING_RATE = .005;
+		private LinearEquation output;
+		//private double output;
 		
 		public Node() {
 			feature = null;
 			children = null;
 			examples = null;
-			//output = null;
-			output = Double.NaN;
+			output = null;
+			//output = Double.NaN;
 		}
 		
 		public Node(List<Data> examples) {
 			feature = null;
 			children = null;
 			this.examples = examples;
-			//output = null;
-			output = Double.NaN;
+			output = null;
+			//output = Double.NaN;
 		}
 		
-		public Node(List<Data> examples, boolean leaf) {
+		public Node(List<Data> examples, boolean leaf) throws Exception {
 			feature = null;
 			children = null;
 			this.examples = examples;
 			if (leaf) {
-				//output = new LinearEquation(perceptron(examples));
-				output = computeAverage(examples);
+				output = new LinearEquation(perceptron(examples));
+				//output = computeAverage(examples);
 			} else {
-				//output = null;
-				output = Double.NaN;
+				output = null;
+				//output = Double.NaN;
 			}
 		}
 		
@@ -241,15 +285,14 @@ public class ModelTree {
 		public Node getChild(String key) {
 			return children.get(key);
 		}
-		
-		public double getOutput() {
-			return output;
-		}
-		/*
+				
 		public double solve(double[] x) {
 			return output.solve(x);
 		}
-		*/
+		
+		public String getFormattedEquation() {
+			return output.toString();
+		}
 		
 		public List<Data> getExamples() {
 			return examples;
@@ -275,83 +318,35 @@ public class ModelTree {
 		}
 		
 		public boolean isLeaf() {
-			if (output == Double.NaN) {
+			if (output == null) {
 				return false;
 			} else {
 				return true;
 			}
 		}
 		
-		// keep going through perceptron until we hit some defined limit or we converge
-		// NEED TO COME UP WITH SOME OTHER WAY TO STOP PERCEPTRON
-		// assume data has at least one continuous feature
-		private double[] perceptron(List<Data> examples) {
-			double[] weights = new double[examples.get(0).getContinuousSize() + 1];
-			while (true) {
-				double[] newWeights = perceptron(examples, weights);
-				if (DEBUG) {
-					//System.out.println(ModelTreeTest.formatArray(weights) + " <> " + ModelTreeTest.formatArray(newWeights));
-				}
-				if (!newWeights.equals(weights)) {
-					weights = newWeights; // continue
-				} else {
-					break; // nothing was updated, so we're done
-				}
-			}
-			return weights;
-		}
-		
-		private double[] perceptron(List<Data> examples, double[] oldWeights) {
-			double weights[] = oldWeights.clone();
-			double[] diff = new double[weights.length];
+		private double[] perceptron(List<Data> examples) throws Exception {
+			Instances dataSet = new Instances("data-set", continuousAttributes, MIN_SUBSET_SIZE);
+			dataSet.setClassIndex(0);
+			
+			int attrCount = examples.get(0).getContinuousSize() + 1;
 			for (Data example : examples) {
-				// sum the difference for every weight
-				for (int i = 0; i < weights.length; i++) {
-					List<Number> input = example.getContinuous();
-					LinearEquation eq = new LinearEquation(weights, convertDoubles(input));
-					double tempp = logisticRegression(eq);
-					System.out.println(example.getOutput() + " - " + tempp);
-					double temp = LEARNING_RATE * (example.getOutput() - tempp);
-					if (i > 0) {
-						// w_0 has an x value of 1; otherwise, multiply by input
-						temp *= input.get(i - 1).doubleValue();
-					}
-					diff[i] += temp;
+				double[] values = new double[attrCount];
+				values[0] = example.getOutput();
+				for (int i = 1; i < attrCount; i++) {
+					values[i] = example.getContinuous(i - 1).doubleValue(); 
 				}
+				dataSet.add(new Instance(1, values));
 			}
 			
-			// update weights
-			for (int i = 0; i < weights.length; i++) {
-				weights[i] += diff[i];
+			double weights[] = new double[attrCount];
+			linearRegression.buildClassifier(dataSet);
+			double coef[] = linearRegression.coefficients();
+			for (int i = coef.length - 1, j = 0; i > 0; i--, j++) {
+				weights[j] = coef[i];
 			}
+			
 			return weights;
 		}
-		
-		/*
-		 * Compute logistic regression with an adjusted coefficient of 10.
-		 * @param eq linear equation
-		 */
-		private double logisticRegression(LinearEquation eq) {
-			return 10.0 / (1 + Math.exp(-1 * eq.getResult()));
-		}
-		
-		/*
-		 * Convert a list of numbers to a primitive double array
-		 * @param list list of Numbers
-		 */
-		private double[] convertDoubles(List<Number> list) {
-			double[] result = new double[list.size()];
-			for (int i = 0; i < result.length; i++) {
-				result[i] = list.get(i).doubleValue();
-			}
-			return result;
-		}
-	}
-	
-	public static void main(String[] args) throws ParseException {
-		Configuration config = Parse.parseConfigFile("../config/config.txt", "../config/clean_config.txt");
-		List<Data> dataset = Parse.parseDataFile("../data-collection/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
-		
-		
 	}
 }

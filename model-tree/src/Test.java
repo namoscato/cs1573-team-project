@@ -1,62 +1,50 @@
+import java.util.Scanner;
+import weka.classifiers.Evaluation;
+import weka.classifiers.functions.LinearRegression;
+import weka.core.Attribute;
+import weka.core.FastVector;
+import weka.core.Instance;
+import weka.core.Instances;
+
 public class Test {
-	public static double standardDeviation(double[] array) {
-		// compute average
-		double average = 0;
-		for (int i = 0; i < array.length; i++) {
-			average += array[i];
-		}
-		average /= array.length;
+	public static void main(String[] args) throws Exception {
+		// declare attributes
+		Attribute rating = new Attribute("rating");
+		Attribute runtime = new Attribute("runtime");
 		
-		double result = 0;
-		for (int i = 0; i < array.length; i++) {
-			double temp = array[i] - average;
-			result += temp * temp;
-		}
-		result /= array.length - 1;
-		return Math.sqrt(result);
-	}
-	
-	public static double logisticRegression(double[] weights, double[] input) {
-		if (validFunction(weights, input)) {
-			return 10.0 / (1 + Math.exp(-1 * solveLinearFunction(weights, input)));
-		} else {
-			return Double.NaN;
-		}
-	}
-	
-	public static double solveLinearFunction(double[] c, double[] x) {
-		if (validFunction(c, x)) {
-			double result = 0;
-			for (int i = 0; i < x.length; i++) {
-				result += c[i + 1] * x[i];
+		// Declare the feature vector
+		FastVector attributes = new FastVector(2);
+		attributes.addElement(rating);
+		attributes.addElement(runtime);
+		
+		// Create an empty training set
+		Instances trainingSet = new Instances("movie-runtimes", attributes, 10);
+		trainingSet.setClassIndex(0);
+		
+		// open file
+		Scanner scanner = Parse.openFile("../data-collection/runtime-data-test.txt");
+		
+		// add examples
+		while (scanner.hasNextLine()) {
+			double[] values = new double[attributes.size()];
+			String[] temp = scanner.nextLine().split(",");
+			for (int i = 0; i < attributes.size(); i++) {
+				values[i] = Double.parseDouble(temp[i]);
 			}
-			return result + c[0];
-		} else {
-			return Double.NaN;
+			trainingSet.add(new Instance(1, values));
 		}
+
+		// add the instance
+		LinearRegression model = new LinearRegression();
+		model.buildClassifier(trainingSet);
+
+		// test the model
+		Evaluation eval = new Evaluation(trainingSet);
+		eval.evaluateModel(model, trainingSet);
+
+		// print results
+		double[] coef = model.coefficients();
+		System.out.println("[" + coef[1] + ", " + coef[2] + "]");
+		System.out.println(eval.toSummaryString());
 	}
-	
-	public static boolean validFunction(double[] c, double[] x) {
-		if (c.length - 1 == x.length) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	public static void test(double[] a) {
-		a[0] = -1;
-	}
-	
-	public static void main(String[] args) {
-		//double[] array = {1.2, 1.5, 3, 2.4, 2.1, 2, 2.7, 1.9};
-		//System.out.println(standardDeviation(array));
-		double[] weights = {0, 0};
-		double[] input = {120};
-		System.out.println(weights[0]);
-		test(weights.clone());
-		System.out.println(weights[0]);
-		//System.out.println(logisticRegression(weights, input));
-	}
-	
 }

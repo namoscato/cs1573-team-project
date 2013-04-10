@@ -44,4 +44,15 @@ public class LinearEquation {
 	public double getResult() {
 		return result;
 	}
+	
+	public String toString() {
+		String result = "[";
+		for (int i = 0; i < weights.length; i++) {
+			result += weights[i];
+			if (i < weights.length - 1) {
+				result += ", ";
+			}
+		}
+		return result + "]";
+	}
 }
