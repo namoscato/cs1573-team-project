@@ -51,6 +51,14 @@ public class Data {
 		return continuous;
 	}
 	
+	public double[] getContinuousArray() {
+		double[] result = new double[continuous.size()];
+		for (int i = 0; i < continuous.size(); i++) {
+			result[i] = continuous.get(i).doubleValue();
+		}
+		return result;
+	}
+	
 	public Number getContinuous(int index) {
 		return continuous.get(index);
 	}

@@ -13,7 +13,7 @@ import weka.core.Instances;
 public class ModelTree { 
 	private final List<Feature> features;
 	private final List<Data> trainingData;
-	private final List<Data> testData;
+	//private final List<Data> testData;
 	private Node root;
 	private LinearRegression linearRegression;
 	private FastVector continuousAttributes;
@@ -37,10 +37,10 @@ public class ModelTree {
 	 * @param trainingData list of training data
 	 * @param testData list of test data
 	 */
-	public ModelTree(List<Feature> features, List<Data> trainingData, List<Data> testData) throws Exception {
+	public ModelTree(List<Feature> features, List<Data> trainingData) throws Exception {
 		this.features = new ArrayList<Feature>(features); // we mess with the features array
 		this.trainingData = trainingData;
-		this.testData = testData;
+		//this.testData = testData;
 		
 		// initialize our leaf-node linear classifier
 		// each leaf node is just re-trained on the same classifier
@@ -56,6 +56,7 @@ public class ModelTree {
 		root = M5(this.trainingData, this.features);
 		
 		// see how we did
+		
 		/*
 		trainingCorrect = numberCorrect(trainingData);
 		trainingAccuracy = (double)trainingCorrect / trainingData.size();
@@ -181,6 +182,38 @@ public class ModelTree {
 		return subsets;
 	}
 	
+	/*
+	 * @param example example to test
+	 * @return true if tree predicted correctly; false otherwise
+	 */
+	public double testExample(Data example) {
+		return testExample(this.root, example);
+	}
+	
+	/*
+	 * @param root root node of tree
+	 * @param example example to test
+	 * @return average squared difference
+	 */
+	private double testExample(Node root, Data example) {
+		if (!root.isLeaf()) {
+			List<String> values = example.getDiscrete(root.getFeature());
+			
+			// take the average prediction given multiple feature values
+			double average = 0;
+			for (String value : values) {
+				average += testExample(root.getChild(value), example);
+			}
+			
+			return average / values.size();
+		} else {
+			//double temp = example.getOutput() - root.solve(example.getContinuousArray());
+			double temp = example.getOutput() - root.getOutputAvg();
+			//System.out.println(example.getOutput() + " - x = " + temp);
+			return temp * temp;
+		}
+	}
+	
 	public static double computeAverage(List<Data> examples) {
 		double avg = 0;
 		for (Data example : examples) {
@@ -239,34 +272,26 @@ public class ModelTree {
 		private Map<String, Node> children;
 		private List<Data> examples;
 		private LinearEquation output;
-		//private double output;
+		private double outputAvg;
 		
 		public Node() {
 			feature = null;
 			children = null;
 			examples = null;
 			output = null;
-			//output = Double.NaN;
+			outputAvg = Double.NaN;
 		}
 		
-		public Node(List<Data> examples) {
-			feature = null;
-			children = null;
-			this.examples = examples;
-			output = null;
-			//output = Double.NaN;
+		public Node(List<Data> examples) throws Exception {
+			this(examples, false);
 		}
 		
 		public Node(List<Data> examples, boolean leaf) throws Exception {
-			feature = null;
-			children = null;
+			this();
 			this.examples = examples;
 			if (leaf) {
 				output = new LinearEquation(perceptron(examples));
-				//output = computeAverage(examples);
-			} else {
-				output = null;
-				//output = Double.NaN;
+				outputAvg = computeAverage(examples);
 			}
 		}
 		
@@ -288,6 +313,10 @@ public class ModelTree {
 				
 		public double solve(double[] x) {
 			return output.solve(x);
+		}
+		
+		public double getOutputAvg() {
+			return outputAvg;
 		}
 		
 		public String getFormattedEquation() {
@@ -329,17 +358,11 @@ public class ModelTree {
 			Instances dataSet = new Instances("data-set", continuousAttributes, MIN_SUBSET_SIZE);
 			dataSet.setClassIndex(0);
 			
-			int attrCount = examples.get(0).getContinuousSize() + 1;
 			for (Data example : examples) {
-				double[] values = new double[attrCount];
-				values[0] = example.getOutput();
-				for (int i = 1; i < attrCount; i++) {
-					values[i] = example.getContinuous(i - 1).doubleValue(); 
-				}
-				dataSet.add(new Instance(1, values));
+				dataSet.add(new Instance(1, example.getContinuousArray()));
 			}
 			
-			double weights[] = new double[attrCount];
+			double weights[] = new double[examples.get(0).getContinuousSize() + 1];
 			linearRegression.buildClassifier(dataSet);
 			double coef[] = linearRegression.coefficients();
 			for (int i = coef.length - 1, j = 0; i > 0; i--, j++) {

@@ -86,8 +86,9 @@ public class ModelTreeTest {
 				}
 			}
 			
-			ModelTree tree = new ModelTree(config.getDiscrete(), train, subsets.get(test));
-			tree.printTree();
+			ModelTree tree = new ModelTree(config.getDiscrete(), train);
+			//tree.printTree();
+			System.out.println(Evaluate.rootMeanSquare(tree, subsets.get(test)));
 			System.exit(0);
 			//correct[test] = tree.getTestAccuracy();
 		}

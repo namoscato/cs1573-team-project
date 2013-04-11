@@ -15,8 +15,8 @@ public class GenerateConfig {
 	private static final int START_INDEX = 4;
 
 	public static void main(String[] args) {
-		File input = new File("../noisy_data_revision1.txt");
-		File output = new File("../../config/noisy_config.txt");
+		File input = new File("../clean_Data.txt");
+		File output = new File("../../config/clean_config.txt");
 
 		try {
 			// create output file
