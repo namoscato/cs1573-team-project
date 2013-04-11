@@ -17,20 +17,21 @@ public class CountOccurrences {
 	public static void main(String[] args) {
 		File input = new File("../clean_data.txt");
 		File output = new File("../../config/clean_config.txt");
-		
+		File inputnoisy = new File("../noisy_data.txt");
 		try {
 			// create output file
 			output.createNewFile();
 			FileWriter fw = new FileWriter(output.getAbsoluteFile());
-			BufferedWriter bw = new BufferedWriter(fw);
 			
 			// open input file
 			Scanner scanner = new Scanner(input);
 			
 			// initialize nominal feature value sets
 			List<Map<String, Integer>> values = new ArrayList<Map<String, Integer>>(FEATURES.length);
+			List<Map<String, Integer>> valuesnoisy = new ArrayList<Map<String, Integer>>(FEATURES.length);
 			for (int i = 0; i < FEATURES.length; i++) {
 				values.add(new HashMap<String, Integer>());
+				valuesnoisy.add(new HashMap<String, Integer>());
 			}
 			
 			// traverse through all examples
@@ -47,12 +48,32 @@ public class CountOccurrences {
 						}
 					}
 					
-					//values.get(i).add();
 				}
 			}
+
+			scanner.close();
+
+			//open noisy input file
+			Scanner scannernoisy = new Scanner(inputnoisy);
+			while (scannernoisy.hasNextLine()) {
+				List<String> example = new ArrayList<String>(Arrays.asList(scannernoisy.nextLine().split("\t")));
+				// add actors, directors, writers, genres, languages, countries, mpaa_rating and release_year
+				for (int i = 0; i < FEATURES.length; i++) {
+					List<String> temp = Arrays.asList(example.get(i + START_INDEX).split(","));
+					for (String key : temp) {
+						if (valuesnoisy.get(i).containsKey(key)) {
+							valuesnoisy.get(i).put(key, new Integer(valuesnoisy.get(i).get(key).intValue() + 1));
+						} else {
+							valuesnoisy.get(i).put(key, new Integer(1));
+						}
+					}
+					
+				}
+			}
+
+			scannernoisy.close();
 			
-			System.out.println("here we go");
-			
+			System.out.println("For clean data:   ");
 			for (int i = 0; i < FEATURES.length; i++) {
 				int size = values.get(i).size();
 				System.out.println("(" + i + ") - " + size + " distinct attributes");
@@ -69,18 +90,25 @@ public class CountOccurrences {
 				System.out.println("*"+count+"/"+size+"*");
 				System.out.println("\n");
 			}
-			
-			// write formatted output to file
-			/*
+
+			System.out.println("For noisy data:   ");
 			for (int i = 0; i < FEATURES.length; i++) {
-				bw.write(FEATURES[i] + "\t" + FixMistakes.formatCommaString(values.get(i)) + "\n");
+				int size = valuesnoisy.get(i).size();
+				System.out.println("(" + i + ") - " + size + " distinct attributes");
+				Iterator it = valuesnoisy.get(i).entrySet().iterator();
+				int count = 0;
+				while (it.hasNext()) {
+					Map.Entry pairs = (Map.Entry)it.next();
+					if (((Integer) pairs.getValue()).intValue() > 1) {
+						System.out.println(pairs.getKey() + " = " + pairs.getValue());
+						count++;
+					}
+					it.remove();
+				}
+				System.out.println("*"+count+"/"+size+"*");
+				System.out.println("\n");
 			}
-			bw.write("release_month\t1,2,3,4,5,6,7,8,9,10,11,12\n");
-			bw.write("weekend\t0,1");
-			*/
 			
-			scanner.close();
-			bw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
