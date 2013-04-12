@@ -112,7 +112,7 @@ public class PostProcess {
 			
 			while (scanner.hasNextLine()) {
 				String str = scanner.nextLine();
-				List<String> example = new ArrayList<String>(Arrays.asList(str.split("\t")));
+				ArrayList<String> example = new ArrayList<String>(Arrays.asList(str.split("\t")));
 				
 				int missing = missingValues(str);
 				
