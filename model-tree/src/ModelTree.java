@@ -23,12 +23,10 @@ public class ModelTree {
 	private int testCorrect;
 	private double testAccuracy;
 	
-	// we prune the tree as we go 
-	private static final int MIN_SUBSET_SIZE = 50; // stop if subset size is less than this
-	private static final double MIN_DEVIATION = 0; // stop if (std) deviation is less than this
-	
-	private static final boolean DEBUG = true;
+	// debug stuff
+	protected static final boolean DEBUG = ModelTreeTest.DEBUG;
 	private static final String HR = "---------------------------";
+	private List<Double> deviations;
 	
 	/*
 	 * Creates a ModelTree object and calculates the accuracy on
@@ -40,7 +38,6 @@ public class ModelTree {
 	public ModelTree(List<Feature> features, List<Data> trainingData) throws Exception {
 		this.features = new ArrayList<Feature>(features); // we mess with the features array
 		this.trainingData = trainingData;
-		//this.testData = testData;
 		
 		// initialize our leaf-node linear classifier
 		// each leaf node is just re-trained on the same classifier
@@ -50,7 +47,10 @@ public class ModelTree {
 		continuousAttributes.addElement(new Attribute("rating"));
 		for (int i = 1; i <= trainingData.get(0).getContinuousSize(); i++) {
 			continuousAttributes.addElement(new Attribute("attr" + i));
-		} 
+		}
+		
+		// initialize debugging stuff
+		deviations = new ArrayList<Double>();
 		
 		// create our tree
 		root = M5(this.trainingData, this.features);
@@ -112,16 +112,27 @@ public class ModelTree {
 		
 		parent.setFeature(chosen);
 		if (DEBUG) {
-			System.out.println(padLevel(depth) + "chose feature " + chosen.getName() + " with stdDev = " + min);			
+			System.out.println(padLevel(depth) + "chose feature " + chosen.getName() + " with dev = " + min);
+			deviations.add(min);
 		}
 		
 		// we now know chosen is the feature we are going to use
+		LinearEquation equation = null;
+		double average = Double.NaN;
 		for (int i = 0; i < subsets.size(); i++) {
 			//System.out.println(padLevel(depth + 1) + chosen.getValue(i) + " size is " + subsets.get(i).size());
-			if (subsets.get(i).size() < MIN_SUBSET_SIZE || min < MIN_DEVIATION) {
+			int size = subsets.get(i).size();
+			if (size <= 2 || size < ModelTreeTest.MIN_SUBSET_SIZE || min < ModelTreeTest.MIN_DEVIATION) {
 				// run examples through perceptron and create leaf node
-				Node child = new Node(examples, true);
-				parent.addChild(chosen.getValue(i), child);
+				if (equation == null) {
+					Node child = new Node(examples, true);
+					parent.addChild(chosen.getValue(i), child);
+					equation = child.getEquation();
+					average = child.getOutputAvg();
+				} else {
+					parent.addChild(chosen.getValue(i), new Node(examples, equation, average));
+				}
+				
 			} else {
 				// only remove the feature for our recursion
 				List<Feature> smaller = new ArrayList<Feature>(features);
@@ -157,6 +168,14 @@ public class ModelTree {
 	}
 	
 	/*
+	 * Returns a list of leaf-node deviations. Used for tweaking
+	 * the pruning factors.
+	 */
+	public List<Double> getDebugDeviations() {
+		return deviations;
+	}
+	
+	/*
 	 * Classify set by the values of a specified feature
 	 * @param set set of data examples
 	 * @param feature feature to classify examples by
@@ -184,10 +203,11 @@ public class ModelTree {
 	
 	/*
 	 * @param example example to test
+	 * @param outputPredictions whether or not to output predictions
 	 * @return true if tree predicted correctly; false otherwise
 	 */
-	public double testExample(Data example) {
-		return testExample(this.root, example);
+	public double testExample(Data example, boolean outputPredictions) {
+		return testExample(this.root, example, outputPredictions);
 	}
 	
 	/*
@@ -195,22 +215,25 @@ public class ModelTree {
 	 * @param example example to test
 	 * @return average squared difference
 	 */
-	private double testExample(Node root, Data example) {
+	private double testExample(Node root, Data example, boolean outputPredictions) {
 		if (!root.isLeaf()) {
 			List<String> values = example.getDiscrete(root.getFeature());
 			
 			// take the average prediction given multiple feature values
 			double average = 0;
 			for (String value : values) {
-				average += testExample(root.getChild(value), example);
+				average += testExample(root.getChild(value), example, outputPredictions);
 			}
 			
 			return average / values.size();
 		} else {
-			//double temp = example.getOutput() - root.solve(example.getContinuousArray());
-			double temp = example.getOutput() - root.getOutputAvg();
-			//System.out.println(example.getOutput() + " - x = " + temp);
-			return temp * temp;
+			double prediction =  root.solve(example.getContinuousArray());
+			double result = example.getOutput() - prediction;
+			if (outputPredictions) {
+				System.out.println(example.getOutput() + "\t" + prediction + "\t" + result);
+			}
+			//double temp = example.getOutput() - root.getOutputAvg();
+			return result * result;
 		}
 	}
 	
@@ -237,7 +260,7 @@ public class ModelTree {
 			Entry<String, Node> leaf = it.next();
 			System.out.print(root.getFeatureName() + "=" + leaf.getKey());
 			if (leaf.getValue().isLeaf()) {
-				System.out.println(" " + leaf.getValue().getFormattedEquation());
+				System.out.println(" " + leaf.getValue().getEquation().toString());
 			} else {
 				System.out.println();
 				printSubtree(leaf.getValue(), level + 1);
@@ -295,6 +318,13 @@ public class ModelTree {
 			}
 		}
 		
+		public Node(List<Data> examples, LinearEquation eq, double avg) {
+			this();
+			this.examples = examples;
+			output = eq;
+			outputAvg = avg;
+		}
+		
 		public Feature getFeature() {
 			return feature;
 		}
@@ -319,8 +349,8 @@ public class ModelTree {
 			return outputAvg;
 		}
 		
-		public String getFormattedEquation() {
-			return output.toString();
+		public LinearEquation getEquation() {
+			return output;
 		}
 		
 		public List<Data> getExamples() {
@@ -355,20 +385,28 @@ public class ModelTree {
 		}
 		
 		private double[] perceptron(List<Data> examples) throws Exception {
-			Instances dataSet = new Instances("data-set", continuousAttributes, MIN_SUBSET_SIZE);
+			Instances dataSet = new Instances("data-set", continuousAttributes, ModelTreeTest.MIN_SUBSET_SIZE);
 			dataSet.setClassIndex(0);
 			
 			for (Data example : examples) {
-				dataSet.add(new Instance(1, example.getContinuousArray()));
+				double[] attrs = new double[example.getContinuousSize() + 1];
+				attrs[0] = example.getOutput();
+				System.arraycopy(example.getContinuousArray(), 0, attrs, 1, attrs.length - 1);
+				//System.out.println(attrs[0] + "," + attrs[1] + "," + attrs[2]);
+				dataSet.add(new Instance(1, attrs));
 			}
 			
 			double weights[] = new double[examples.get(0).getContinuousSize() + 1];
 			linearRegression.buildClassifier(dataSet);
 			double coef[] = linearRegression.coefficients();
+			
+			// first coefficient is always 0 -- scrap it
 			for (int i = coef.length - 1, j = 0; i > 0; i--, j++) {
-				weights[j] = coef[i];
+				weights[j] = coef[i]; 
 			}
 			
+			//System.out.println(ModelTreeTest.formatArray(weights));
+			//System.exit(0);
 			return weights;
 		}
 	}

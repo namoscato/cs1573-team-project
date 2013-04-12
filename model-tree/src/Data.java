@@ -43,6 +43,10 @@ public class Data {
 		return discrete.get(feature.getID());
 	}
 	
+	public List<String> getDiscrete(int id) {
+		return discrete.get(id);
+	}
+	
 	public int getDiscreteSize() {
 		return discrete.size();
 	}

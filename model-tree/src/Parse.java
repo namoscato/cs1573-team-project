@@ -112,4 +112,15 @@ public class Parse {
 		
 		return new Configuration(discrete, continuous);
 	}
+	
+	public static String createLine(List<String> list) {
+		String result = "";
+		for (int i = 0; i < list.size(); i++) {
+			result += list.get(i);
+			if (i < list.size() - 1) {
+				result += "\t";
+			}
+		}
+		return result + "\n";
+	}
 }

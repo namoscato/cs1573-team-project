@@ -1,8 +1,18 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModelTreeTest {
+	static final boolean DEBUG = true;
+	static final boolean PREDICTIONS = false;
+	
 	private final static int KFOLDS = 10;
+	private final static int FOLD = -1; // run through kfolds manually
+	
+	static final int MIN_SUBSET_SIZE = 20; // stop if subset size is less than this
+	static final double MIN_DEVIATION = .35; // stop if deviation is less than this
 	
 	/*
 	 * Shuffles the elements in a list.
@@ -69,15 +79,24 @@ public class ModelTreeTest {
 	
 	public static void main(String[] args) throws Exception {		
 		Configuration config = Parse.parseConfigFile("../config/config.txt", "../config/clean_config.txt");
-		List<Data> examples = Parse.parseDataFile("../data-collection/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+		List<Data> examples = Parse.parseDataFile("input/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
 		
 		// shuffle our data
-		randomize(examples);
+		// randomize(examples);
+		
+		File output = new File("output/deviations.txt");
+		FileWriter fw = new FileWriter(output.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
 		
 		// perform a 10-fold cross validation experiment
 		List<List<Data>> subsets = splitList(examples, KFOLDS);
-		double[] correct = new double[KFOLDS];
+		double[] error = new double[KFOLDS];
+		double[] normError = new double[KFOLDS];
 		for (int test = 0; test < subsets.size(); test++) {
+			if (FOLD >= 0) {
+				// if we are doing this manually
+				test = FOLD;
+			}
 			// create our training set
 			List<Data> train = new ArrayList<Data>();
 			for (int i = 0; i < subsets.size(); i++) {
@@ -87,10 +106,28 @@ public class ModelTreeTest {
 			}
 			
 			ModelTree tree = new ModelTree(config.getDiscrete(), train);
-			//tree.printTree();
-			System.out.println(Evaluate.rootMeanSquare(tree, subsets.get(test)));
-			System.exit(0);
-			//correct[test] = tree.getTestAccuracy();
+			Evaluate eval = new Evaluate(tree, subsets.get(test));
+			System.out.println(eval.getRMS() + "\t" + eval.getNormRMS());
+			error[test] = eval.getRMS();
+			normError[test] = eval.getNormRMS();
+			
+			/*
+			// write deviations to file
+			if (ModelTree.DEBUG) {
+				for (Double value : tree.getDebugDeviations()) {
+					bw.append(value.toString() + "\n");
+				}	
+			}
+			*/
+			
+			if (FOLD >= 0) {
+				break;
+			}
+		}
+		bw.close();
+		
+		if (FOLD < 0) {
+			System.out.println(average(error) + "\t" + average(normError));
 		}
 	}
 }
