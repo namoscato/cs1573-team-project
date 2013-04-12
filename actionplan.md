@@ -63,11 +63,18 @@ rating | 6.36890402893429
 rating_count | 15274
 runtime | 103
 
-## 2. Build SFS
+## 2. Build Models
 
-## 3. Build Models
+### Baseline
+
+Simply predicts the average value (6.3689) for all examples in the data set. This calculation is implemented in `model-tree/src/Evaluate.java`.
+
+dataset | root-mean-square | normalized root-mean-square
+--- | --- | ---
+clean | 1.0762702439836687 | 0.045402246604460475
+noisy | 1.0450910855264475 | 0.04408695999395767
 
 ### Model Tree
 ### Neural Network
 
-## 4. Evaluate
+## 3. Evaluate
