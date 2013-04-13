@@ -75,6 +75,10 @@ clean | 1.0762702439836687 | 0.045402246604460475
 noisy | 1.0450910855264475 | 0.04408695999395767
 
 ### Model Tree
+
+* A model tree learning algorithm was implemented from scratch based off of M5. The input consisted of ten nominal attributes (actors, directors, writers, genres, language, country, mpaa_rating, release_year, release_month and weekend) and one numerical attribute, runtime. Many of the examples had multiple values for for a particular nominal attribute. For example, up to five actors were included as input for one movie to the actor attribute. In these cases, the particular example was included in the set of all relevent child nodes. Features were chosen based of the standard deviation of ratings adjusted for the size of each subset.
+* In an effort to decrease the effects of the large cardinality of actors, this feature was split up into three separate features: actor1, actor2 and actor3. This decision was made with the assumption that actor1 is more "popular" than actor2 and so on. Movies with less than three actors were removed. Unfortunately, this did not improve the model.
+
 ### Neural Network
 
 ## 3. Evaluate

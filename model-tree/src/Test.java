@@ -97,6 +97,7 @@ public class Test {
 		
 		
 		// mess with runtimes
+		/*
 		// declare attributes
 		Attribute rating = new Attribute("rating");
 		Attribute runtime = new Attribute("runtime");
@@ -135,5 +136,6 @@ public class Test {
 		double[] coef = model.coefficients();
 		System.out.println("[" + coef[1] + ", " + coef[2] + "]");
 		System.out.println(eval.toSummaryString());
+		*/
 	}
 }

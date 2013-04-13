@@ -11,12 +11,12 @@ import java.util.Set;
 
 
 public class GenerateConfig {
-	private static final String[] FEATURES = {"actor", "director", "writer", "genre", "language", "country", "mpaa_rating", "release_year"};
+	private static final String[] FEATURES = {"actor1", "actor2", "actor3", "director", "writer", "genre", "language", "country", "mpaa_rating", "release_year"};
 	private static final int START_INDEX = 4;
 
 	public static void main(String[] args) {
-		File input = new File("../../model-tree/input/noisy_data.txt");
-		File output = new File("../../model-tree/config/noisy_config.txt");
+		File input = new File("../../model-tree/input/clean_data_split_people.txt");
+		File output = new File("../../model-tree/config/clean_split_people_config.txt");
 
 		try {
 			// create output file

@@ -78,7 +78,7 @@ public class ModelTreeTest {
 	}
 	
 	public static void main(String[] args) throws Exception {		
-		Configuration config = Parse.parseConfigFile("../config/config.txt", "../config/clean_config.txt");
+		Configuration config = Parse.parseConfigFile("../config/config.txt", "config/clean_config.txt");
 		List<Data> examples = Parse.parseDataFile("input/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
 		
 		// shuffle our data
