@@ -7,6 +7,39 @@ import java.util.Scanner;
  * This class will produce 20 files (10 training, 10 testing)
  * it takes the input file as formated in clean_data.txt
  * the output files are to be used by GenerateScore.java
+ 
+ original:
+[0] number
+[1] movie id
+[2] rating
+[3] vote count
+[4] actor
+[5] director
+[6] writer
+[7] genre
+[8] language
+[9] country
+[10] MPAA
+[11] year
+[12] month
+[13] weekend
+[14] runtime
+
+after:
+[0] vote count
+[1] actor
+[2] director
+[3] writer
+[4] genre
+[5] language
+[6] country
+[7] MPAA
+[8] year
+[9] month
+[10] weekend
+[11] runtime
+[12] rating
+
  */
 public class SplitFile {
 	int numFold = 10;
