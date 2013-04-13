@@ -166,7 +166,13 @@ public class GenerateScore {
 				Double a = calcScore(example.get(1), testActors);
 				Double d = calcScore(example.get(2), testDirectors);
 				Double w = calcScore(example.get(3), testWriters);
-				String outputline = example.get(0) + "," + a + "," + d + "," + w + "," + example.get(4) + "," + example.get(5)+ "," + example.get(6) + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
+				String[] genrearr = example.get(4).split(",");
+				String genre = genrearr[0];
+				String[] languagearr = example.get(5).split(",");
+				String language = languagearr[0];
+				String[] countryarr = example.get(6).split(",");
+				String country = countryarr[0];
+				String outputline = example.get(0) + "," + a + "," + d + "," + w + "," + genre + "," + language + "," + country + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
 				test_bw.write(outputline);
 			}
 			scanner.close();
