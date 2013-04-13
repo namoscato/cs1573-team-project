@@ -1,48 +1,159 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.HashMap;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IoException;
+import java.io.FileWriter;
+import java.io.IOException;
+
+/*
+ * Class GenerateScore:
+ * 
+ * Places all actors, writers, and directors from two files,
+ * a training and test file,
+ * into several HashMaps, the key being the name of the said actor/director/writer
+ * and the value being an ArrayList of rating values times some coefficient
+ * to mark the position in the film (lead actors get more weight than the 
+ * fifth actor mentioned).
+ * 
+ * These maps then used to generate a total actor, writer, and director
+ * score for each film, which replaces the list of actors, writers, and 
+ * directors, respectively, for that example.
+ */
+
 public class GenerateScore {
-	//init all scores to be 1
-	//then increase the score proportional to the rating
-	// score += rating * coefficient
-	// coefficients 10, 5, 1, 0.5, 0.3
-	float actorscore_training = 1;
-	float directorscore_training = 1;
-	float writerscore_training = 1;
+	
+	HashMap <String, ArrayList<Double>> trainActors;
+	HashMap <String, ArrayList<Double>> trainWriters;
+	HashMap <String, ArrayList<Double>> trainDirectors;
 
-	float actorscore_testing = 1;
-	float directorscore_testing = 1;
-	float writerscore_testing = 1;
-
+	HashMap <String, ArrayList<Double>> testActors;
+	HashMap <String, ArrayList<Double>> testWriters;
+	HashMap <String, ArrayList<Double>> testDirectors;
+	
 	File training;
-	File test;
-	public GenerateScore(String training, String test) {
+	File testing;
+	
+	public GenerateScore(String tr, String te) {
 		//reads from two text files
-		training = new File(training);
-		test = new File(test);
+		training = new File(tr);
+		testing = new File(te);
+
+		trainActors = new HashMap <String, ArrayList<Double>>();
+		trainWriters = new HashMap <String, ArrayList<Double>>();
+		trainDirectors = new HashMap <String, ArrayList<Double>>();
+
+		testActors = new HashMap <String, ArrayList<Double>>();
+		testWriters = new HashMap <String, ArrayList<Double>>();
+		testDirectors = new HashMap <String, ArrayList<Double>>();
 	}
 
-	public void Calculate() {
-		//calc for training
+	private void addToMap(HashMap <String, ArrayList<Double>> m, String str, Double rating) {
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList(str.split(",")));
+		for (int i = 0; i < list.size(); i++) {
+			String key = list.get(i);
+			ArrayList<Double> values = m.get(key);
+			if  (values == null) {
+				values = new ArrayList<Double>();
+				m.put(key, values);
+			}
+			Double v = 1.0;
+			switch (i) {
+				case 0: {
+					v += 10 * rating;
+					break;
+				}
+				case 1: {
+					v += 5 * rating;
+					break;
+				}
+				case 2: {
+					v += 1 * rating;
+					break;
+				}
+				case 3: {
+					v += 0.5 * rating;
+					break;
+				}
+				case 4: {
+					v += 0.3 * rating;
+					break;
+				}
+			}
+			values.add(v);
+		}
+
+	}
+
+	private void buildHashMaps() {
 		try {
 			Scanner scanner = new Scanner(training);
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				ArrayList<String> example = new ArrayList<String>(Arrays.asList(line.split("\t")));
-				if (example.get(2) != null) {
-					Double rating = Double.parseDouble(example.get(2));
-					calcActorsTraining(example.get(4), rating);
-					calcDirectorsTraining(example.get(5), rating);
-					calcWritersTraining(example.get(6), rating);
-				}
-				else {
-					//do not adjust the score if for whatever reason the rating is null
+				if (example.get(12) != null) {
+					Double rating = Double.parseDouble(example.get(12));
+					addToMap(trainActors, example.get(1), rating);
+					addToMap(trainDirectors, example.get(2), rating);
+					addToMap(trainWriters, example.get(3), rating);
 				}
 			}
+			scanner.close();
 
+
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			Scanner scanner = new Scanner(testing);
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				ArrayList<String> example = new ArrayList<String>(Arrays.asList(line.split("\t")));
+				if (example.get(12) != null) {
+					Double rating = Double.parseDouble(example.get(12));
+					addToMap(testActors, example.get(1), rating);
+					addToMap(testDirectors, example.get(2), rating);
+					addToMap(testWriters, example.get(3), rating);
+				}
+			}
+			scanner.close();
+
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void CreateCSV(String outputTraining, String outputTesting) {
+		buildHashMaps();
+		
+		//assume files don't exist
+		File train_data = new File(outputTraining);
+ 		File test_data = new File(outputTesting);
+		
+		try {
+	 		train_data.createNewFile();
+			Scanner scanner = new Scanner(training);
+			FileWriter train_fw = new FileWriter(train_data.getAbsoluteFile());
+			BufferedWriter train_bw = new BufferedWriter(train_fw);
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				ArrayList<String> example = new ArrayList<String>(Arrays.asList(line.split("\t")));
+				Double a = calcScore(example.get(1), trainActors);
+				Double d = calcScore(example.get(2), trainDirectors);
+				Double w = calcScore(example.get(3), trainWriters);
+				String[] genrearr = example.get(4).split(",");
+				String genre = genrearr[0];
+				String[] languagearr = example.get(5).split(",");
+				String language = languagearr[0];
+				String[] countryarr = example.get(6).split(",");
+				String country = countryarr[0];
+				String outputline = example.get(0) + "," + a + "," + d + "," + w + "," + genre + "," + language + "," + country + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
+			}
+			scanner.close();
+			train_bw.close();
+			train_bw.close();
 
 		} catch(IOException e) {
 			e.printStackTrace();
@@ -50,21 +161,28 @@ public class GenerateScore {
 
 		//then testing
 		try {
+			test_data.createNewFile();
+			FileWriter test_fw = new FileWriter(test_data.getAbsoluteFile());
+			BufferedWriter test_bw = new BufferedWriter(test_fw);
 			Scanner scanner = new Scanner(testing);
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				ArrayList<String> example = new ArrayList<String>(Arrays.asList(line.split("\t")));
-				if (example.get(2) != null) {
-					Double rating = Double.parseDouble(example.get(2));
-					calcActorsTesting(example.get(4), rating);
-					calcDirectorsTesting(example.get(5), rating);
-					calcWritersTesting(example.get(6), rating);
-				}
-				else {
-					//do not adjust the score if for whatever reason the rating is null
-				}
+				Double a = calcScore(example.get(1), testActors);
+				Double d = calcScore(example.get(2), testDirectors);
+				Double w = calcScore(example.get(3), testWriters);
+				String[] genrearr = example.get(4).split(",");
+				String genre = genrearr[0];
+				String[] languagearr = example.get(5).split(",");
+				String language = languagearr[0];
+				String[] countryarr = example.get(6).split(",");
+				String country = countryarr[0];
+				String outputline = example.get(0) + "," + a + "," + d + "," + w + "," + genre + "," + language + "," + country + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
+				test_bw.write(outputline);
 			}
-
+			scanner.close();
+			test_bw.close();
+			test_bw.close();
 
 		} catch(IOException e) {
 			e.printStackTrace();
@@ -73,184 +191,25 @@ public class GenerateScore {
 
 	}
 
-	private void calcActorsTraining(String a, Double rating) {
-		if (a == null) { return ;}
-		ArrayList<String> actors = new ArrayList<String>(Arrays.asList(a.split(",")));
-		for (int i = 0; i < actors.size(); i++) {
-			switch (i) {
-				case 0: {
-					actorscore_training += 10 * rating;
-					break;
+	private Double calcScore(String a, HashMap<String, ArrayList<Double>> m) {
+		Double rating = 0.0;
+		if (a == null) { return rating;}
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList(a.split(",")));
+		for (int i = 0; i < list.size(); i++) {
+			ArrayList<Double> values = m.get(list.get(i));
+			if (values == null) {
+				//do nothing
+			}
+			else {
+				double total = 0;
+				for (int j = 0; j < values.size(); j++) {
+					total += values.get(j);
 				}
-				case 1: {
-					actorscore_training += 5 * rating;
-					break;
-				}
-				case 2: {
-					actorscore_training += 1 * rating;
-					break;
-				}
-				case 3: {
-					actorscore_training += 0.5 * rating;
-					break;
-				}
-				case 4: {
-					actorscore_training += 0.3 * rating;
-					break;
-				}
+				total /= values.size();
+				rating += total;
 			}
 		}
-
-	}
-
-	private void calcDirectorsTraining(String d, Double rating) {
-		if (d == null) { return; }
-		ArrayList<String> directors = new ArrayList<String>(Arrays.asList(d.split(",")));
-		for (int i = 0; i < directors.size(); i++) {
-			switch (i) {
-				case 0: {
-					directorscore_training += 10 * rating;
-					break;
-				}
-				case 1: {
-					directorscore_training += 5 * rating;
-					break;
-				}
-				case 2: {
-					directorscore_training += 1 * rating;
-					break;
-				}
-				case 3: {
-					directorscore_training += 0.5 * rating;
-					break;
-				}
-				case 4: {
-					directorscore_training += 0.3 * rating;
-					break;
-				}
-			}
-		}
-		
-	}
-
-	private void calcWritersTraining(String w, Double rating) {
-		if (w == null ) { return;}
-		ArrayList<String> writers = new ArrayList<String>(Arrays.asList(w.split(",")));
-		for (int i = 0; i < writers.size(); i++) {
-			switch (i) {
-				case 0: {
-					writerscore_training += 10 * rating;
-					break;
-				}
-				case 1: {
-					writerscore_training += 5 * rating;
-					break;
-				}
-				case 2: {
-					writerscore_training += 1 * rating;
-					break;
-				}
-				case 3: {
-					writerscore_training += 0.5 * rating;
-					break;
-				}
-				case 4: {
-					writerscore_training += 0.3 * rating;
-					break;
-				}
-			}
-		}
-		
-	}
-
-	private void calcActorsTesting(String a, Double rating) {
-		if (a == null) { return ;}
-		ArrayList<String> actors = new ArrayList<String>(Arrays.asList(a.split(",")));
-		for (int i = 0; i < actors.size(); i++) {
-			switch (i) {
-				case 0: {
-					actorscore_testing += 10 * rating;
-					break;
-				}
-				case 1: {
-					actorscore_testing += 5 * rating;
-					break;
-				}
-				case 2: {
-					actorscore_testing += 1 * rating;
-					break;
-				}
-				case 3: {
-					actorscore_testing += 0.5 * rating;
-					break;
-				}
-				case 4: {
-					actorscore_testing += 0.3 * rating;
-					break;
-				}
-			}
-		}
-
-	}
-
-	private void calcDirectorsTesting(String d, Double rating) {
-		if (d == null) { return; }
-		ArrayList<String> directors = new ArrayList<String>(Arrays.asList(d.split(",")));
-		for (int i = 0; i < directors.size(); i++) {
-			switch (i) {
-				case 0: {
-					directorscore_testing += 10 * rating;
-					break;
-				}
-				case 1: {
-					directorscore_testing += 5 * rating;
-					break;
-				}
-				case 2: {
-					directorscore_testing += 1 * rating;
-					break;
-				}
-				case 3: {
-					directorscore_testing += 0.5 * rating;
-					break;
-				}
-				case 4: {
-					directorscore_testing += 0.3 * rating;
-					break;
-				}
-			}
-		}
-		
-	}
-
-	private void calcWritersTesting(String w, Double rating) {
-		if (w == null ) { return;}
-		ArrayList<String> writers = new ArrayList<String>(Arrays.asList(w.split(",")));
-		for (int i = 0; i < writers.size(); i++) {
-			switch (i) {
-				case 0: {
-					writerscore_testing += 10 * rating;
-					break;
-				}
-				case 1: {
-					writerscore_testing += 5 * rating;
-					break;
-				}
-				case 2: {
-					writerscore_testing += 1 * rating;
-					break;
-				}
-				case 3: {
-					writerscore_testing += 0.5 * rating;
-					break;
-				}
-				case 4: {
-					writerscore_testing += 0.3 * rating;
-					break;
-				}
-			}
-		}
-		
+		return rating;
 	}
 
 	public float Normalize(float var, float max, float min) {
@@ -259,18 +218,6 @@ public class GenerateScore {
 		return answer;
 	}
 
-	public void printScores() {
-		System.out.println("TRAINING:   ");
-		Sstem.out.println("Actor score:  " + actorscore_training);
-		Sstem.out.println("Director score:  " + directorscore_training);
-		Sstem.out.println("Writer score:  " + writerscore_training);
-
-		System.out.println("TESTING:   ");
-		Sstem.out.println("Actor score:  " + actorscore_testing);
-		Sstem.out.println("Director score:  " + directorscore_testing);
-		Sstem.out.println("Writer score:  " + writerscore_testing);
-
-	}
 
 
 
