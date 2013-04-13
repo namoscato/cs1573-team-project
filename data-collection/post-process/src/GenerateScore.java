@@ -35,10 +35,10 @@ public class GenerateScore {
 	File training;
 	File testing;
 	
-	public GenerateScore(String tr, String te) {
+	public GenerateScore(String inputTraining, String inputTesting) {
 		//reads from two text files
-		training = new File(tr);
-		testing = new File(te);
+		training = new File(inputTraining);
+		testing = new File(inputTesting);
 
 		trainActors = new HashMap <String, ArrayList<Double>>();
 		trainWriters = new HashMap <String, ArrayList<Double>>();
@@ -143,13 +143,16 @@ public class GenerateScore {
 				Double a = calcScore(example.get(1), trainActors);
 				Double d = calcScore(example.get(2), trainDirectors);
 				Double w = calcScore(example.get(3), trainWriters);
-				String[] genrearr = example.get(4).split(",");
-				String genre = genrearr[0];
+				//String[] genrearr = example.get(4).split(",");
+				//String genre = genrearr[0];
 				String[] languagearr = example.get(5).split(",");
 				String language = languagearr[0];
 				String[] countryarr = example.get(6).split(",");
 				String country = countryarr[0];
-				String outputline = example.get(0) + "," + a + "," + d + "," + w + "," + genre + "," + language + "," + country + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
+				String outputline = example.get(0) + "," + a + "," + d + "," + w + ",";
+				outputline += getGenres(example.get(4));
+				outputline += language + "," + country + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
+				train_bw.write(outputline);
 			}
 			scanner.close();
 			train_bw.close();
@@ -171,13 +174,15 @@ public class GenerateScore {
 				Double a = calcScore(example.get(1), testActors);
 				Double d = calcScore(example.get(2), testDirectors);
 				Double w = calcScore(example.get(3), testWriters);
-				String[] genrearr = example.get(4).split(",");
-				String genre = genrearr[0];
+				//String[] genrearr = example.get(4).split(",");
+				//String genre = genrearr[0];
 				String[] languagearr = example.get(5).split(",");
 				String language = languagearr[0];
 				String[] countryarr = example.get(6).split(",");
 				String country = countryarr[0];
-				String outputline = example.get(0) + "," + a + "," + d + "," + w + "," + genre + "," + language + "," + country + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
+				String outputline = example.get(0) + "," + a + "," + d + "," + w + ",";
+				outputline += getGenres(example.get(4));
+				outputline += language + "," + country + "," + example.get(7) + "," + example.get(8) + "," + example.get(9) + "," + example.get(10) + "," + example.get(11) + "," + example.get(12) + "\n";
 				test_bw.write(outputline);
 			}
 			scanner.close();
@@ -189,6 +194,118 @@ public class GenerateScore {
 		}
 
 
+	}
+	
+	//please don't look at this code
+	//it is very bad
+	//look away
+	private String getGenres(String g) {
+		String answer = "";
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList(g.split(",")));
+		String isFilmNoir = "false";
+		String isCrime = "false";
+		String isComedy = "false";
+		String isShort = "false";
+		String isMystery = "false";
+		String isNews = "false";
+		String isBiography = "false";
+		String isAction = "false";
+		String isWar = "false";
+		String isHistory = "false";
+		String isFantasy = "false";
+		String isAdult = "false";
+		String isMusic = "false";
+		String isMusical = "false";
+		String isThriller = "false";
+		String isAnimation = "false";
+		String isRomance = "false";
+		String isHorror = "false";
+		String isWestern = "false";
+		String isAdventure = "false";
+		String isFamily = "false";
+		String isSciFi = "false";
+		String isSport = "false";
+		String isDrama = "false";
+		String isDocumentary = "false";
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).equals("Film-Noir")) {
+				isFilmNoir = "true";
+			}
+			else if (list.get(i).equals("Crime")) {
+				isCrime = "true";
+			}
+			else if (list.get(i).equals("Comedy")) {
+				isComedy = "true";
+			}
+			else if (list.get(i).equals("Short")) {
+				isShort = "true";
+			}
+			else if (list.get(i).equals("Mystery")) {
+				isMystery = "true";
+			}
+			else if (list.get(i).equals("News")) {
+				isNews = "true";
+			}
+			else if (list.get(i).equals("Biography")) {
+				isBiography = "true";
+			}
+			else if (list.get(i).equals("Action")) {
+				isAction = "true";
+			}
+			else if (list.get(i).equals("War")) {
+				isWar = "true";
+			}
+			else if (list.get(i).equals("History")) {
+				isHistory = "true";
+			}
+			else if (list.get(i).equals("Fantasy")) {
+				isFantasy = "true";
+			}
+			else if (list.get(i).equals("Adult")) {
+				isAdult = "true";
+			}
+			else if (list.get(i).equals("Music")) {
+				isMusic = "true";
+			}
+			else if (list.get(i).equals("Musical")) {
+				isMusical = "true";
+			}
+			else if (list.get(i).equals("Thriller")) {
+				isThriller = "true";
+			}
+			else if (list.get(i).equals("Animation")) {
+				isAnimation = "true";
+			}
+			else if (list.get(i).equals("Romance")) {
+				isRomance = "true";
+			}
+			else if (list.get(i).equals("Horror")) {
+				isHorror = "true";
+			}
+			else if (list.get(i).equals("Western")) {
+				isWestern = "true";
+			}
+			else if (list.get(i).equals("Adventure")) {
+				isAdventure = "true";
+			}
+			else if (list.get(i).equals("Family")) {
+				isFamily = "true";
+			}
+			else if (list.get(i).equals("Sci-Fi")) {
+				isSciFi = "true";
+			}
+			else if (list.get(i).equals("Sport")) {
+				isSport = "true";
+			}
+			else if (list.get(i).equals("Drama")) {
+				isDrama = "true";
+			}
+			else if (list.get(i).equals("Documentary")) {
+				isDocumentary = "true";
+			}
+		}
+		answer += isFilmNoir + "," +isCrime + "," +isComedy + "," +isShort + "," +isMystery + "," +isNews + "," +isBiography + "," +isAction + "," +isWar + "," +isHistory +"," +isFantasy +"," +isAdult +"," +isMusic +"," +isMusical +"," +isThriller +"," +isAnimation +"," +isRomance +"," +isHorror +"," +isWestern +"," +isAdventure +"," +isFamily +"," +isSciFi + "," + isSport + "," + isDrama + "," + isDocumentary + ",";
+		return answer;
 	}
 
 	private Double calcScore(String a, HashMap<String, ArrayList<Double>> m) {
