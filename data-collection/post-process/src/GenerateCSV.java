@@ -4,7 +4,16 @@ import java.util.*;
 
 
 public class GenerateCSV {
-	public static void randomChooseThousand(){
+	
+	public static void main(String args[]) throws Exception{
+		NominalToBinary nb = new NominalToBinary("clean_data.txt","cleanBinary.txt");
+		SplitFile sf = new SplitFile(nb.getAttributes(),"cleanBinary.txt");
+		//put this into 10 loops later
+		GenerateScore2 gs = new GenerateScore2("train0.txt", "test0.txt");
+		gs.CreateCSV("train0.csv", "test0.csv");
+	}
+	
+/*	public static void randomChooseThousand(){
 		Scanner sc = null;
 		FileWriter fw = null;
 		try {
@@ -45,14 +54,7 @@ public class GenerateCSV {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
-	public static void main(String args[]) throws Exception{
-		randomChooseThousand();
-		NominalToBinary nb = new NominalToBinary("randomThousand.txt","randomThousandBinary.txt");
-		SplitFile sf = new SplitFile("randomThousandBinary.txt");
-		//put this into 10 loops later
-		GenerateScore2 gs = new GenerateScore2("train0.txt", "test0.txt");
-		gs.CreateCSV("train0.csv", "test0.csv");
-	}
+	
 }

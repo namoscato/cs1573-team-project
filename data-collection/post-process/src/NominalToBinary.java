@@ -87,9 +87,9 @@ public class NominalToBinary {
 				List<String> example = new ArrayList<String>(Arrays.asList(scanner.nextLine().split("\t")));
 				
 				// compute actor, director and writer score
-				example.set(4, "ACTOR_SCORE");
+				/*example.set(4, "ACTOR_SCORE");
 				example.set(5, "DIRECTOR_SCORE");
-				example.set(6, "WRITER_SCORE");
+				example.set(6, "WRITER_SCORE");*/
 				
 				// split up remaining features
 				int currentStart = START;

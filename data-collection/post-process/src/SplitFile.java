@@ -43,8 +43,10 @@ after:
  */
 public class SplitFile {
 	int numFold = 10;
+	String attributes = null;
 	
-	public SplitFile(String filename){
+	public SplitFile(String attributes, String filename){
+		this.attributes = attributes;
 		try{
 			splitFile(filename);
 		}catch(Exception e){
@@ -57,11 +59,16 @@ public class SplitFile {
 			Scanner sc = new Scanner(new File(filename));
 			FileWriter fw1 = new FileWriter("train"+l+".txt");
 			FileWriter fw2 = new FileWriter("test"+l+".txt");
-			FileWriter full = new FileWriter("full.csv");//this csv is only to be used to generate arff header in weka - to be appended in all other arff
 			BufferedWriter bwTrain = new BufferedWriter(fw1);
 			BufferedWriter bwTest = new BufferedWriter(fw2);
-			BufferedWriter bwFull = new BufferedWriter(full);
-			bwFull.write("// append a header to this csv and then convert this csv to arff in weka - add the header to other files\n");
+			BufferedWriter bwFull = null;
+			
+			if(l==0){
+				FileWriter full = new FileWriter("full.csv");//this csv is only to be used to generate arff header in weka - to be appended in all other arff
+				bwFull = new BufferedWriter(full);
+				bwFull.write("// append a header to this csv and then convert this csv to arff in weka - add the header to other files\n");
+			}
+			
 			String line;
 			int j = 0;
 			while(sc.hasNextLine()){
@@ -80,16 +87,19 @@ public class SplitFile {
 					}
 					bwTrain.write(split[2]+"\n");
 				}
-				bwFull.write(split[3]+","+"0.0"+","+"0.0"+","+"0.0"+",");
-				for(int k=7;k<split.length;k++){
-					bwFull.write(split[k]+",");
+				if(l==0){
+					bwFull.write(split[3]+","+"0.0"+","+"0.0"+","+"0.0"+",");
+					for(int k=7;k<split.length;k++){
+						bwFull.write(split[k]+",");
+					}
+					bwFull.write(split[2]+"\n");
 				}
-				bwFull.write(split[2]+"\n");
 				j++;
 			}
 			sc.close();
 			bwTrain.close();
 			bwTest.close();
+			if(l==0)bwFull.close();
 		}
 	}
 	
