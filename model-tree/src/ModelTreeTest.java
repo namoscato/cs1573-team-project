@@ -11,8 +11,8 @@ public class ModelTreeTest {
 	private final static int KFOLDS = 10;
 	private final static int FOLD = -1; // run through kfolds manually
 	
-	static final int MIN_SUBSET_SIZE = 20; // stop if subset size is less than this
-	static final double MIN_DEVIATION = .35; // stop if deviation is less than this
+	static final int MIN_SUBSET_SIZE = 0; // stop if subset size is less than this
+	static final double MIN_DEVIATION = 0; // stop if deviation is less than this
 	
 	/*
 	 * Shuffles the elements in a list.
@@ -78,8 +78,8 @@ public class ModelTreeTest {
 	}
 	
 	public static void main(String[] args) throws Exception {		
-		Configuration config = Parse.parseConfigFile("../config/config.txt", "config/clean_config.txt");
-		List<Data> examples = Parse.parseDataFile("input/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+		Configuration config = Parse.parseConfigFile("config/split_people_config.txt", "config/noisy_split_people_config.txt");
+		List<Data> examples = Parse.parseDataFile("input/noisy_data_split_people.txt", 1, 2, config.getDiscrete(), config.getContinuous());
 		
 		// shuffle our data
 		// randomize(examples);

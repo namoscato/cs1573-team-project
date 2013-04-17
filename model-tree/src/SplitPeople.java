@@ -12,13 +12,13 @@ public class SplitPeople {
 	
 	
 	public static void main(String[] args) throws IOException {
-		Scanner scanner = Parse.openFile("input/noisy_data.txt");
+		Scanner scanner = Parse.openFile("../data-collection/subsets/clean_data.txt");
 		List<String> examples = new ArrayList<String>();
 		while (scanner.hasNextLine()) {
 			examples.add(scanner.nextLine());
 		}
 		
-		BufferedWriter bw = new BufferedWriter(new FileWriter(new File("input/noisy_data_split_people.txt").getAbsoluteFile()));
+		BufferedWriter bw = new BufferedWriter(new FileWriter(new File("input/clean_data_split_people.txt").getAbsoluteFile()));
 		int count = 0;
 		for (String example : examples) {
 			List<String> values = new ArrayList<String>(Arrays.asList(example.split("\t")));

@@ -1,0 +1,10 @@
+java.io.FileNotFoundException: input/clean_data.txt (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at java.util.Scanner.<init>(Scanner.java:636)
+	at Parse.openFile(Parse.java:20)
+	at Parse.parseDataFile(Parse.java:66)
+	at ModelTreeTest.main(ModelTreeTest.java:82)
+Exception in thread "main" java.lang.NullPointerException
+	at Parse.parseDataFile(Parse.java:69)
+	at ModelTreeTest.main(ModelTreeTest.java:82)
