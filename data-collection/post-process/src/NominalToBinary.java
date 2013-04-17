@@ -25,7 +25,17 @@ public class NominalToBinary {
 	private static final String TRUE = "y";
 	private static final String FALSE = "n";
 	
+	private String attributes = null;
+	
 	public NominalToBinary() {
+		values = initialize();
+		splitNominal();
+		printConfig();
+	}
+	
+	public NominalToBinary(String inFile, String outFile) {
+		input = new File(inFile);
+		output = new File(outFile);
 		values = initialize();
 		splitNominal();
 		printConfig();
@@ -114,6 +124,9 @@ public class NominalToBinary {
 		}
 	}
 	
+	public String getAttributes(){
+		return attributes;
+	}
 	public static String formatFeatureName(String name) {
 		String result = "is";
 		String[] parts = name.split("\\s");
@@ -127,17 +140,20 @@ public class NominalToBinary {
 	}
 	
 	public void printConfig() {
+		StringBuffer sb = new StringBuffer();
 		// first couple of features in data output are numerical...
 		// I don't know if we need to print config for them
 		
 		// print the names of features we just split up
 		for (Set<String> feature : values) {
 			for (String value : feature) {
-				System.out.print(formatFeatureName(value) + ",");
+				String formatted = formatFeatureName(value);
+				System.out.print(formatted + ",");
+				sb.append(formatted+",");
 			}
 			System.out.println();
 		}
-		
+		attributes = sb.toString();
 		// print config stuff for last features?
 	}
 	

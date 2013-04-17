@@ -7,8 +7,8 @@ import java.util.Scanner;
  * This class will produce 20 files (10 training, 10 testing)
  * it takes the input file as formated in clean_data.txt
  * the output files are to be used by GenerateScore.java
- 
- original:
+
+original:
 [0] number
 [1] movie id
 [2] rating
@@ -57,8 +57,11 @@ public class SplitFile {
 			Scanner sc = new Scanner(new File(filename));
 			FileWriter fw1 = new FileWriter("train"+l+".txt");
 			FileWriter fw2 = new FileWriter("test"+l+".txt");
+			FileWriter full = new FileWriter("full.csv");//this csv is only to be used to generate arff header in weka - to be appended in all other arff
 			BufferedWriter bwTrain = new BufferedWriter(fw1);
 			BufferedWriter bwTest = new BufferedWriter(fw2);
+			BufferedWriter bwFull = new BufferedWriter(full);
+			bwFull.write("// append a header to this csv and then convert this csv to arff in weka - add the header to other files\n");
 			String line;
 			int j = 0;
 			while(sc.hasNextLine()){
@@ -77,6 +80,11 @@ public class SplitFile {
 					}
 					bwTrain.write(split[2]+"\n");
 				}
+				bwFull.write(split[3]+","+"0.0"+","+"0.0"+","+"0.0"+",");
+				for(int k=7;k<split.length;k++){
+					bwFull.write(split[k]+",");
+				}
+				bwFull.write(split[2]+"\n");
 				j++;
 			}
 			sc.close();
