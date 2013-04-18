@@ -86,7 +86,7 @@ __actor__ | 3904 | 4108
 __director__ | 873 | 886
 __writer__ | 1474 | 1465
 __genre__ | 23 | 24
-__language__ 69 | 72
+__language__ | 69 | 72
 __country__ | 56 | 68
 __mpaa rating__ | 7 | 7
 __release year__ | 87 | 91
