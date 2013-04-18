@@ -227,7 +227,8 @@ public class ModelTree {
 			
 			return average / values.size();
 		} else {
-			double prediction =  root.solve(example.getContinuousArray());
+			//double prediction =  root.solve(example.getContinuousArray());
+			double prediction = root.getOutputAvg();
 			double result = example.getOutput() - prediction;
 			if (outputPredictions) {
 				System.out.println(example.getOutput() + "\t" + prediction + "\t" + result);
