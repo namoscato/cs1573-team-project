@@ -59,7 +59,7 @@ public class Evaluate {
 		double min = Double.MAX_VALUE;
 		double max = Double.MIN_VALUE;
 		for (Float example : examples) {
-			double temp = 6.3689 - example.floatValue();
+			double temp = 6.4241 - example.floatValue();
 			temp *= temp;
 			result += temp;
 			if (normalize) {
@@ -79,12 +79,13 @@ public class Evaluate {
 	}
 	
 	public static void main(String[] args) throws ParseException {
-		Scanner scanner = Parse.openFile("../data-collection/clean_data.txt");
+		Scanner scanner = Parse.openFile("../data-collection/subsets/noisy_data.txt");
 		List<Float> ratings = new ArrayList<Float>();
 		while (scanner.hasNextLine()) {
 			String[] example = scanner.nextLine().split("\t");
 			ratings.add(Float.parseFloat(example[2]));
 		}
+		System.out.println(rootMeanSquare(ratings, false));
 		System.out.println(rootMeanSquare(ratings, true));
 	}
 }

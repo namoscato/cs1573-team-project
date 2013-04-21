@@ -80,15 +80,15 @@ public class Test {
 		*/
 		
 		// shuffle data file
-		Scanner scanner = Parse.openFile("../data-collection/clean_data.txt");
+		Scanner scanner = Parse.openFile("../data-collection/noisy_data.txt");
 		List<String> examples = new ArrayList<String>();
 		while (scanner.hasNextLine()) {
 			examples.add(scanner.nextLine());
 		}
 		randomize(examples);
 		
-		BufferedWriter bw = new BufferedWriter(new FileWriter(new File("../data-collection/subsets/clean_data.txt").getAbsoluteFile()));
-		for (int i = 0; i < 1000; i++) {
+		BufferedWriter bw = new BufferedWriter(new FileWriter(new File("../data-collection/subsets/noisy_data_5000.txt").getAbsoluteFile()));
+		for (int i = 0; i < 5000; i++) {
 			bw.write(examples.get(i) + "\n");
 		}
 		bw.close();

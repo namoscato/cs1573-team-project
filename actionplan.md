@@ -67,17 +67,44 @@ runtime | 103
 
 ### Baseline
 
-Simply predicts the average value (6.3689) for all examples in the data set. This calculation is implemented in `model-tree/src/Evaluate.java`.
+Simply predicts the average rating for all examples in the data set. This calculation is implemented in `model-tree/src/Evaluate.java`.
 
-dataset | root-mean-square | normalized root-mean-square
---- | --- | ---
-clean | 1.0762702439836687 | 0.045402246604460475
-noisy | 1.0450910855264475 | 0.04408695999395767
+dataset | average rating | rms | normalized rms
+--- | --- | --- | ---
+1000 clean | 6.3869 | 1.0452 | 0.0631
+1000 noisy | 6.4241 | 1.0813 | 0.0446
 
 ### Model Tree
 
-* A model tree learning algorithm was implemented from scratch based off of M5. The input consisted of ten nominal attributes (actors, directors, writers, genres, language, country, mpaa_rating, release_year, release_month and weekend) and one numerical attribute, runtime. Many of the examples had multiple values for for a particular nominal attribute. For example, up to five actors were included as input for one movie to the actor attribute. In these cases, the particular example was included in the set of all relevent child nodes. Features were chosen based of the standard deviation of ratings adjusted for the size of each subset.
-* In an effort to decrease the effects of the large cardinality of actors, this feature was split up into three separate features: actor1, actor2 and actor3. This decision was made with the assumption that actor1 is more "popular" than actor2 and so on. Movies with less than three actors were removed. Unfortunately, this did not improve the model.
+A model tree learning algorithm was implemented from scratch based off of M5. The input consisted of ten nominal attributes (actors, directors, writers, genres, language, country, mpaa_rating, release_year, release_month and weekend) and one numerical attribute, runtime. Many of the examples had multiple values for for a particular nominal attribute. For example, up to five actors were included as input for one movie to the actor attribute. In these cases, the particular example was included in the set of all relevent child nodes. Features were chosen based of the standard deviation of ratings adjusted for the size of each subset.
+
+As expected, attributes such as actors, writers and directors had a relatively high cardinality.
+
+attribute | clean | noisy
+--- | --- | ---
+__actor__ | 3904 | 4108
+__director__ | 873 | 886
+__writer__ | 1474 | 1465
+__genre__ | 23 | 24
+__language__ | 69 | 72
+__country__ | 56 | 68
+__mpaa rating__ | 7 | 7
+__release year__ | 87 | 91
+
+#### Split Actors
+
+In an effort to decrease the effects of the large cardinality of actors, this feature was split up into three separate features: actor1, actor2 and actor3. This decision was made with the assumption that actor1 is more "popular" than actor2 and so on. Movies with less than three actors were removed.
+
+attribute | clean | noisy
+--- | --- | ---
+__discarded__ | 3 | 8
+__actors 1__ | 851 | 895
+__actors 2__ | 905 | 945
+__actors 3__ | 918 | 921
+
+It should be noted that other nominal attributes such as writers and directors also consisted of a fairly large set of distinct values. However, these distinct sets were not as large as the actor attribute. More importantly, all movies had at most two directors and writers associated with them.
+
+Unfortunately, splitting up the actor attribute did not improve the model.
 
 ### Neural Network
 

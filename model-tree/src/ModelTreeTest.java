@@ -11,8 +11,8 @@ public class ModelTreeTest {
 	private final static int KFOLDS = 10;
 	private final static int FOLD = -1; // run through kfolds manually
 	
-	static final int MIN_SUBSET_SIZE = 20; // stop if subset size is less than this
-	static final double MIN_DEVIATION = .35; // stop if deviation is less than this
+	static final int MIN_SUBSET_SIZE = 10; // stop if subset size is less than this
+	static final double MIN_DEVIATION = .5; // stop if deviation is less than this
 	
 	/*
 	 * Shuffles the elements in a list.
@@ -78,15 +78,17 @@ public class ModelTreeTest {
 	}
 	
 	public static void main(String[] args) throws Exception {		
-		Configuration config = Parse.parseConfigFile("../config/config.txt", "config/clean_config.txt");
-		List<Data> examples = Parse.parseDataFile("input/clean_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+		Configuration config = Parse.parseConfigFile("config/config.txt", "config/noisy_config.txt");
+		List<Data> examples = Parse.parseDataFile("../data-collection/subsets/noisy_data_1000.txt", 1, 2, config.getDiscrete(), config.getContinuous());
 		
 		// shuffle our data
 		// randomize(examples);
 		
+		/*
 		File output = new File("output/deviations.txt");
 		FileWriter fw = new FileWriter(output.getAbsoluteFile());
 		BufferedWriter bw = new BufferedWriter(fw);
+		*/
 		
 		// perform a 10-fold cross validation experiment
 		List<List<Data>> subsets = splitList(examples, KFOLDS);
@@ -124,7 +126,7 @@ public class ModelTreeTest {
 				break;
 			}
 		}
-		bw.close();
+		//bw.close();
 		
 		if (FOLD < 0) {
 			System.out.println(average(error) + "\t" + average(normError));
