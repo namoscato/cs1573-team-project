@@ -66,7 +66,7 @@ public class SplitFile {
 			if(l==0){
 				FileWriter full = new FileWriter("full.csv");//this csv is only to be used to generate arff header in weka - to be appended in all other arff
 				bwFull = new BufferedWriter(full);
-				bwFull.write("// append a header to this csv and then convert this csv to arff in weka - add the header to other files\n");
+				bwFull.write("count,actor,director,writer,"+attributes+"MPAA,year,month,weekend,runtime,rating\n");
 			}
 			
 			String line;
