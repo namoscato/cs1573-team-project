@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class GenerateSubsets {
 	private static File input = new File("../clean_data.txt");
-	private static File output = new File("../subsets/test_subset.txt");
+	private static File output = new File("../subsets/english_data.txt");
 	
 	public static void main(String[] args) {
 		try {
@@ -32,16 +32,20 @@ public class GenerateSubsets {
 				int count = 0;
 				
 				while (scanner.hasNextLine()) {
-					List<String> example = new ArrayList<String>(Arrays.asList(scanner.nextLine().split("\t")));
-					int temp = Integer.parseInt(example.get(11)) / 10 * 10;
-					//List<String> values = Arrays.asList(example.get(9).split(","));
+					String str = scanner.nextLine();
+					List<String> example = new ArrayList<String>(Arrays.asList(str.split("\t")));
+					//int temp = Integer.parseInt(example.get(11)) / 10 * 10;
+					List<String> values = Arrays.asList(example.get(8).split(","));
 					int runtime = Integer.parseInt(example.get(14));
-					//if (values.contains("UK") && runtime < 146 && runtime > 63) {
-					if (temp == 2000 && runtime < 146 && runtime > 63) {
+					if (values.size() == 1 && values.contains("English") && runtime < 146 && runtime > 63) {
+					//if (temp == 1990 && runtime < 146 && runtime > 63) {
+						fw.write(str + "\n");
+						/*
 						System.out.println(example.get(2));
 						for (int i = 4; i <= 6; i++) {
 							distinctPeople.get(i - 4).addAll(Arrays.asList(example.get(i).split(",")));		
 						}
+						*/
 						count++;
 					}
 				}
@@ -70,8 +74,6 @@ public class GenerateSubsets {
 						}
 					}
 				}
-	
-				scanner.close();
 				
 				// print out results
 				Iterator<Entry<String, Integer>> it = map.entrySet().iterator();
@@ -82,6 +84,9 @@ public class GenerateSubsets {
 					it.remove();
 				}
 			}
+			
+			scanner.close();
+			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
