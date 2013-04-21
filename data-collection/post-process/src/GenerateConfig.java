@@ -15,8 +15,8 @@ public class GenerateConfig {
 	private static final int START_INDEX = 4;
 
 	public static void main(String[] args) {
-		File input = new File("../subsets/clean_data_5000.txt");
-		File output = new File("../../model-tree/config/clean_config_5000.txt");
+		File input = new File("../subsets/USA_data.txt");
+		File output = new File("../../model-tree/config/USA_data.txt");
 
 		try {
 			// create output file

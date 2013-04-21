@@ -73,6 +73,31 @@ public class Parse {
 		return examples;
 	}
 	
+	public static Configuration parseConfigFile(String config, Map<String, List<String>> nominalValues) {
+		Scanner scanner = openFile(config);
+		
+		// get discrete features
+		String[] line = scanner.nextLine().split("\t");
+		List<Feature> discrete = new ArrayList<Feature>(line.length);
+		int count = 0;
+		for (String feature : line) {
+			String[] temp = feature.split(","); // split id from name
+			discrete.add(new Feature( count, Integer.parseInt(temp[0]), temp[1], nominalValues.get(temp[1]) ));
+			count++;
+		}
+		
+		line = scanner.nextLine().split("\t");
+		List<Feature> continuous = new ArrayList<Feature>(line.length);
+		count = 0;
+		for (String feature : line) {
+			String[] temp = feature.split(","); // split id from name
+			continuous.add(new Feature( count, Integer.parseInt(temp[0]), temp[1] ));
+			count++;
+		}
+		
+		return new Configuration(discrete, continuous);
+	}
+	
 	/*
 	 * Setup project configuration.
 	 * @param config text file that includes list of discrete and continuous features

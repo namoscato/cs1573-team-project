@@ -1,6 +1,8 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -32,7 +34,7 @@ public class Test {
 		}
 	}
 	
-	public static double average(List<Float> examples) {
+	public static double average(List<Double> examples) {
 		double average = 0;
 		for (int i = 0; i < examples.size(); i++) {
 			average += examples.get(i);
@@ -56,10 +58,30 @@ public class Test {
 		return Math.sqrt(result);
 	}
 	
-	public static void main(String[] args) throws Exception {
-		// check number of multiple values for attribute
-		/*
-		Scanner scanner = Parse.openFile("../data-collection/noisy_data_revision1.txt");
+	// shuffle data file
+	public static void shuffle(String input, String output, int count) {
+		try {
+			Scanner scanner = Parse.openFile(input);
+			List<String> examples = new ArrayList<String>();
+			while (scanner.hasNextLine()) {
+				examples.add(scanner.nextLine());
+			}
+			randomize(examples);
+			
+			BufferedWriter bw;
+				bw = new BufferedWriter(new FileWriter(new File(output).getAbsoluteFile()));
+			for (int i = 0; i < count; i++) {
+				bw.write(examples.get(i) + "\n");
+			}
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/*
+	public static void checkDistribution(String input) {
+		Scanner scanner = Parse.openFile(input);
 		Map<Integer, List<Float>> map = new HashMap<Integer, List<Float>>();
 		while (scanner.hasNextLine()) {
 			String[] example = scanner.nextLine().split("\t");
@@ -77,24 +99,11 @@ public class Test {
 			double avg = average(set);
 			System.out.println(key + "\t" + avg + "\t" + standardDeviation(avg, set));
 		}
-		*/
-		
-		// shuffle data file
-		Scanner scanner = Parse.openFile("../data-collection/noisy_data.txt");
-		List<String> examples = new ArrayList<String>();
-		while (scanner.hasNextLine()) {
-			examples.add(scanner.nextLine());
-		}
-		randomize(examples);
-		
-		BufferedWriter bw = new BufferedWriter(new FileWriter(new File("../data-collection/subsets/noisy_data_5000.txt").getAbsoluteFile()));
-		for (int i = 0; i < 5000; i++) {
-			bw.write(examples.get(i) + "\n");
-		}
-		bw.close();
-		
-		// mess with runtimes
-		/*
+	}
+	*/
+	
+	/*
+	public static void messRuntimes() {
 		// declare attributes
 		Attribute rating = new Attribute("rating");
 		Attribute runtime = new Attribute("runtime");
@@ -133,6 +142,14 @@ public class Test {
 		double[] coef = model.coefficients();
 		System.out.println("[" + coef[1] + ", " + coef[2] + "]");
 		System.out.println(eval.toSummaryString());
-		*/
+	}
+	*/
+	
+	
+	
+	public static void main(String[] args) throws Exception {
+		//checkDistribution("../data-collection/noisy_data_revision1.txt");
+		
+		//shuffle("../data-collection/noisy_data.txt", "../data-collection/subsets/noisy_data_5000.txt", 5000);
 	}
 }

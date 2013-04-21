@@ -11,8 +11,8 @@ public class ModelTreeTest {
 	private final static int KFOLDS = 10;
 	private final static int FOLD = -1; // run through kfolds manually
 	
-	static final int MIN_SUBSET_SIZE = 10; // stop if subset size is less than this
-	static final double MIN_DEVIATION = .5; // stop if deviation is less than this
+	static final int MIN_SUBSET_SIZE = 20; // stop if subset size is less than this
+	static final double MIN_DEVIATION = 0.2; // stop if deviation is less than this
 	
 	/*
 	 * Shuffles the elements in a list.
@@ -78,19 +78,28 @@ public class ModelTreeTest {
 	}
 	
 	public static void main(String[] args) throws Exception {		
-		Configuration config = Parse.parseConfigFile("config/config.txt", "config/noisy_config.txt");
-		List<Data> examples = Parse.parseDataFile("../data-collection/subsets/noisy_data_1000.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+		double[] error = new double[10];
+		double[] normError = new double[10];
+		for (int fold = 0; fold < 10; fold++) {
+			String subset = "USA_data";
+			Configuration config = Parse.parseConfigFile("config/score_config.txt", "config/USA_config.txt");
+			List<Data> trainSet = Parse.parseDataFile("../data-collection/subsets/" + subset + "/" + subset + "-" + fold + "-train.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+			List<Data> testSet = Parse.parseDataFile("../data-collection/subsets/" + subset + "/" + subset + "-" + fold + "-test.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+			
+			ModelTree tree = new ModelTree(config.getDiscrete(), trainSet);
+			Evaluate eval = new Evaluate(tree, testSet);
+			System.out.println(eval.getRMS() + "\t" + eval.getNormRMS());
+			error[fold] = eval.getRMS();
+			normError[fold] = eval.getNormRMS();
+		}
 		
-		// shuffle our data
-		// randomize(examples);
+		System.out.println(average(error) + "\t" + average(normError));
+		
 		
 		/*
-		File output = new File("output/deviations.txt");
-		FileWriter fw = new FileWriter(output.getAbsoluteFile());
-		BufferedWriter bw = new BufferedWriter(fw);
-		*/
-		
 		// perform a 10-fold cross validation experiment
+		// randomize(examples);
+		
 		List<List<Data>> subsets = splitList(examples, KFOLDS);
 		double[] error = new double[KFOLDS];
 		double[] normError = new double[KFOLDS];
@@ -113,23 +122,10 @@ public class ModelTreeTest {
 			error[test] = eval.getRMS();
 			normError[test] = eval.getNormRMS();
 			
-			/*
-			// write deviations to file
-			if (ModelTree.DEBUG) {
-				for (Double value : tree.getDebugDeviations()) {
-					bw.append(value.toString() + "\n");
-				}	
-			}
-			*/
-			
 			if (FOLD >= 0) {
 				break;
 			}
 		}
-		//bw.close();
-		
-		if (FOLD < 0) {
-			System.out.println(average(error) + "\t" + average(normError));
-		}
+		*/
 	}
 }
