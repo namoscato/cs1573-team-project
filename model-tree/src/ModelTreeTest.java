@@ -77,8 +77,7 @@ public class ModelTreeTest {
 		return result;
 	}
 	
-	public static void main(String[] args) throws Exception {		
-		
+	public static void main(String[] args) throws Exception {
 		double[] error = new double[10];
 		double[] normError = new double[10];
 		for (int fold = 0; fold < 10; fold++) {
