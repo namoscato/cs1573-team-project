@@ -41,6 +41,18 @@ public class Evaluate {
 	}
 	
 	/*
+	 * @param array double array to average
+	 * @return average of double array
+	 */
+	public static double average(List<Float> list) {
+		double sum = 0;
+		for (int i = 0; i < list.size(); i++) {
+			sum += list.get(i);
+		}
+		return sum / list.size();
+	}
+	
+	/*
 	 * @param examples data set of example ratings
 	 * @return root-mean-squared deviation
 	 */
@@ -58,8 +70,9 @@ public class Evaluate {
 		double result = 0;
 		double min = Double.MAX_VALUE;
 		double max = Double.MIN_VALUE;
+		double avg = average(examples);
 		for (Float example : examples) {
-			double temp = 6.4241 - example.floatValue();
+			double temp = avg - example.floatValue();
 			temp *= temp;
 			result += temp;
 			if (normalize) {
@@ -79,7 +92,7 @@ public class Evaluate {
 	}
 	
 	public static void main(String[] args) throws ParseException {
-		Scanner scanner = Parse.openFile("../data-collection/subsets/USA_data.txt");
+		Scanner scanner = Parse.openFile("../data-collection/subsets/English_data.txt");
 		List<Float> ratings = new ArrayList<Float>();
 		while (scanner.hasNextLine()) {
 			String[] example = scanner.nextLine().split("\t");

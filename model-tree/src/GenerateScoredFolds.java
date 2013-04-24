@@ -89,7 +89,11 @@ public class GenerateScoredFolds {
 			for (String person : temp) {
 				if (average > 0 && !ratings.contains(person)) {
 					// person only exists in our test set
-					myScores.add(average);
+					double score = average;
+					if (max > 0) {
+						score = (score - min) / (max - min);
+					}
+					myScores.add(score);
 				} else {
 					// we saw this person in our training, so we're good to go
 					double score = average(ratings.get(attr - 4).get(person));
@@ -116,19 +120,19 @@ public class GenerateScoredFolds {
 			double weight;
 			switch(i) {
 				case 0:
-					weight = 5;
+					weight = 10;
 					break;
 				case 1:
-					weight = 4;
+					weight = 5;
 					break;
 				case 2:
-					weight = 3;
+					weight = 1;
 					break;
 				case 3:
-					weight = 2;
+					weight = .5;
 					break;
 				default:
-					weight = 1;
+					weight = .3;
 					break;
 			}
 			score += scores.get(i);
@@ -230,7 +234,7 @@ public class GenerateScoredFolds {
 				for (List<String> example : trainSet) {
 					for (int i = 4; i <= 6; i++) {
 						double temp = Double.parseDouble(example.get(i));
-						averages[i - 4] += temp;
+						averages[i - 4] += Double.parseDouble(example.get(2));
 						if (temp < min[i - 4]) {
 							min[i - 4] = temp;
 						}

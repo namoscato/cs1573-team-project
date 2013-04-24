@@ -78,6 +78,7 @@ public class ModelTreeTest {
 	}
 	
 	public static void main(String[] args) throws Exception {		
+		
 		double[] error = new double[10];
 		double[] normError = new double[10];
 		for (int fold = 0; fold < 10; fold++) {
@@ -91,14 +92,20 @@ public class ModelTreeTest {
 			System.out.println(eval.getRMS() + "\t" + eval.getNormRMS());
 			error[fold] = eval.getRMS();
 			normError[fold] = eval.getNormRMS();
+			
+			System.exit(0);
 		}
 		
 		System.out.println(average(error) + "\t" + average(normError));
 		
 		
-		/*
+		
 		// perform a 10-fold cross validation experiment
-		// randomize(examples);
+		/*
+		Configuration config = Parse.parseConfigFile("config/config.txt", "config/noisy_config.txt");
+		List<Data> examples = Parse.parseDataFile("../data-collection/subsets/noisy_data_1000.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+
+		randomize(examples);
 		
 		List<List<Data>> subsets = splitList(examples, KFOLDS);
 		double[] error = new double[KFOLDS];
@@ -127,5 +134,6 @@ public class ModelTreeTest {
 			}
 		}
 		*/
+		
 	}
 }

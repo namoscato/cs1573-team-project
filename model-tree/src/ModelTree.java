@@ -76,10 +76,6 @@ public class ModelTree {
 			System.out.println(padLevel(depth) + "M5 with " + examples.size() + " examples and " + features.size() + " features");	
 		}
 		
-		// if examples.size() is small or standard deviation (difference of examples) is below some threshold
-		// if features is empty, just run the linear model
-		// else:
-		
 		Feature chosen = null;
 		double min = Double.POSITIVE_INFINITY;
 		List<List<Data>> subsets = null;
@@ -227,8 +223,9 @@ public class ModelTree {
 			
 			return average / values.size();
 		} else {
-			//double prediction =  root.solve(example.getContinuousArray());
-			double prediction = root.getOutputAvg();
+			//System.out.println(ModelTreeTest.formatArray(example.getContinuousArray()));
+			double prediction = root.solve(example.getContinuousArray());
+			//double prediction = root.getOutputAvg();
 			double result = example.getOutput() - prediction;
 			if (outputPredictions) {
 				System.out.println(example.getOutput() + "\t" + prediction + "\t" + result);
@@ -393,8 +390,22 @@ public class ModelTree {
 				double[] attrs = new double[example.getContinuousSize() + 1];
 				attrs[0] = example.getOutput();
 				System.arraycopy(example.getContinuousArray(), 0, attrs, 1, attrs.length - 1);
-				//System.out.println(attrs[0] + "," + attrs[1] + "," + attrs[2]);
+				//System.out.println(attrs[0] + "," + attrs[1] + "," + attrs[2] + "," + attrs[3] + "," + attrs[4]);
 				dataSet.add(new Instance(1, attrs));
+				
+				/*
+				int count = 0;
+				System.out.print(example.getOutput() + ",");
+				for (double temp : example.getContinuousArray()) {
+					System.out.print(temp);
+					count++;
+					if (count < example.getContinuousSize()) {
+						System.out.print(",");
+					} else {
+						System.out.println();
+					}
+				}
+				*/
 			}
 			
 			double weights[] = new double[examples.get(0).getContinuousSize() + 1];
@@ -402,12 +413,11 @@ public class ModelTree {
 			double coef[] = linearRegression.coefficients();
 			
 			// first coefficient is always 0 -- scrap it
-			for (int i = coef.length - 1, j = 0; i > 0; i--, j++) {
-				weights[j] = coef[i]; 
+			weights[0] = coef[coef.length - 1];
+			for (int i = 1; i < coef.length - 1; i++) {
+				weights[i] = coef[i]; 
 			}
 			
-			//System.out.println(ModelTreeTest.formatArray(weights));
-			//System.exit(0);
 			return weights;
 		}
 	}
