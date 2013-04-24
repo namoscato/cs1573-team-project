@@ -68,8 +68,8 @@ public class Test {
 			}
 			randomize(examples);
 			
-			BufferedWriter bw;
-				bw = new BufferedWriter(new FileWriter(new File(output).getAbsoluteFile()));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(output).getAbsoluteFile()));
+			if (count < 0) count = examples.size();
 			for (int i = 0; i < count; i++) {
 				bw.write(examples.get(i) + "\n");
 			}
@@ -149,12 +149,14 @@ public class Test {
 	
 	public static void main(String[] args) throws Exception {
 		//checkDistribution("../data-collection/noisy_data_revision1.txt");
-		//shuffle("../data-collection/noisy_data.txt", "../data-collection/subsets/noisy_data_5000.txt", 5000);
+		shuffle("../data-collection/datasets/english/english_data.txt", "../data-collection/datasets/english/english_data2.txt", -1);
+		/*
 		Scanner scanner = Parse.openFile("../data-collection/subsets/USA_data/USA_data-0-train.txt");
 		//Map<Integer, List<Float>> map = new HashMap<Integer, List<Float>>();
 		while (scanner.hasNextLine()) {
 			String[] example = scanner.nextLine().split("\t");
 			System.out.println(example[2] + "," + example[14] + "," + example[4] + "," + example[5] + "," + example[6] );
 		}
+		*/
 	}
 }

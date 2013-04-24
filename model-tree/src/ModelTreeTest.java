@@ -14,7 +14,9 @@ public class ModelTreeTest {
 	private static final int[] SUBSET_SIZES = {30, 40, 50, 60, 70};
 	private static final double[] DEVIATION_SIZES = {1};
 	
-	private static final boolean SCORED = true;
+	private static final boolean NOISY = true;
+	private static final boolean FOLDS = false;
+	private static final boolean SCORED = false;
 	
 	/*
 	 * Shuffles the elements in a list.
@@ -98,12 +100,15 @@ public class ModelTreeTest {
 	
 	public static void main(String[] args) throws Exception {
 		Configuration config;
+		List<Data> examples;
 		List<List<Data>> subsets;
 		
-		if (!SCORED) {
-			config = Parse.parseConfigFile("config/config.txt", "../data-collection/datasets/clean/clean_config_5000.txt");
-			List<Data> examples = Parse.parseDataFile("../data-collection/datasets/clean/clean_data_5000.txt", 1, 2, config.getDiscrete(), config.getContinuous());
-
+		if (FOLDS) {
+			System.out.println("Running regular 10-fold experiment");
+			config = Parse.parseConfigFile("config/config.txt", "../data-collection/datasets/english/english_config.txt");
+			examples = Parse.parseDataFile("../data-collection/datasets/english/english_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+			
+			// assume file is already shuffled
 			//randomize(examples);
 			
 			subsets = splitList(examples, KFOLDS);
@@ -118,6 +123,7 @@ public class ModelTreeTest {
 				double[] normError = new double[KFOLDS];
 				
 				if (SCORED) {
+					System.out.println("Running special 10-fold experiment over 20 files");
 					// use for pre-generated training/test sets
 					for (int fold = 0; fold < 10; fold++) {
 						String path = "../data-collection/datasets/clean/";
@@ -134,7 +140,7 @@ public class ModelTreeTest {
 					}
 					
 					//System.out.println(average(error) + "\t" + average(normError));
-				} else {
+				} else if (FOLDS) {
 					// regular 10-fold experiment
 					for (int test = 0; test < subsets.size(); test++) {
 						if (FOLD >= 0) {
@@ -159,10 +165,22 @@ public class ModelTreeTest {
 							break;
 						}
 					}
+				} else if (NOISY) {
+					config = Parse.parseConfigFile("config/config.txt", "../data-collection/datasets/noisy/noisy_config_5000.txt");
+					List<Data> trainSet = Parse.parseDataFile("../data-collection/datasets/noisy/noisy_data_5000-train.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+					List<Data> testSet = Parse.parseDataFile("../data-collection/datasets/noisy/noisy_data_5000-test.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+					
+					ModelTree tree = new ModelTree(config.getDiscrete(), trainSet);
+					Evaluate eval = new Evaluate(tree, testSet);
+					System.out.println(MIN_SUBSET_SIZE + "\t" + MIN_DEVIATION + "\t" + eval.getRMS() + "\t" + eval.getNormRMS());
+					//error[0] = eval.getRMS();
+					//normError[0] = eval.getNormRMS();
 				}
 				
 				// print results
-				System.out.println(MIN_SUBSET_SIZE + "\t" + MIN_DEVIATION + "\t" + average(error) + "\t" + average(normError));
+				if (!NOISY) {
+					System.out.println(MIN_SUBSET_SIZE + "\t" + MIN_DEVIATION + "\t" + average(error) + "\t" + average(normError));
+				}
 			}
 		}
 		
