@@ -94,7 +94,7 @@ public class ModelTree {
 				// only compute standard deviation if subset has more than one example
 				if (subset.size() > 1) {
 					double stddev = standardDeviation(subset);
-					temp += stddev * (1 - subset.size() / count); // punish small subsets
+					temp += stddev * Math.sqrt(1 - subset.size() / count); // punish small subsets
 				}
 			}
 			
@@ -118,7 +118,7 @@ public class ModelTree {
 		for (int i = 0; i < subsets.size(); i++) {
 			//System.out.println(padLevel(depth + 1) + chosen.getValue(i) + " size is " + subsets.get(i).size());
 			int size = subsets.get(i).size();
-			if (size <= 2 || size < ModelTreeTest.MIN_SUBSET_SIZE || min < ModelTreeTest.MIN_DEVIATION) {
+			if (size <= 2 || size < ModelTreeTest.MIN_SUBSET_SIZE || min < ModelTreeTest.MIN_DEVIATION || features.size() == 1) {
 				// run examples through perceptron and create leaf node
 				if (equation == null) {
 					Node child = new Node(examples, true);

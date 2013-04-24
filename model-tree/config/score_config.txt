@@ -1,2 +1,2 @@
-7,genre	8,language	9,country	10,mpaa_rating	11,release_year	12,release_month	13,weekend
-14,runtime	4,actor	5,director	6,writer
+7,genre	8,language	9,country	10,mpaa_rating	13,weekend
+14,runtime	4,actor	5,director	6,writer	11,release_year	12,release_month

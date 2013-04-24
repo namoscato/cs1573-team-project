@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 
 public class GenerateScoredFolds {
+	private static int[] onlyTestCount = new int[3];
 	
 	/*
 	 * Shuffles the elements in a list.
@@ -60,16 +61,6 @@ public class GenerateScoredFolds {
 	}
 	
 	/*
-	 * Generates k folds with actor, director and writer attributes
-	 * converted to nominal scores.
-	 * @param inputStr path to input file
-	 * @param k number of folds
-	 */
-	public static void generateFolds(String inputStr, int k) throws ParseException {
-		
-	}
-	
-	/*
 	 * Replaces the nominal values of a specified attribute with a calculated score 
 	 */
 	public static List<List<String>> replaceScore(List<List<String>> examples, List<Map<String, List<Double>>> ratings, int attr) {
@@ -87,13 +78,15 @@ public class GenerateScoredFolds {
 			String[] temp = example.get(attr).split(",");
 			List<Double> myScores = new ArrayList<Double>(temp.length);
 			for (String person : temp) {
-				if (average > 0 && !ratings.contains(person)) {
+				if (average > 0 && !ratings.get(attr - 4).containsKey(person)) {
 					// person only exists in our test set
+					/*
 					double score = average;
 					if (max > 0) {
 						score = (score - min) / (max - min);
 					}
 					myScores.add(score);
+					*/
 				} else {
 					// we saw this person in our training, so we're good to go
 					double score = average(ratings.get(attr - 4).get(person));
@@ -102,6 +95,16 @@ public class GenerateScoredFolds {
 					}
 					myScores.add(score);
 				}
+			}
+			
+			// if no people in test were in training, replace with the average
+			if (average > 0 && myScores.size() == 0) {
+				double score = average;
+				if (max > 0) {
+					score = (score - min) / (max - min);
+				}
+				myScores.add(score);
+				onlyTestCount[attr - 4]++;
 			}
 			
 			// replace this aggregated score with nominal values
@@ -168,7 +171,7 @@ public class GenerateScoredFolds {
 	}
 	
 	public static void main(String[] args) {
-		final String INPUT = "../data-collection/subsets/USA_data.txt";
+		final String INPUT = "../data-collection/datasets/clean/clean_data_5000.txt";
 		final int FOLDS = 10;
 		
 		List<List<String>> examples = new ArrayList<List<String>>();
@@ -194,6 +197,7 @@ public class GenerateScoredFolds {
 			// generate k training and test datasets
 			List<List<List<String>>> subsets = splitList(examples, FOLDS);
 			for (int test = 0; test < subsets.size(); test++) {
+				//onlyTestCount = new int[3];
 				
 				// create our training set
 				List<List<String>> trainSet = new ArrayList<List<String>>();
@@ -261,7 +265,7 @@ public class GenerateScoredFolds {
 				}
 				
 				// write stuff to files
-				file = new File(path + filename + '/' + filename + "-" + test + "-train.txt" );
+				file = new File(path + filename + "-score-subsets/" + filename + "-" + test + "-train.txt" );
 				file.getParentFile().mkdirs();
 				bw = new BufferedWriter(new FileWriter(file));
 				for (List<String> example : trainSet) {
@@ -269,13 +273,17 @@ public class GenerateScoredFolds {
 				}
 				bw.close();
 				
-				file = new File(path + filename + '/' + filename + "-" + test + "-test.txt" );
-				file.getParentFile().mkdirs();
+				file = new File(path + filename + "-score-subsets/" + filename + "-" + test + "-test.txt" );
+				//file.getParentFile().mkdirs();
 				bw = new BufferedWriter(new FileWriter(file));
 				for (List<String> example : testSet) {
 					bw.write(Parse.createLine(example));
 				}
 				bw.close();
+			}
+			
+			for (int i = 0; i < 3; i++) {
+				System.out.println(onlyTestCount[i] / 10);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
