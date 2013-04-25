@@ -92,7 +92,7 @@ public class Evaluate {
 	}
 	
 	public static void main(String[] args) throws ParseException {
-		Scanner scanner = Parse.openFile("../data-collection/datasets/noisy/noisy_data_5000-test.txt");
+		Scanner scanner = Parse.openFile("../data-collection/datasets/usa/USA_data.txt");
 		List<Float> ratings = new ArrayList<Float>();
 		while (scanner.hasNextLine()) {
 			String[] example = scanner.nextLine().split("\t");

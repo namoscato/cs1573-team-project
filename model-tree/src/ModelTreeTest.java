@@ -14,8 +14,8 @@ public class ModelTreeTest {
 	private static final int[] SUBSET_SIZES = {30, 40, 50, 60, 70};
 	private static final double[] DEVIATION_SIZES = {1};
 	
-	private static final boolean NOISY = true;
-	private static final boolean FOLDS = false;
+	private static final boolean NOISY = false;
+	private static final boolean FOLDS = true;
 	private static final boolean SCORED = false;
 	
 	/*
@@ -105,8 +105,8 @@ public class ModelTreeTest {
 		
 		if (FOLDS) {
 			System.out.println("Running regular 10-fold experiment");
-			config = Parse.parseConfigFile("config/config.txt", "../data-collection/datasets/english/english_config.txt");
-			examples = Parse.parseDataFile("../data-collection/datasets/english/english_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+			config = Parse.parseConfigFile("config/config.txt", "../data-collection/datasets/usa/USA_config.txt");
+			examples = Parse.parseDataFile("../data-collection/datasets/usa/USA_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
 			
 			// assume file is already shuffled
 			//randomize(examples);
