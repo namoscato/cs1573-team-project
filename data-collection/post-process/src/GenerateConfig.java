@@ -15,8 +15,8 @@ public class GenerateConfig {
 	private static final int START_INDEX = 4;
 
 	public static void main(String[] args) {
-		File input = new File("../datasets/usa/USA_data.txt");
-		File output = new File("../datasets/usa/USA_config.txt");
+		File input = new File("../datasets/usa/USA_data_5000.txt");
+		File output = new File("../datasets/usa/USA_config_5000.txt");
 
 		try {
 			// create output file

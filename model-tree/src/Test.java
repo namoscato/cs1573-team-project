@@ -149,7 +149,7 @@ public class Test {
 	
 	public static void main(String[] args) throws Exception {
 		//checkDistribution("../data-collection/noisy_data_revision1.txt");
-		shuffle("../data-collection/datasets/1980s/decade_1980_data.txt", "../data-collection/datasets/1980s/decade_1980_data2.txt", -1);
+		shuffle("../data-collection/datasets/usa/USA_data.txt", "../data-collection/datasets/usa/USA_data_5000.txt", 5000);
 		/*
 		Scanner scanner = Parse.openFile("../data-collection/subsets/USA_data/USA_data-0-train.txt");
 		//Map<Integer, List<Float>> map = new HashMap<Integer, List<Float>>();
