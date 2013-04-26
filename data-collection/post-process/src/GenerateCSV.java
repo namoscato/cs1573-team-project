@@ -6,11 +6,19 @@ import java.util.*;
 public class GenerateCSV {
 	
 	public static void main(String args[]) throws Exception{
-		NominalToBinary nb = new NominalToBinary("clean_data.txt","cleanBinary.txt");
-		SplitFile sf = new SplitFile(nb.getAttributes(),"cleanBinary.txt");
+
 		//put this into 10 loops later
-		GenerateScore2 gs = new GenerateScore2("train0.txt", "test0.txt");
-		gs.CreateCSV("train0.csv", "test0.csv");
+		if (args.length < 1) { 
+			System.out.println("Usage:  java GenerateCSV <input>");
+			System.exit(0);
+		}
+		String input = args[0] + ".txt";
+		String input_binary = args[0] + "binary.txt";
+		//NominalToBinary nb = new NominalToBinary(input, input_binary);
+		//SplitFile sf = new SplitFile(nb.getAttributes(),input_binary);
+		GenerateScore2 gs = new GenerateScore2(input);
+		String input_csv = args[0] + ".csv";
+		gs.CreateCSV(input_csv);
 	}
 	
 /*	public static void randomChooseThousand(){

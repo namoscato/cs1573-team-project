@@ -37,9 +37,10 @@ public class GenerateScore2 {
 	
 	double average = 0.0;
 
-	public GenerateScore2(String inputTraining, String inputTesting) {
+	public GenerateScore2(String inputTraining) {
 		// reads from two text files
 		training = new File(inputTraining);
+		/*
 		testing = new File(inputTesting);
 
 		trainActors = new HashMap<String, ArrayList<Double>>();
@@ -49,6 +50,7 @@ public class GenerateScore2 {
 		testActors = new HashMap<String, ArrayList<Double>>();
 		testWriters = new HashMap<String, ArrayList<Double>>();
 		testDirectors = new HashMap<String, ArrayList<Double>>();
+		*/
 	}
 
 	private void addToMap(HashMap<String, ArrayList<Double>> m, String str,
@@ -117,27 +119,31 @@ public class GenerateScore2 {
 
 	}
 
-	public void CreateCSV(String outputTraining, String outputTesting) {
-		buildHashMaps();
+	public void CreateCSV(String outputTraining) {
+		//buildHashMaps();
 
 		// assume files don't exist
 		File train_data = new File(outputTraining);
-		File test_data = new File(outputTesting);
+		//File test_data = new File(outputTesting);
 
 		try {
 			train_data.createNewFile();
 			Scanner scanner = new Scanner(training);
 			FileWriter train_fw = new FileWriter(train_data.getAbsoluteFile());
 			BufferedWriter train_bw = new BufferedWriter(train_fw);
+			
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
+
 				ArrayList<String> example = new ArrayList<String>(
 						Arrays.asList(line.split("\t")));
-				Double a = calcScore(example.get(1), trainActors);
-				Double d = calcScore(example.get(2), trainDirectors);
-				Double w = calcScore(example.get(3), trainWriters);
-				String outputline = example.get(0) + "," + a + "," + d + "," + w + ",";
-				for(int i=4; i<example.size()-1; i++){
+				/*
+				Double a = calcScore(example.get(3), trainActors);
+				Double d = calcScore(example.get(4), trainDirectors);
+				Double w = calcScore(example.get(5), trainWriters);
+				*/
+				String outputline = example.get(2); + "," //+ a + "," + d + "," + w + ",";
+				for(int i=7; i<example.size()-1; i++){
 					outputline += example.get(i)+",";
 				}
 				outputline += example.get(example.size()-1);
@@ -151,21 +157,24 @@ public class GenerateScore2 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		/*
 		// then testing
 		try {
 			test_data.createNewFile();
 			FileWriter test_fw = new FileWriter(test_data.getAbsoluteFile());
 			BufferedWriter test_bw = new BufferedWriter(test_fw);
 			Scanner scanner = new Scanner(testing);
+			test_bw.write("class, \n");
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				ArrayList<String> example = new ArrayList<String>(
 						Arrays.asList(line.split("\t")));
+				/*
 				Double a = calcScore(example.get(1), trainActors);
 				Double d = calcScore(example.get(2), trainDirectors);
 				Double w = calcScore(example.get(3), trainWriters);
-				String outputline = example.get(0) + "," + a + "," + d + "," + w + ",";
+				
+				String outputline = example.get(0);// + "," + a + "," + d + "," + w + ",";
 				for(int i=4; i<example.size()-1; i++){
 					outputline += example.get(i)+",";
 				}
@@ -180,9 +189,9 @@ public class GenerateScore2 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		*/
 	}
-
+	
 	
 
 	private Double calcScore(String a, HashMap<String, ArrayList<Double>> m) {

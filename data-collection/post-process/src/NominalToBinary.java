@@ -83,6 +83,7 @@ public class NominalToBinary {
 			FileWriter fw = new FileWriter(output.getAbsoluteFile());
 			BufferedWriter bw = new BufferedWriter(fw);
 			Scanner scanner = new Scanner(input);
+			
 			while (scanner.hasNextLine()) {
 				List<String> example = new ArrayList<String>(Arrays.asList(scanner.nextLine().split("\t")));
 				
