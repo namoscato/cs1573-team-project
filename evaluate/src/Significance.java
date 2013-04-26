@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Significance {
 	private double averageDifference;
@@ -6,6 +9,9 @@ public class Significance {
 	private double upperBound;
 	private final double[] tValue = {12.71, 4.303, 3.182, 2.776, 2.571, 2.447, 2.365, 2.306, 2.262, 2.228,
 									 2.201, 2.179, 2.160, 2.145, 2.131, 2.120, 2.110, 2.101, 2.093, 2.086};
+	
+	private final boolean BASELINE = true;
+	
 	/*
 	 * Computes the statistical significance between two lists A and B where
 	 * the ith element of A is from the same test set as the ith element of B.
@@ -35,10 +41,27 @@ public class Significance {
 	}
 	
 	public static void main(String[] args) {
-		double[] a = {.85, .83, .86, .92, .9};
-		double[] b = {.83, .82, .9, .89, .91};
+		double[] a = new double[1];
+		double[] b = new double[1];
+		Scanner scan;
 		
-		Significance s = new Significance(a, b);
-		System.out.println(s);
+		try {
+			// bring in first set of results
+			scan = new Scanner(new File("results1.txt"));
+			for (int i = 0; i < 1; i++) {
+				a[i] = Double.parseDouble(scan.nextLine().split("\\s")[1]);
+			}
+			
+			// bring in second set of results
+			scan = new Scanner(new File("results2.txt"));
+			for (int i = 0; i < 1; i++) {
+				b[i] = Double.parseDouble(scan.nextLine().split("\\s")[1]);
+			}
+			
+			// print out the significance
+			System.out.println(new Significance(a, b));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 }

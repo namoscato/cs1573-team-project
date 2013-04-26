@@ -91,14 +91,54 @@ public class Evaluate {
 		return result;
 	}
 	
+	/*
+	 * Splits a list into k distinct subsets in preparation for
+	 * k-fold validation.
+	 * @param list list to split
+	 * @param k number of distinct subsets
+	 * @return k distinct subsets
+	 */
+	public static List<List<Float>> splitList(List<Float> list, int k) {
+		List<List<Float>> subsets = new ArrayList<List<Float>>();
+		int size = list.size() / k; //5
+		for (int i = 0; i < k; i++) {
+			int max = (i + 1) * size - 1;
+			if (i == k - 1) {
+				// our last subset is probably going to bigger
+				max = list.size() - 1;
+			}
+			subsets.add( list.subList(i * size, max) );
+		}
+		return subsets;
+	}
+	
 	public static void main(String[] args) throws ParseException {
-		Scanner scanner = Parse.openFile("../data-collection/datasets/usa/USA_data.txt");
+		Scanner scanner = Parse.openFile("../data-collection/datasets/usa/usa_data_5000.txt");
 		List<Float> ratings = new ArrayList<Float>();
+		
+		// bring all of the ratings into memory
 		while (scanner.hasNextLine()) {
 			String[] example = scanner.nextLine().split("\t");
 			ratings.add(Float.parseFloat(example[2]));
 		}
-		System.out.println(rootMeanSquare(ratings, false));
-		System.out.println(rootMeanSquare(ratings, true));
+		
+		//System.out.println(rootMeanSquare(ratings, false));
+		//System.exit(0);
+		
+		List<List<Float>> subsets = splitList(ratings, 10);
+		
+		// test on each training set of the 10-folds
+		for (int test = 0; test < subsets.size(); test++) {
+			// create our training set
+			List<Float> train = new ArrayList<Float>();
+			for (int i = 0; i < subsets.size(); i++) {
+				if (i != test) {
+					train.addAll(subsets.get(i));
+				}
+			}
+			
+			// evaluate our training set
+			System.out.println("(" + test + ")\t" + rootMeanSquare(train, false));
+		}
 	}
 }

@@ -11,7 +11,7 @@ public class ModelTreeTest {
 	static int MIN_SUBSET_SIZE; // stop if subset size is less than this
 	static double MIN_DEVIATION; // stop if deviation is less than this
 	
-	private static final int[] SUBSET_SIZES = {30, 40, 50, 60, 70};
+	private static final int[] SUBSET_SIZES = {40};
 	private static final double[] DEVIATION_SIZES = {1};
 	
 	private static final boolean NOISY = false;
@@ -105,8 +105,8 @@ public class ModelTreeTest {
 		
 		if (FOLDS) {
 			System.out.println("Running regular 10-fold experiment");
-			config = Parse.parseConfigFile("config/config.txt", "../data-collection/datasets/usa/USA_config.txt");
-			examples = Parse.parseDataFile("../data-collection/datasets/usa/USA_data.txt", 1, 2, config.getDiscrete(), config.getContinuous());
+			config = Parse.parseConfigFile("config/config.txt", "../data-collection/datasets/usa/USA_config_5000.txt");
+			examples = Parse.parseDataFile("../data-collection/datasets/usa/usa_data_5000.txt", 1, 2, config.getDiscrete(), config.getContinuous());
 			
 			// assume file is already shuffled
 			//randomize(examples);
@@ -134,7 +134,7 @@ public class ModelTreeTest {
 						
 						ModelTree tree = new ModelTree(config.getDiscrete(), trainSet);
 						Evaluate eval = new Evaluate(tree, testSet);
-						//System.out.println(eval.getRMS() + "\t" + eval.getNormRMS());
+						System.out.println("(" + fold + ")\t" + eval.getRMS());
 						error[fold] = eval.getRMS();
 						normError[fold] = eval.getNormRMS();
 					}
@@ -157,7 +157,7 @@ public class ModelTreeTest {
 						
 						ModelTree tree = new ModelTree(config.getDiscrete(), train);
 						Evaluate eval = new Evaluate(tree, subsets.get(test));
-						//System.out.println(eval.getRMS() + "\t" + eval.getNormRMS());
+						System.out.println("(" + test + ")\t" + eval.getRMS());
 						error[test] = eval.getRMS();
 						normError[test] = eval.getNormRMS();
 						
