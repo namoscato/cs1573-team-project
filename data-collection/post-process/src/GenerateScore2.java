@@ -36,10 +36,12 @@ public class GenerateScore2 {
 	File testing;
 	
 	double average = 0.0;
+	String attributes = "";
 
-	public GenerateScore2(String inputTraining) {
+	public GenerateScore2(String inputTraining, String _attributes) {
 		// reads from two text files
 		training = new File(inputTraining);
+		attributes = _attributes;
 		/*
 		testing = new File(inputTesting);
 
@@ -131,7 +133,8 @@ public class GenerateScore2 {
 			Scanner scanner = new Scanner(training);
 			FileWriter train_fw = new FileWriter(train_data.getAbsoluteFile());
 			BufferedWriter train_bw = new BufferedWriter(train_fw);
-			
+
+			train_bw.write(attributes);
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 
@@ -204,7 +207,6 @@ public class GenerateScore2 {
 		for (int i = 0; i < list.size(); i++) {
 			ArrayList<Double> values = m.get(list.get(i));
 			if (values == null) {
-				// do nothing
 				rating +=average;
 			} else {
 				double total = 0;
