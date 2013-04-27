@@ -133,19 +133,20 @@ public class GenerateScore2 {
 			Scanner scanner = new Scanner(training);
 			FileWriter train_fw = new FileWriter(train_data.getAbsoluteFile());
 			BufferedWriter train_bw = new BufferedWriter(train_fw);
-
+			train_bw.write("rating, ");
 			train_bw.write(attributes);
+			train_bw.write("\n");
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 
 				ArrayList<String> example = new ArrayList<String>(
 						Arrays.asList(line.split("\t")));
 				/*
-				Double a = calcScore(example.get(3), trainActors);
-				Double d = calcScore(example.get(4), trainDirectors);
-				Double w = calcScore(example.get(5), trainWriters);
+				Double a = calcScore(example.get(4), trainActors);
+				Double d = calcScore(example.get(5), trainDirectors);
+				Double w = calcScore(example.get(6), trainWriters);
 				*/
-				String outputline = example.get(2); + "," //+ a + "," + d + "," + w + ",";
+				String outputline = example.get(2) + ",";// + a + "," + d + "," + w + ",";
 				for(int i=7; i<example.size()-1; i++){
 					outputline += example.get(i)+",";
 				}
