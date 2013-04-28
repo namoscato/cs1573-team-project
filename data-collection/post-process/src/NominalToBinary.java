@@ -16,7 +16,7 @@ import java.util.TreeSet;
 
 public class NominalToBinary {
 	private static File input = new File("../../data-collection/datasets/clean/clean_data_5000.txt");
-	private static File output = new File("../../data-collection/datasets/clean/clean_data_5000_test.txt");
+	private static File output = new File("../../data-collection/datasets/clean/clean_data_5000_binary.txt");
 	
 	private List<Set<String>> values;
 	private static final int START = 7;
@@ -112,6 +112,18 @@ public class NominalToBinary {
 					}
 				}
 				
+				// remove id and imdb id
+				example.remove(0);
+				example.remove(0);
+				
+				// remove rating count
+				example.remove(1);
+				
+				// remove actor, writer, director
+				example.remove(1);
+				example.remove(1);
+				example.remove(1);
+				
 				// write new example to output file
 				bw.write(createLine(example));
 			}
@@ -163,7 +175,7 @@ public class NominalToBinary {
 		for (int i = 0; i < list.size(); i++) {
 			result += list.get(i);
 			if (i < list.size() - 1) {
-				result += "\t";
+				result += ",";
 			}
 		}
 		return result + "\n";
