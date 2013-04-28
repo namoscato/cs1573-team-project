@@ -15,8 +15,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class NominalToBinary {
-	private static File input = new File("../../data-collection/datasets/clean/clean_data_5000.txt");
-	private static File output = new File("../../data-collection/datasets/clean/clean_data_5000_binary.txt");
+	private static File input = new File("../../data-collection/datasets/english/english_data.txt");
+	private static File output = new File("../../data-collection/datasets/english/english_data.csv");
 	
 	private List<Set<String>> values;
 	private static final int START = 7;
@@ -111,6 +111,8 @@ public class NominalToBinary {
 						currentStart++;
 					}
 				}
+				
+				example.remove(8);
 				
 				// remove id and imdb id
 				example.remove(0);
