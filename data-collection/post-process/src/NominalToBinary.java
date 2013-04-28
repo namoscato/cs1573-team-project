@@ -15,8 +15,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class NominalToBinary {
-	private static File input = new File("../../data-collection/clean_data.txt");
-	private static File output = new File("../../neural-network/clean_data_split.txt");
+	private static File input = new File("../../data-collection/datasets/usa/USA_data_5000.txt");
+	private static File output = new File("../../data-collection/datasets/usa/USA_data_5000_binary.txt");
 	
 	private List<Set<String>> values;
 	private static final int START = 7;
