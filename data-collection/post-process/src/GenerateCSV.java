@@ -14,9 +14,9 @@ public class GenerateCSV {
 		}
 		String input = args[0] + ".txt";
 		String input_binary = args[0] + "binary.txt";
-		//NominalToBinary nb = new NominalToBinary(input, input_binary);
-		//SplitFile sf = new SplitFile(nb.getAttributes(),input_binary);
-		GenerateScore2 gs = new GenerateScore2(input);
+		NominalToBinary nb = new NominalToBinary(input, input_binary);
+		//SplitFile sf = new SplitFile(nb.getAttributes(), input_binary);
+		GenerateScore2 gs = new GenerateScore2(input, nb.getAttributes());
 		String input_csv = args[0] + ".csv";
 		gs.CreateCSV(input_csv);
 	}
